@@ -73,7 +73,7 @@
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Responsibility%20Table']"/>
         <target xmi:type="stpa:ControlEntity" href="ThreatModel_RISCV.capella#b3fd3877-c0ed-472a-8d99-14a6b28f06dd"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WiA0bRfcEfG0tt4COtklBw" name="[RET] Responsibility Table of Interrupt Manager" repPath="#_WiA0YBfcEfG0tt4COtklBw" changeId="1772643187449">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WiA0bRfcEfG0tt4COtklBw" name="[RET] Responsibility Table of Interrupt Manager" repPath="#_WiA0YBfcEfG0tt4COtklBw" changeId="1773417137432">
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Responsibility%20Table']"/>
         <target xmi:type="stpa:ControlEntity" href="ThreatModel_RISCV.capella#9b1ace03-d370-4c3c-ab2f-01bfaac80158"/>
       </ownedRepresentationDescriptors>
@@ -217,7 +217,7 @@
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#d2ded130-8582-4f49-b99a-40c3ac2a038e"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NuRNDRiDEfGonZ3KeUxxGA" name="[UAT] UCA Table for Request Domain Manager Services" repPath="#_NuRM8BiDEfGonZ3KeUxxGA" changeId="1773396465838">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NuRNDRiDEfGonZ3KeUxxGA" name="[UAT] UCA Table for Request Domain Manager Services" repPath="#_NuRM8BiDEfGonZ3KeUxxGA" changeId="1773416978150">
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#49f9d95b-24c8-4d15-9501-1d1f71f56545"/>
       </ownedRepresentationDescriptors>
@@ -229,7 +229,7 @@
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#561eb47f-47f6-45f9-83ad-842d3668b7c9"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KF4TzRi0EfGonZ3KeUxxGA" name="[UAT] UCA Table for CoVE-H SBI" repPath="#_KF4TsBi0EfGonZ3KeUxxGA" changeId="1772791550940">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KF4TzRi0EfGonZ3KeUxxGA" name="[UAT] UCA Table for CoVE-H SBI" repPath="#_KF4TsBi0EfGonZ3KeUxxGA" changeId="1773416963452">
         <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#5d58d2e8-1d39-499c-ace9-47b32afd2d13"/>
       </ownedRepresentationDescriptors>
@@ -7786,9 +7786,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Global%20Traceability%20Diagram']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ZZXwkB7CEfG0ovdNsAENCQ" name="Prova" visible="false" tooltipText="Prova" outgoingEdges="_ZahAFx7CEfG0ovdNsAENCQ" width="3" height="3" resizeKind="NSEW">
-      <target xmi:type="org.polarsys.capella.core.data.capellacore:Constraint" href="ThreatModel_RISCV.capella#5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.capellacore:Constraint" href="ThreatModel_RISCV.capella#5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ZZXwkB7CEfG0ovdNsAENCQ" target="5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c" name="Prova" semanticElements="5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c" visible="false" tooltipText="Prova" outgoingEdges="_ZahAFx7CEfG0ovdNsAENCQ" width="3" height="3" resizeKind="NSEW">
       <graphicalFilters xmi:type="diagram:AppliedCompositeFilters" uid="_Zd3PAh7CEfG0ovdNsAENCQ">
         <compositeFilterDescriptions xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Global%20Traceability%20Diagram']/@filters[name='Hide%20Design%20Constraints']"/>
       </graphicalFilters>
@@ -10783,8 +10781,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Global%20Traceability%20Diagram']/@defaultLayer/@edgeMappings[name='GTConstrainedElementsEdge']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ZahAFx7CEfG0ovdNsAENCQ" visible="false" sourceNode="_ZZXwkB7CEfG0ovdNsAENCQ" targetNode="_UaVekBfOEfG0tt4COtklBw">
-      <target xmi:type="org.polarsys.capella.core.data.capellacore:Constraint" href="ThreatModel_RISCV.capella#5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ZahAFx7CEfG0ovdNsAENCQ" target="5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c" visible="false" sourceNode="_ZZXwkB7CEfG0ovdNsAENCQ" targetNode="_UaVekBfOEfG0tt4COtklBw">
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ZahAGB7CEfG0ovdNsAENCQ" lineStyle="dot" centered="Both" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Global%20Traceability%20Diagram']/@defaultLayer/@edgeMappings[name='GTConstrainedElementsEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ZahAGR7CEfG0ovdNsAENCQ" labelSize="12"/>
@@ -12201,7 +12198,7 @@
   </table:DTable>
   <table:DTable uid="_WiA0YBfcEfG0tt4COtklBw" headerColumnWidth="120">
     <target xmi:type="stpa:ControlEntity" href="ThreatModel_RISCV.capella#9b1ace03-d370-4c3c-ab2f-01bfaac80158"/>
-    <lines xmi:type="table:DLine" uid="_XAdrBBfcEfG0tt4COtklBw" label="(R-15)">
+    <lines xmi:type="table:DLine" uid="_XAdrBBfcEfG0tt4COtklBw" label="(R-16)">
       <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Responsibility%20Table']/@ownedLineMappings[name='ResponsibilityLine']"/>
@@ -12213,11 +12210,11 @@
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_XAdrEBfcEfG0tt4COtklBw" label="[CA-13]" column="_WiA0ZRfcEfG0tt4COtklBw">
+      <cells xmi:type="table:DCell" uid="_XAdrEBfcEfG0tt4COtklBw" label="[CA-18, FB-02, FB-06]" column="_WiA0ZRfcEfG0tt4COtklBw">
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_XAdrEhfcEfG0tt4COtklBw" label="[]" column="_WiA0ZxfcEfG0tt4COtklBw">
+      <cells xmi:type="table:DCell" uid="_XAdrEhfcEfG0tt4COtklBw" label="[FB-18]" column="_WiA0ZxfcEfG0tt4COtklBw">
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       </cells>
@@ -12230,7 +12227,7 @@
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#4f29480d-ebcd-453e-bcae-e570f755def4"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_XapspRfcEfG0tt4COtklBw" label="(R-16)">
+    <lines xmi:type="table:DLine" uid="_XapspRfcEfG0tt4COtklBw" label="(R-17)">
       <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
       <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
       <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Responsibility%20Table']/@ownedLineMappings[name='ResponsibilityLine']"/>
@@ -12242,11 +12239,11 @@
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_XaqTsRfcEfG0tt4COtklBw" label="[CA-10, CA-11, CA-12]" column="_WiA0ZRfcEfG0tt4COtklBw">
+      <cells xmi:type="table:DCell" uid="_XaqTsRfcEfG0tt4COtklBw" label="[CA-15, CA-16, CA-17, FB-01, FB-05]" column="_WiA0ZRfcEfG0tt4COtklBw">
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_XaqTsxfcEfG0tt4COtklBw" label="[]" column="_WiA0ZxfcEfG0tt4COtklBw">
+      <cells xmi:type="table:DCell" uid="_XaqTsxfcEfG0tt4COtklBw" label="[FB-17, FB-16, FB-15]" column="_WiA0ZxfcEfG0tt4COtklBw">
         <target xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
         <semanticElements xmi:type="stpa:Responsibility" href="ThreatModel_RISCV.capella#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
       </cells>
@@ -14054,7 +14051,7 @@
       <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#49f9d95b-24c8-4d15-9501-1d1f71f56545"/>
       <lines xmi:type="table:DLine" uid="_NuRM8xiDEfGonZ3KeUxxGA" label="Not providing causes hazard">
         <target xmi:type="stpa:UnsafeControlActionCategory" href="ThreatModel_RISCV.capella#52b7885b-2491-41c0-ab46-83a85ad6f56c"/>
-        <lines xmi:type="table:DLine" uid="_SEg0mRiDEfGonZ3KeUxxGA" label="UCA-41">
+        <lines xmi:type="table:DLine" uid="_SEg0mRiDEfGonZ3KeUxxGA" label="UCA-40">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#6c5f1408-0264-4f6f-bcff-62c694dfb71e"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#6c5f1408-0264-4f6f-bcff-62c694dfb71e"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
@@ -14075,7 +14072,7 @@
             <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#6c5f1408-0264-4f6f-bcff-62c694dfb71e"/>
           </cells>
         </lines>
-        <lines xmi:type="table:DLine" uid="_AHQn5hiHEfGonZ3KeUxxGA" label="UCA-44">
+        <lines xmi:type="table:DLine" uid="_AHQn5hiHEfGonZ3KeUxxGA" label="UCA-43">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#b32c21a1-379a-4fcb-8da3-566bca8a86b1"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#b32c21a1-379a-4fcb-8da3-566bca8a86b1"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
@@ -14105,7 +14102,7 @@
       </lines>
       <lines xmi:type="table:DLine" uid="_NuRM9RiDEfGonZ3KeUxxGA" label="Providing causes hazard">
         <target xmi:type="stpa:UnsafeControlActionCategory" href="ThreatModel_RISCV.capella#df9ba4cd-0973-4ba1-a019-7275c1f81a66"/>
-        <lines xmi:type="table:DLine" uid="_68gsMBiEEfGonZ3KeUxxGA" label="UCA-42">
+        <lines xmi:type="table:DLine" uid="_68gsMBiEEfGonZ3KeUxxGA" label="UCA-41">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#340d377c-6d73-4ec6-85d7-3e2afc2995d5"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#340d377c-6d73-4ec6-85d7-3e2afc2995d5"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
@@ -14126,7 +14123,7 @@
             <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#340d377c-6d73-4ec6-85d7-3e2afc2995d5"/>
           </cells>
         </lines>
-        <lines xmi:type="table:DLine" uid="_7bYZkhiEEfGonZ3KeUxxGA" label="UCA-43">
+        <lines xmi:type="table:DLine" uid="_7bYZkhiEEfGonZ3KeUxxGA" label="UCA-42">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#d2c3c757-efd2-4e79-a881-47e254008d52"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#d2c3c757-efd2-4e79-a881-47e254008d52"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
@@ -14401,11 +14398,11 @@
   </table:DTable>
   <table:DTable uid="_KF4TsBi0EfGonZ3KeUxxGA" headerColumnWidth="320">
     <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#5d58d2e8-1d39-499c-ace9-47b32afd2d13"/>
-    <lines xmi:type="table:DLine" uid="_KF4TsRi0EfGonZ3KeUxxGA" label="CA-14">
+    <lines xmi:type="table:DLine" uid="_KF4TsRi0EfGonZ3KeUxxGA" label="CA-15">
       <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#5d58d2e8-1d39-499c-ace9-47b32afd2d13"/>
       <lines xmi:type="table:DLine" uid="_KF4Tsxi0EfGonZ3KeUxxGA" label="Not providing causes hazard">
         <target xmi:type="stpa:UnsafeControlActionCategory" href="ThreatModel_RISCV.capella#52b7885b-2491-41c0-ab46-83a85ad6f56c"/>
-        <lines xmi:type="table:DLine" uid="_LAwnrhi0EfGonZ3KeUxxGA" label="UCA-33">
+        <lines xmi:type="table:DLine" uid="_LAwnrhi0EfGonZ3KeUxxGA" label="UCA-38">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#bf4d558f-b67d-4673-8d45-36a34185fbdc"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#bf4d558f-b67d-4673-8d45-36a34185fbdc"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
@@ -14435,7 +14432,7 @@
       </lines>
       <lines xmi:type="table:DLine" uid="_KF4TtRi0EfGonZ3KeUxxGA" label="Providing causes hazard">
         <target xmi:type="stpa:UnsafeControlActionCategory" href="ThreatModel_RISCV.capella#df9ba4cd-0973-4ba1-a019-7275c1f81a66"/>
-        <lines xmi:type="table:DLine" uid="_JfNgAhi1EfGonZ3KeUxxGA" label="UCA-34">
+        <lines xmi:type="table:DLine" uid="_JfNgAhi1EfGonZ3KeUxxGA" label="UCA-39">
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#42e2f8eb-d8de-424b-b700-35dbba17b8e5"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#42e2f8eb-d8de-424b-b700-35dbba17b8e5"/>
           <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>

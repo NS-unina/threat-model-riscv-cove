@@ -742,14 +742,6 @@
           </subEntities>
           <subEntities xsi:type="stpa:ControlEntity" id="9b1ace03-d370-4c3c-ab2f-01bfaac80158"
               name="Interrupt Manager" userID="C-19" incomingRelations="#276f462d-876c-4ac8-b85f-fc4995ccee22 #5425ec0e-6ea2-48cc-9a16-435c7f63a9b6 #049efd87-b993-4e0a-a308-26724aee3fce #dfe73db9-c63f-4126-ab18-19c6820e803b">
-            <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
-                id="5ec01a81-8b10-4e90-bb54-bbbc6ab2b44c" name="Prova" constrainedElements="#9b1ace03-d370-4c3c-ab2f-01bfaac80158">
-              <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
-                  id="84b591f1-f6cd-4529-a189-c5f0b78c2691">
-                <bodies></bodies>
-                <languages>capella:linkedText</languages>
-              </ownedSpecification>
-            </ownedConstraints>
             <responsibilities xsi:type="stpa:Responsibility" id="4f29480d-ebcd-453e-bcae-e570f755def4"
                 name="Manage non-confidential requests" userID="R-16" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
                 controlActions="#d2ded130-8582-4f49-b99a-40c3ac2a038e #169d8dc7-4ab2-4324-84bb-9daf9339af50 #73e08167-8e47-4a12-a1c4-7d64aa67afbe"
