@@ -1077,13 +1077,133 @@
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.la:LogicalArchitecture"
         id="66ef9355-d7de-4517-b46f-5bad037f644d" name="Logical Architecture">
+      <ownedExtensions xsi:type="cybersecurity:CybersecurityPkg" id="32088b51-9b5b-4c7c-8e0b-fd06ca51a696"
+          name="Cybersecurity">
+        <ownedThreats xsi:type="cybersecurity:Threat" id="09361786-7e96-44f6-82b8-4fed83a54ce7"
+            name="TVM Confidential Data Leakage" kind="#c5977600-5591-4bb0-b37e-b779f42a2732"
+            level="5">
+          <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="7da3fedc-addb-4dd7-99a9-11c3891925e6"
+              confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"/>
+          <ownedThreatApplications xsi:type="cybersecurity:ThreatApplication" id="01f31d7d-a3ba-4cee-a013-cbaa375bcef9"
+              asset="#aeb6e52c-f934-4d8f-a0fd-9c7b4447bf69"/>
+          <ownedThreatInvolvements xsi:type="cybersecurity:ThreatInvolvement" id="ab9a1e0c-bf85-4a73-b6a9-153074c27453"
+              component="#2d410dc9-f67f-46c2-af72-88e6240ab71d"/>
+        </ownedThreats>
+        <ownedPrimaryAssets xsi:type="cybersecurity:FunctionalPrimaryAsset" id="aeb6e52c-f934-4d8f-a0fd-9c7b4447bf69"
+            name="TVM Data Confidentiality">
+          <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="2856e80d-e5d0-4941-8aa4-5e44a04421b3"
+              confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="5524e0de-631f-408f-86b4-df47b458bede"
+              member="#21f51550-7d45-4cd3-9c80-78072ac5852b"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="872e4b77-b1ff-459a-becd-dacd57ebec1a"
+              member="#8ff89574-9f7d-4029-9660-df40d8336fd0"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="60137e56-cbcc-4d5a-adbe-9294e2b5d3e3"
+              member="#5f18300e-16e9-4651-8195-3b41a6f720ae"/>
+        </ownedPrimaryAssets>
+      </ownedExtensions>
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.la:LogicalFunctionPkg"
           id="71bfee34-1d4f-443a-9a2c-fd77d7dc43f7" name="Logical Functions">
         <ownedLogicalFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
             id="0aef910e-21a3-4cbf-83f5-14bc86b9bd88" name="Root Logical Function">
+          <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+              id="5f18300e-16e9-4651-8195-3b41a6f720ae" name="Unsafe PMP control">
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="73951b73-210e-411d-8c7d-bcc274d1d9d4" involved="#83ab098b-bbc7-486a-a485-c8ff24e04b54"
+                source="#50c9dcf0-dc47-4900-b74c-bd0540d2574f" target="#de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e" involved="#36cbe0ba-6ad7-49a4-90b5-1d60a1648c26"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="50c9dcf0-dc47-4900-b74c-bd0540d2574f" involved="#2c8d463c-1768-4ec8-ae28-9712b37dfb2f"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="ace4e64c-c284-4938-85cd-cf55da69cb48" involved="#ad5e05d7-6cd9-4159-9491-a6b807891b34"
+                source="#de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e" target="#309d74c5-db80-4f32-b394-3c7b6e815587"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="309d74c5-db80-4f32-b394-3c7b6e815587" involved="#21f51550-7d45-4cd3-9c80-78072ac5852b"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="13edeea3-2e83-4771-9cc5-83667d00d838" involved="#6267a253-c934-4573-839e-4c2dec414842"
+                source="#309d74c5-db80-4f32-b394-3c7b6e815587" target="#038fb6d1-5682-4a75-b30e-9f57f50dca4c"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="038fb6d1-5682-4a75-b30e-9f57f50dca4c" involved="#8ff89574-9f7d-4029-9660-df40d8336fd0"/>
+          </ownedFunctionalChains>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="2c8d463c-1768-4ec8-ae28-9712b37dfb2f" name="Request Confidential Computing Services">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="f6dd8159-dfe5-4ece-96a2-197e227a20ab" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="d951ba26-1021-4cbb-8f75-bac96d0cf510" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="36cbe0ba-6ad7-49a4-90b5-1d60a1648c26" name="Manage Confidential Requests">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="5661f948-1a12-4050-9829-250ea179820a"
+                integrityValue="#88060c64-793d-4213-a6f0-7bcee5f68a7c"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="a69b5e3d-3508-4b01-95b2-c7ed781adf8d" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="17ad5337-bc45-4d53-9143-ac518a753fc7" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="503ecb0f-baf2-4040-a35a-ce99ba40c893" name="FOP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="2908e344-9774-40cb-b9c6-55a8f0094b71" name="FOP 2"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="21f51550-7d45-4cd3-9c80-78072ac5852b" name="Provide Domain Isolation and Manage Supervisor Domain Metadata">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="ab337e37-8de7-4cf7-b120-630eb11b7a91"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="cc806083-ecfc-4f37-a5dd-9c83f87c0d44" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="a146fe18-1189-424e-bb8d-ae1cff2de30c" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="7f8eecea-4e53-47a6-a40e-c28e245c358c" name="FOP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="c2aa3695-4761-482e-9e25-301a9ed8b85d" name="FOP 2"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="8ff89574-9f7d-4029-9660-df40d8336fd0" name="Ensure Memory Isolation">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="bba3f242-abda-4c8b-904c-065c877181f0"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="ad2f2703-71ca-46e6-90de-667b0fbb87db" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="b2e0a0c8-434a-4f66-8e7b-49184c9f882e" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="6bda9175-99bc-4ae2-9c46-4c075dd2f7c7" name=""/>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="3b2037b1-53ee-49a0-8cda-f0768493a021" targetElement="#662afd2c-5db1-4bbf-8f95-24b72c5c0deb"
               sourceElement="#0aef910e-21a3-4cbf-83f5-14bc86b9bd88"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="83ab098b-bbc7-486a-a485-c8ff24e04b54" name="CoVE-H SBI" target="#a69b5e3d-3508-4b01-95b2-c7ed781adf8d"
+              source="#d951ba26-1021-4cbb-8f75-bac96d0cf510"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="ad5e05d7-6cd9-4159-9491-a6b807891b34" name="Request Domain Manager Services"
+              target="#cc806083-ecfc-4f37-a5dd-9c83f87c0d44" source="#503ecb0f-baf2-4040-a35a-ce99ba40c893"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="6267a253-c934-4573-839e-4c2dec414842" name="Apply Domain Metadata"
+              target="#ad2f2703-71ca-46e6-90de-667b0fbb87db" source="#7f8eecea-4e53-47a6-a40e-c28e245c358c">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="4d881373-9309-4ce6-bbe2-73db9656b3d3"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="e4d87a11-d0ec-48aa-b4c4-cfc9973c847e" name="Domain Isolation" target="#a146fe18-1189-424e-bb8d-ae1cff2de30c"
+              source="#b2e0a0c8-434a-4f66-8e7b-49184c9f882e">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="89bdfda8-c0bb-4c73-97fc-3757a989f762"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="59064152-5dae-4c88-8ed0-50e5bf19954c" name="Domain Isolation" target="#17ad5337-bc45-4d53-9143-ac518a753fc7"
+              source="#c2aa3695-4761-482e-9e25-301a9ed8b85d">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="d644d305-49f7-4a60-bf17-23582f4f6932"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="2cd9f158-862e-42e3-a86f-4a5013a58411" name="CoVE-H SBI result" target="#f6dd8159-dfe5-4ece-96a2-197e227a20ab"
+              source="#2908e344-9774-40cb-b9c6-55a8f0094b71"/>
         </ownedLogicalFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
@@ -1096,11 +1216,68 @@
           id="5b2debf1-5095-4676-910c-80575f1b9732" name="Structure">
         <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="9eb1821e-5e20-41d3-8fe3-214ca1ad8b50"
             name="Logical System" abstractType="#37881e02-0e7e-42bc-9e39-05905efafc24"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4dfddab0-d859-4a92-b301-4e4e8354abea"
+            name="Untrusted Supervisor Domain" abstractType="#c0063f2a-3279-418d-a03b-2f87dbbe59e1"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4c0ffaab-ac90-479e-8225-3e19d7d7e777"
+            name="Untrusted Supervisor Domain" abstractType="#2d410dc9-f67f-46c2-af72-88e6240ab71d"/>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="37881e02-0e7e-42bc-9e39-05905efafc24" name="Logical System">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="cbb2f57b-5eef-4e29-bb00-6832353dc65b"
+              name="RISC V Platform" abstractType="#2d79285d-b596-4d0d-81e5-f63e1fc2786e"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="393be30f-142f-4c89-8bd1-bca2228e176a"
+              name="TSM-driver" abstractType="#2a572a60-9a45-4163-b866-bbb48df90a4e"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="01b2d7ab-2e4b-496a-ace3-e46eaf159908" targetElement="#09993234-e2d5-4d30-b3c2-8d24a8a148ba"
               sourceElement="#37881e02-0e7e-42bc-9e39-05905efafc24"/>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="2d79285d-b596-4d0d-81e5-f63e1fc2786e" name="RISC V Platform">
+            <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="a38c0d24-65fb-4531-83ac-fbf19bde5337"
+                trusted="false"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="665edb0b-5039-459a-a6d1-fec7b253e632"
+                name="PMP" abstractType="#9298bacb-eea8-40a5-9cfa-f2d04a1af8d3"/>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="9298bacb-eea8-40a5-9cfa-f2d04a1af8d3" name="PMP">
+              <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="84bd598f-bb5e-4c75-94a1-02726b8433c4"
+                  trusted="false"/>
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="3b82c0eb-d752-472c-8776-0e71fc0a5e8c" targetElement="#8ff89574-9f7d-4029-9660-df40d8336fd0"
+                  sourceElement="#9298bacb-eea8-40a5-9cfa-f2d04a1af8d3"/>
+            </ownedLogicalComponents>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="2a572a60-9a45-4163-b866-bbb48df90a4e" name="TSM-driver">
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="9fcf92d7-8a62-4f26-b66b-125c6480d5d0"
+                name="Interrupt Manager" abstractType="#7a81909f-53c0-420d-adc5-4c10a4c59f66"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="070c5bd4-e5d1-4cd5-8c7c-f74f26626e82"
+                name="Domain Manager" abstractType="#4ee4093f-2344-4887-9dd3-b448f4a4baaf"/>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="7a81909f-53c0-420d-adc5-4c10a4c59f66" name="Interrupt Manager">
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="9ac3c808-ecf4-4655-9077-5b21cf8970d3" targetElement="#36cbe0ba-6ad7-49a4-90b5-1d60a1648c26"
+                  sourceElement="#7a81909f-53c0-420d-adc5-4c10a4c59f66"/>
+            </ownedLogicalComponents>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="4ee4093f-2344-4887-9dd3-b448f4a4baaf" name="Domain Manager">
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="ce4f4ce1-efef-41a9-951f-c13a206474a8" targetElement="#21f51550-7d45-4cd3-9c80-78072ac5852b"
+                  sourceElement="#4ee4093f-2344-4887-9dd3-b448f4a4baaf"/>
+            </ownedLogicalComponents>
+          </ownedLogicalComponents>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="c0063f2a-3279-418d-a03b-2f87dbbe59e1" name="Untrusted Supervisor Domain"
+            actor="true">
+          <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="cdfe75c3-a07a-4809-9cf4-8542965a7772"
+              threatSource="true" threatSourceProfile="5" trusted="false" rationale="The Untrusted Supervisor Domain can have interest in leaking Confidential TVM Data"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="21ba81e5-16aa-4c8b-887e-ad085475ac48" targetElement="#2c8d463c-1768-4ec8-ae28-9712b37dfb2f"
+              sourceElement="#c0063f2a-3279-418d-a03b-2f87dbbe59e1"/>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="2d410dc9-f67f-46c2-af72-88e6240ab71d" name="Untrusted Supervisor Domain"
+            actor="true">
+          <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="1c292181-3fec-4c35-8e17-4567ef6633a6"
+              threatSource="true" threatSourceProfile="5" trusted="false"/>
         </ownedLogicalComponents>
       </ownedLogicalComponentPkg>
       <ownedSystemAnalysisRealizations xsi:type="org.polarsys.capella.core.data.la:SystemAnalysisRealization"
