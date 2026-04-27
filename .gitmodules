@@ -1,0 +1,3 @@
+[submodule "shadowfax"]
+	path = shadowfax
+	url = https://github.com/HiSA-Team/shadowfax
