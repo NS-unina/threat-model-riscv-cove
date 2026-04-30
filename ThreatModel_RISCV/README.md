@@ -75,5 +75,5 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
     In this analysis we consider as the main problem the incorrectness the process model. 
     ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca35.png)
 
-*   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, system constraints and the previously identified causal factors with the related countermeasures. 
+*   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, violated system constraints and the previously identified causal factors with the related countermeasures. 
     ![Loss Scenarios](./figures/loss-scanarios.png)
