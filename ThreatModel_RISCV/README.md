@@ -73,7 +73,6 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
 *   **Causal Factor Diagram (UCA-35):**
     Analyzes the not cleaning memory pages after the reclaim.
     In this analysis we consider as the main problem the incorrectness the process model. 
-    **Causal Factor Diagram (UCA-35):*
     ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca35.png)
 
 *   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, system constraints and the previously identified causal factors with the related countermeasures. 
