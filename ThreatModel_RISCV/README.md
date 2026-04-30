@@ -32,6 +32,14 @@ Establish the goals and boundaries of the security analysis by identifying what 
 *   **System-Level Constraints (SC):**
     ![System-Level Constraints](./figures/system-constraint.png)
 
+## Derived Security Requirements
+
+Based on the analysis, specific security requirements and constraints are allocated to the components:
+
+*   **Domain Manager Requirements:** ![Domain Manager Requirements](./figures/requirements-domain-manager.png)
+*   **Interrupt Manager Requirements:** ![Interrupt Manager Requirements](./figures/requirements-interrupt-manager.png)
+*   **PMP Requirements:** ![PMP Requirements](./figures/requirements-pmp.png)
+
 ### 2. Model the Control Structure
 Create a functional model of the system as a set of interacting feedback loops.
 
@@ -56,21 +64,10 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
     Analyzes how an untrusted domain can provide memory addresses it doesn't own.
     ![Causal Factor Diagram - UCA-31](./figures/causal-factor-diagram-uca31.png)
 
+*   **Causal Factor Diagram (UCA-35):**
+    Analyzes the not cleaning memory pages after the reclaim.
+    **Causal Factor Diagram (UCA-35):*
+    ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca35.png)
+
 *   **Loss Scenario Table:**
     ![Loss Scenarios](./figures/loss-scanarios.png)
-
----
-
-## Derived Security Requirements
-
-Based on the analysis, specific security requirements and constraints are allocated to the components:
-
-*   **Domain Manager Requirements:** ![Domain Manager Requirements](./figures/requirements-domain-manager.png)
-*   **Interrupt Manager Requirements:** ![Interrupt Manager Requirements](./figures/requirements-interrupt-manager.png)
-*   **PMP Requirements:** ![PMP Requirements](./figures/requirements-pmp.png)
-
----
-
-## Project Files
-*   `ThreatModel_RISCV.capella`: The main Capella project file.
-*   `ThreatModel_RISCV.aird`: The representations (diagrams) file.
