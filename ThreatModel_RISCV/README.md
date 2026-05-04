@@ -8,8 +8,8 @@ The model was created within the Capella MBSE tool using the STPA and DARC Add-O
 ## Methodology Overview
 
 Our approach follows a hybrid workflow that provides end-to-end traceability from high-level system hazards down to concrete attack paths:
-1.  **STPA-Sec Analysis:** Modeling components, control actions, and feedback loops to identify safety/security artifacts (losses, hazards, UCAs, scenarios).
-2.  **Security Analysis (DARC/STRIDE):** Mapping identified loss scenarios to the STRIDE taxonomy to clarify attacker objectives.
+1.  **STPA Analysis:** Modeling components, control actions, and feedback loops to identify safety/security artifacts (losses, hazards, UCAs, scenarios).
+2.  **Security Analysis (DARC/STRIDE):** Mapping identified loss scenarios to the STRIDE taxonomy to clarify attacker objectives through DARC add-on.
 3.  **Attack Graph Generation (Mulval):** Refining the analysis from a practical attacker perspective to identify feasible exploit chains.
 4.  **Experimental Validation:** Verifying vulnerabilities on the **Shadowfax** TEE platform.
 
@@ -77,3 +77,31 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
 
 *   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, violated system constraints and the previously identified causal factors with the related countermeasures. 
     ![Loss Scenarios](./figures/loss-scanarios.png)
+
+## Security Analysis Phases
+The security analysis is the additional step that transforms STPA into STPA-Sec. This analysis is performed through DARC Capella add-on, that allows for analysing the system under a security perspective. It is possible to apply DARC analysis at different layers of the MBSE analysis, we focus on the logical one. Moreover, both loss scenarios can be modeled in the same way in the DARC analysis. 
+*   **Threats & Assets (TDB):**
+    The first step is the identfication of the threats source, the threat and the violated asset.
+    ![Threats & Assets (TDB)](./figures/[TDB] Threats & Assets.png)
+
+*   **Logical Architecture (LAB):**
+    We identify the logical components involved into both loss scenarios and map their logical functions with the responsibilities previously identified.
+    Exchange functions are mapped to STPA control actions and feedback channels. This allows us to connect threats to assets in a traceable way and identify
+    critical vulnerabilities. In DARC, each component is classified as one of the following:
+    • Trusted: inside the TCB (e.g., the TSM-driver);
+    • Untrusted: outside the TCB;
+    • Threat source: outside the TCB and potentially malicious (e.g., the Untrusted Supervisor Domain).
+
+    It is possible to have different views on the Logical Architecture, that individuate:
+    *   **Cybersecurity Asset:** illustrates how each component is involvede and can mine the asset.
+          ![Logical Architecture (LAB) with assets](./figures/[LAB] Logical Architecture .png)  
+    *   **Confidentiality Property:** illustrates how each component is related with Confidentiality property (on a color scale ranging from green-0 to red-3).
+         ![Logical Architecture (LAB) with Confidentiality](./figures/[LAB] Logical ArchitectureC .png) 
+    *   **Integrity Property:** illustrates how each component is related with the Integrity property (on a color scale ranging from green-0 to red-3).
+         ![Logical Architecture (LAB) with Integrity](./figures/[LAB] Logical ArchitectureI .png)
+    *   **Availability Property:** illustrates how each component is related with the Availability property (on a color scale ranging from green-0 to red-3).
+         ![Logical Architecture (LAB) with Availability](./figures/[LAB] Logical ArchitectureA .png)
+    *   **System Trust Boundaries:** illustrates with are the system trust boundaries.
+         ![Logical Architecture (LAB) with Trust Boundaries](./figures/[LAB] Logical ArchitectureTB .png)
+        
+   
