@@ -9,7 +9,6 @@ The repository is structured as follows:
 - [ThreatModel_RISCV(**old**)](./ThreatModel_RISCV/): contains the Capella project used to model the architecture and perform the analysis
 - [stpa-sec-analysis(**old**)](./stpa-sec-analysis/): contains the Capella project used to model the architecture and perform the analysis
 - [attack-graphs](./attack-graphs/): contains the attack graphs files used for Mulval
-- [data](./data): contains tables (in CSVs format) extracted from Capella
 
 The target implementation is [Shadowfax](https://github.com/HiSA-Team/shadowfax). The Shadowfax platform (submodule in this repository) includes a trusted firmware leveraging OpenSBI firmware and a trusted hypervisor that can spawn bare-metal workloads.
 
