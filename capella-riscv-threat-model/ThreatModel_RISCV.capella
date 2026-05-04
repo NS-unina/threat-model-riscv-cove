@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Capella_Version_7.0.0-->
+<org.polarsys.capella.core.data.capellamodeller:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cybersecurity="http://www.polarsys.org/capella/cybersecurity/1.0"
+    xmlns:libraries="http://www.polarsys.org/capella/common/libraries/7.0.0" xmlns:org.polarsys.capella.core.data.capellacommon="http://www.polarsys.org/capella/core/common/7.0.0"
+    xmlns:org.polarsys.capella.core.data.capellacore="http://www.polarsys.org/capella/core/core/7.0.0"
+    xmlns:org.polarsys.capella.core.data.capellamodeller="http://www.polarsys.org/capella/core/modeller/7.0.0"
+    xmlns:org.polarsys.capella.core.data.cs="http://www.polarsys.org/capella/core/cs/7.0.0"
+    xmlns:org.polarsys.capella.core.data.ctx="http://www.polarsys.org/capella/core/ctx/7.0.0"
+    xmlns:org.polarsys.capella.core.data.epbs="http://www.polarsys.org/capella/core/epbs/7.0.0"
+    xmlns:org.polarsys.capella.core.data.fa="http://www.polarsys.org/capella/core/fa/7.0.0"
+    xmlns:org.polarsys.capella.core.data.information="http://www.polarsys.org/capella/core/information/7.0.0"
+    xmlns:org.polarsys.capella.core.data.information.datatype="http://www.polarsys.org/capella/core/information/datatype/7.0.0"
+    xmlns:org.polarsys.capella.core.data.information.datavalue="http://www.polarsys.org/capella/core/information/datavalue/7.0.0"
+    xmlns:org.polarsys.capella.core.data.la="http://www.polarsys.org/capella/core/la/7.0.0"
+    xmlns:org.polarsys.capella.core.data.oa="http://www.polarsys.org/capella/core/oa/7.0.0"
+    xmlns:org.polarsys.capella.core.data.pa="http://www.polarsys.org/capella/core/pa/7.0.0"
+    xmlns:stpa="http://www.thalesgroup.com/capella/stpa" id="94397b63-18ef-4827-9580-a21a06639ce9"
+    name="ThreatModel_RISCV">
+  <ownedExtensions xsi:type="libraries:ModelInformation" id="aacaaad2-ec51-4996-a28a-80eb48bc5334"/>
+  <ownedExtensions xsi:type="cybersecurity:CybersecurityConfiguration" id="f60ec28e-0e30-404d-a1ec-16fc5e31b1cd"
+      name="Cybersecurity Configuration" confidentiality="#0cedb16c-0024-4c11-b6b9-6543da2ed220"
+      integrity="#9ac6b291-21b9-460a-97b6-f5daba30cb1d" traceability="#b9ec409a-64cc-4492-a09b-64cd691a2053"
+      availability="#35936223-5b73-4c29-b4af-1181ecc9e64a" threatKind="#dbaf6e2a-f541-46f9-abf8-da2a1bec6734">
+    <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+        id="0cedb16c-0024-4c11-b6b9-6543da2ed220" name="Security.Confidentiality">
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="932dbedd-6acd-4e4c-bb05-49a202cba9ba" name="0"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="1ed60dc5-b6b6-401d-a7e0-dac5f65a73dc" name="1"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="e72bfa84-1a86-4c92-914f-76b5a7254955" name="2"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="e3c0386a-2ff7-48ae-9f52-303ea560f517" name="3"/>
+    </ownedEnumerationPropertyTypes>
+    <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+        id="9ac6b291-21b9-460a-97b6-f5daba30cb1d" name="Security.Integrity">
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="ebd5adb0-a87d-4895-b4b4-26e173832e12" name="0"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="88060c64-793d-4213-a6f0-7bcee5f68a7c" name="1"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="7fb8f8ef-7179-4c0b-9d18-caad47e291f8" name="2"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="3e5f8859-f3b5-4c29-a668-542d1197f1e5" name="3"/>
+    </ownedEnumerationPropertyTypes>
+    <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+        id="b9ec409a-64cc-4492-a09b-64cd691a2053" name="Security.Traceability">
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="4d462ed0-5d23-4261-9838-df9721a0105f" name="0"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="0550dd51-6bfe-4195-988c-c080bffd24e0" name="1"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="e332b849-b3bd-4808-a794-ab4b08d540ef" name="2"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="b7e289f7-b854-40ad-977a-dff9139e9025" name="3"/>
+    </ownedEnumerationPropertyTypes>
+    <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+        id="35936223-5b73-4c29-b4af-1181ecc9e64a" name="Security.Availability">
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="1dadbbef-f6e3-4616-a33e-7ee7f93a6a60" name="0"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="aa003e30-4241-4ecc-9a1f-1eafe22c9128" name="1"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="29481d64-33a4-4ab8-8eec-1a36cd512365" name="2"/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="cc538228-a81a-47ef-a6b0-d64f9250c7f3" name="3"/>
+    </ownedEnumerationPropertyTypes>
+    <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+        id="dbaf6e2a-f541-46f9-abf8-da2a1bec6734" name="Threat.Kind">
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="656fdd87-a97d-42bd-a0b2-0446e27f9c21" name="Spoofing" summary="The set of threats that allow an attacker to interact with the&#xD;&#xA; system using another identity; this could be avoided through a proper&#xD;&#xA; authentication control."/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="7d8927af-024d-48ae-9baa-16ef73bfc55d" name="Tampering" summary="The set of threats that lead to malicious and unauthorized&#xA; modifications of code and data, thus violating integrity property."/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="f787f3c8-70e3-4dee-889d-76f6d3e2a260" name="Repudiation" summary="The set of threats that allow an attacker to deny that he&#xA; has performed an action on the system; for this reason it is important to &#xA;implement non-repudiation mechanisms."/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="782681f3-3d73-4bdf-9328-f463aa3433a0" name="Information Disclosure "
+          summary="The set of threats that expose information to who&#xA; is not allowed to access that data, thus violating confidentiality."/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="820dd45d-02da-4f42-9154-b933d14aa3f8" name="Denial of Service" summary="The set of threats that allow denying or degrading the &#xA;provision of a service, thus not guaranteeing availability."/>
+      <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+          id="de526a1d-9aac-42b3-a563-7f72d35a2ebb" name="Elevation of Privileges"
+          summary="The set of threats that allow an attacker to gain &#xD;&#xA;more privileges that the ones he should have; the principle of least privilege should always be guaranteed through authorizations controls."/>
+    </ownedEnumerationPropertyTypes>
+  </ownedExtensions>
+  <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+      id="004476bd-e99e-4890-b22a-39356b06c376" name="ProgressStatus">
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="45d67113-8c7b-4f13-84ee-788b679af757" name="DRAFT"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="9b8f4a1f-454a-4917-8010-0d25d3ab8fec" name="TO_BE_REVIEWED"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="ae072f94-2dc4-4a0d-878f-b423b8d61910" name="TO_BE_DISCUSSED"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="f41cf5a0-84ee-4f04-a442-935ffc6e9e2e" name="REWORK_NECESSARY"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="3fd09dac-6690-42c7-bb4e-466ffdf197dd" name="UNDER_REWORK"/>
+    <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+        id="76c60349-feae-4839-a7a2-4856174cf8de" name="REVIEWED_OK"/>
+  </ownedEnumerationPropertyTypes>
+  <keyValuePairs xsi:type="org.polarsys.capella.core.data.capellacore:KeyValue" id="867d7fd6-63bf-4d15-9105-c35366447620"
+      key="projectApproach" value="SingletonComponents"/>
+  <ownedModelRoots xsi:type="org.polarsys.capella.core.data.capellamodeller:SystemEngineering"
+      id="e2a6865b-c93e-4b7b-bb66-5981ce062855" name="ThreatModel_RISCV">
+    <ownedExtensions xsi:type="stpa:StpaAnalysis" id="a1879977-a813-4209-9d5f-a6bdfdac1772"
+        name="STPA Analysis">
+      <technicalPackage xsi:type="stpa:TechnicalPackage" id="46aa0627-458e-41fc-9bbc-8e5fa6e71272"
+          name="Technical Package">
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="52b7885b-2491-41c0-ab46-83a85ad6f56c"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="df9ba4cd-0973-4ba1-a019-7275c1f81a66" kind="PROVIDING"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="73454a4f-9656-446d-a2ea-6de02c7d289b" kind="WRONG_TIMING"/>
+        <unsafeControlActionCategories xsi:type="stpa:UnsafeControlActionCategory"
+            id="e1d62859-4eb8-481b-9dc9-652017836f1d" kind="WRONG_DURATION"/>
+      </technicalPackage>
+      <lossPackage xsi:type="stpa:LossPackage" id="66709b21-9b38-444b-b8f7-0adc043c383d"
+          name="Losses">
+        <stakeholders xsi:type="stpa:Stakeholder" id="43e9efd4-2bb2-4e2e-83b2-e21bc42e0a56"
+            name="Confidential Computing Stakeholder " userID="SH-01">
+          <stakes xsi:type="stpa:Stake" id="d804b0ff-01bc-4e4b-a4a0-318f5e4765a2"
+              name="Confidential Workload Confidentiality Guarantees" userID="ST-01"
+              losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4"/>
+          <stakes xsi:type="stpa:Stake" id="d59790e8-debe-4f51-9d8e-f75076724224"
+              name="Confidential Workload Integrity Guarantees" userID="ST-02" losses="#2aeebaba-15a5-428f-80fe-c7d34441d309"/>
+          <stakes xsi:type="stpa:Stake" id="16d694eb-62ef-41f5-a963-31670f0c67a7"
+              name="Trustworthiness Guarantees of the Attestation Procedure" userID="ST-03"
+              losses="#02c60727-5620-4054-838f-38e1b946cca5"/>
+        </stakeholders>
+        <stakeholders xsi:type="stpa:Stakeholder" id="fe713f99-d1c9-4f6c-9f60-398d583dee9f"
+            name="Normal Computing Stakeholder" userID="SH-02">
+          <stakes xsi:type="stpa:Stake" id="b8cfb2eb-796b-4001-8696-a43873a2c82e"
+              name="System Availability Guarantees" userID="ST-04" losses="#f96a8826-131c-4b8b-8299-f3975dda8adf"/>
+        </stakeholders>
+        <losses xsi:type="stpa:Loss" id="01898c6b-dd74-4637-a7fa-3264b40a8bb4" name="Loss of Confidentiality"
+            userID="L-01" hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #935f10d7-4877-49ab-99a0-7ee06a3332b9 #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"
+            stakes="#d804b0ff-01bc-4e4b-a4a0-318f5e4765a2"/>
+        <losses xsi:type="stpa:Loss" id="2aeebaba-15a5-428f-80fe-c7d34441d309" name="Loss of Integrity"
+            userID="L-02" hazards="#935f10d7-4877-49ab-99a0-7ee06a3332b9 #59072a65-f642-4512-808e-5cd798eb2470 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #99cf129c-7bc9-4c64-86fa-1edead1279bb #27b22db6-d572-4f73-99d3-7d49986c8bdc #2a160f6e-8408-469f-8336-c4e25f24bc3f"
+            stakes="#d59790e8-debe-4f51-9d8e-f75076724224"/>
+        <losses xsi:type="stpa:Loss" id="f96a8826-131c-4b8b-8299-f3975dda8adf" name="Loss of Availability "
+            userID="L-03" hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"
+            stakes="#b8cfb2eb-796b-4001-8696-a43873a2c82e"/>
+        <losses xsi:type="stpa:Loss" id="02c60727-5620-4054-838f-38e1b946cca5" name="Loss of Trust "
+            userID="L-04" hazards="#e001dc43-262b-451a-84f8-607a9a007dff" stakes="#16d694eb-62ef-41f5-a963-31670f0c67a7"/>
+      </lossPackage>
+      <hazardConstraintPackage xsi:type="stpa:HazardConstraintPackage" id="8f324d3a-d83a-4798-8c3f-417a95ac1f4c"
+          name="Hazards &amp; Constraints">
+        <rootHazards xsi:type="stpa:Hazard" id="f333368a-63a9-467e-b640-0c01b2cd48f9"
+            name="Confidential Data are revealed to unauthorized actors" userID="H-01"
+            losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+          <subHazards xsi:type="stpa:Hazard" id="27ab6f9a-a943-4986-80e9-232a3e33690e"
+              name="Confidential Workload is leaked to unauthorized actors" userID="H-02"
+              losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+          <subHazards xsi:type="stpa:Hazard" id="697c43c0-a969-4b13-86dc-cf4ef58a5322"
+              name="TSM Confidential Data are accessed by unauthorized actors" userID="H-03"
+              losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #3b08208a-e347-48aa-a304-b04877d8e09a"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+        </rootHazards>
+        <rootHazards xsi:type="stpa:Hazard" id="59072a65-f642-4512-808e-5cd798eb2470"
+            name="The system is forced to work under faulty conditions that cause integrity violations (fault injection)"
+            userID="H-04" losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#de5aa1d9-73d4-44f1-93b7-163ec201a25c"/>
+        <rootHazards xsi:type="stpa:Hazard" id="78a50e78-0d4e-40b8-b05a-a35f99ed8163"
+            name="Confidential Data are modified by unauthorized actors" userID="H-05"
+            losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#6abae367-f4e9-46ca-9613-efb65dadf740"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557">
+          <subHazards xsi:type="stpa:Hazard" id="373491ed-b9bb-4db4-9188-1262c23e3109"
+              name="Unauthorized modification of the Confidential Workload" userID="H-06"
+              losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+          <subHazards xsi:type="stpa:Hazard" id="27b22db6-d572-4f73-99d3-7d49986c8bdc"
+              name="Unauthorized modification inside the TSM and its data" userID="H-07"
+              losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#088e55b8-c450-4839-8765-db8f308eec34"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #9023bf75-04c9-4a36-b175-b85bb5bc9b24 #ceadc66f-c8e6-4617-b41e-6cba3c66f5ef #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #d641b698-d684-40a2-9bf9-2e02e0e488b5 #39aa9f66-609f-4cb5-aa3b-2af3431c5e8d #09998f14-08a0-4911-a3e3-00d6b33d2b6f #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"/>
+        </rootHazards>
+        <rootHazards xsi:type="stpa:Hazard" id="99cf129c-7bc9-4c64-86fa-1edead1279bb"
+            name="Malicious operation inside the TSM causes TVM to escape memory isolation"
+            userID="H-08" losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4 #2aeebaba-15a5-428f-80fe-c7d34441d309"
+            systemConstraints="#84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+            lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+        <rootHazards xsi:type="stpa:Hazard" id="2a160f6e-8408-469f-8336-c4e25f24bc3f"
+            name="A malicious operation inside the TSM driver causes a violation of memory isolation between Supervisor Domains"
+            userID="H-09" losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4 #2aeebaba-15a5-428f-80fe-c7d34441d309"
+            systemConstraints="#cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+            lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+        <rootHazards xsi:type="stpa:Hazard" id="d9048faa-02bc-4a37-9d9f-f7d00f687bf2"
+            name="A malicious actor causes a Denial of Service to the system" userID="H-10"
+            losses="#f96a8826-131c-4b8b-8299-f3975dda8adf" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+            unsafeControlActions="#ce7fe11e-059f-4c2b-adff-f35716864b86 #eb973b58-694e-42ce-b4c9-eddcf4cdf9c9 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #b88702cd-8754-44bf-a9fa-2de79445ede1 #5e3f3fef-4c26-4514-827c-1d2c9f2e3103 #75a68c71-eac7-4e69-b12d-6f0086ecb780 #1a624da3-1636-4833-90b4-fd842b98067c #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #6c5f1408-0264-4f6f-bcff-62c694dfb71e #b32c21a1-379a-4fcb-8da3-566bca8a86b1 #051c1154-1809-4ca0-8ba5-3cf9ad93935e #f0cc9850-4215-4968-88fd-6f03c3cceef6 #f9568e62-d07c-4ae8-99d9-5d5b6e022372 #ef4c0387-c4a5-4867-923c-247753aa162a #cf3f3f65-aafe-4ed7-9e1d-93d563f40cbc #aa3e5b3b-6067-4c81-97e8-53722c5db4ba #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc">
+          <subHazards xsi:type="stpa:Hazard" id="85bd1f19-a77c-471c-8ebb-57a72530c796"
+              name="A malicious actor causes a Denial of Service to TVMs" userID="H-11"
+              losses="#f96a8826-131c-4b8b-8299-f3975dda8adf" systemConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+              unsafeControlActions="#ce7fe11e-059f-4c2b-adff-f35716864b86 #eb973b58-694e-42ce-b4c9-eddcf4cdf9c9 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #b88702cd-8754-44bf-a9fa-2de79445ede1 #5e3f3fef-4c26-4514-827c-1d2c9f2e3103 #6c5f1408-0264-4f6f-bcff-62c694dfb71e #b32c21a1-379a-4fcb-8da3-566bca8a86b1 #560bc23c-bb9e-4e6f-883f-51bd063c91e7 #bf4d558f-b67d-4673-8d45-36a34185fbdc #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #7a1e6cc7-0c88-4ea0-8152-c8a4c7a86365 #619443b0-0ea2-4c31-be07-72d6ddcdafb7 #1080687d-be40-4b15-a567-a169edc7b77b #5db8e060-3c90-4899-99fb-c4f7d9bb550a #16c552ff-0121-45b5-9855-265dd3d0b8a6 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #39f7c73d-3979-4df7-86fb-f60b2ef25491 #db778098-1408-4d4e-b24b-63bf6722fabe #49e95a2c-362c-46e7-b7d2-064c99893741 #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #80cd9218-b5e5-4da9-9399-235846684042 #bd6a1ed1-4538-45ed-9ae8-28632056955a #c845f7c0-97c9-422f-b281-e70fd918f57d #aa3e5b3b-6067-4c81-97e8-53722c5db4ba #812136f0-7284-41f1-a29d-d0c32d3faf35 #aa618122-c66f-4b83-a144-7acb530a30ec #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1d2c1d93-42e6-4131-b9f6-af62e989b195"/>
+        </rootHazards>
+        <rootHazards xsi:type="stpa:Hazard" id="935f10d7-4877-49ab-99a0-7ee06a3332b9"
+            name="Sealed data are accessible with compromised or predictable sealing keys"
+            userID="H-12" losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4 #2aeebaba-15a5-428f-80fe-c7d34441d309"
+            systemConstraints="#72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd #7445b7e2-1868-405c-9ac3-4135407139bb #28d17566-3ac9-4cf5-8a25-b1aa8277d531"/>
+        <rootHazards xsi:type="stpa:Hazard" id="e001dc43-262b-451a-84f8-607a9a007dff"
+            name="Attestation Validation is incomplete or incorrect" userID="H-13"
+            losses="#02c60727-5620-4054-838f-38e1b946cca5" systemConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2"
+            unsafeControlActions="#03a16dd7-5baa-46d4-929c-e837a749d0ac #6b919c38-438c-4ef2-bba0-208d6e057edb #9023bf75-04c9-4a36-b175-b85bb5bc9b24 #ceadc66f-c8e6-4617-b41e-6cba3c66f5ef #d641b698-d684-40a2-9bf9-2e02e0e488b5 #39aa9f66-609f-4cb5-aa3b-2af3431c5e8d #5f620784-e5dd-4a2d-b423-2f27f4fabb46 #cf72d55e-867b-4621-8d60-b22910845e39"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="2e42cd37-f96d-4c2d-88f7-0cda2665e98d"
+            name="Confidential Data must not be accessible to unauthorized actors"
+            userID="SC-01" hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322"
+            responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="fbbe1358-cd41-41b9-95e0-1bebb158b84d"
+              name="Confidential Workload must not be leaked to unauthorized actors"
+              userID="SC-02" hazards="#27ab6f9a-a943-4986-80e9-232a3e33690e" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="3b08208a-e347-48aa-a304-b04877d8e09a"
+              name="TSM Confidential Data must not be accessible to unauthorized actors"
+              userID="SC-03" hazards="#697c43c0-a969-4b13-86dc-cf4ef58a5322" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+              lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+        </rootSystemConstraints>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="de5aa1d9-73d4-44f1-93b7-163ec201a25c"
+            name="The system must always work under valid operational conditions "
+            userID="SC-04" hazards="#59072a65-f642-4512-808e-5cd798eb2470" responsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12 #78cda357-ba2e-4cf1-8547-4101d4c10f2b #6959218f-de11-4797-a753-ffe401cb8590 #bfa26d30-ef10-4b39-8335-c7519a86ae73"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="6abae367-f4e9-46ca-9613-efb65dadf740"
+            name="It must not be possible for unauthorized actors to modify Confidential Data "
+            userID="SC-05" hazards="#78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109"
+            responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557">
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="a0884088-0235-4e18-a012-f68cc762306d"
+              name="It must not be possible for unauthorized actors to modify Confidential Workload "
+              userID="SC-06" hazards="#373491ed-b9bb-4db4-9188-1262c23e3109" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="088e55b8-c450-4839-8765-db8f308eec34"
+              name="It must not be possible for unauthorized actors to modify the TSM and its data"
+              userID="SC-07" hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #9023bf75-04c9-4a36-b175-b85bb5bc9b24 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #ceadc66f-c8e6-4617-b41e-6cba3c66f5ef #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #d641b698-d684-40a2-9bf9-2e02e0e488b5 #39aa9f66-609f-4cb5-aa3b-2af3431c5e8d #09998f14-08a0-4911-a3e3-00d6b33d2b6f #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"/>
+        </rootSystemConstraints>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="cda902c3-04ef-4dbe-bb0d-e30971cb32b2"
+            name="The system must guarantee memory level isolation" userID="SC-08"
+            hazards="#99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"
+            responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
+            unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+              name="The system must guarantee memory level isolation between different Supervisor Domains"
+              userID="SC-09" hazards="#2a160f6e-8408-469f-8336-c4e25f24bc3f" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="84a57b16-6dda-4cf6-b964-cbdc4b4f3775"
+              name="The system must guarantee memory level isolation between TVMs within the same Supervisor Domains"
+              userID="SC-10" hazards="#99cf129c-7bc9-4c64-86fa-1edead1279bb" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058"
+              unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"/>
+        </rootSystemConstraints>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="49386ed4-3e37-4b57-be1b-91849262da74"
+            name="The system must gurantee non-confidential computing services availability "
+            userID="SC-11" hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2" responsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12 #899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4f29480d-ebcd-453e-bcae-e570f755def4 #e6df4682-e95a-4f8d-9950-02c06edc1cd8 #6aec348b-4d04-4183-9989-6542b43b6e87 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #bfa26d30-ef10-4b39-8335-c7519a86ae73 #16059577-7552-4205-891e-b1634f8cd011"
+            unsafeControlActions="#ce7fe11e-059f-4c2b-adff-f35716864b86 #eb973b58-694e-42ce-b4c9-eddcf4cdf9c9 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #b88702cd-8754-44bf-a9fa-2de79445ede1 #5e3f3fef-4c26-4514-827c-1d2c9f2e3103 #75a68c71-eac7-4e69-b12d-6f0086ecb780 #1a624da3-1636-4833-90b4-fd842b98067c #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #6c5f1408-0264-4f6f-bcff-62c694dfb71e #b32c21a1-379a-4fcb-8da3-566bca8a86b1 #051c1154-1809-4ca0-8ba5-3cf9ad93935e #f0cc9850-4215-4968-88fd-6f03c3cceef6 #f9568e62-d07c-4ae8-99d9-5d5b6e022372 #ef4c0387-c4a5-4867-923c-247753aa162a #cf3f3f65-aafe-4ed7-9e1d-93d563f40cbc #aa3e5b3b-6067-4c81-97e8-53722c5db4ba #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="c501898d-fea1-401a-af38-b4670711196a"
+            name="The system must guarantee confidential computing services availability "
+            userID="SC-12" hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796" responsibilities="#bd113a0d-0d5f-431e-a913-12c516db21dd #6aec348b-4d04-4183-9989-6542b43b6e87 #3377b52b-1a31-4cf8-a3da-85a40de72058 #6d363363-1b1d-4786-8faf-417c43642cc3 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1 #bfa26d30-ef10-4b39-8335-c7519a86ae73 #6fa6ea8d-264d-4b3f-b222-997b9212843f #9454f05c-405a-4cf9-afc6-b707c27d93c7"
+            unsafeControlActions="#ce7fe11e-059f-4c2b-adff-f35716864b86 #eb973b58-694e-42ce-b4c9-eddcf4cdf9c9 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #b88702cd-8754-44bf-a9fa-2de79445ede1 #5e3f3fef-4c26-4514-827c-1d2c9f2e3103 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #6c5f1408-0264-4f6f-bcff-62c694dfb71e #b32c21a1-379a-4fcb-8da3-566bca8a86b1 #560bc23c-bb9e-4e6f-883f-51bd063c91e7 #bf4d558f-b67d-4673-8d45-36a34185fbdc #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #7a1e6cc7-0c88-4ea0-8152-c8a4c7a86365 #619443b0-0ea2-4c31-be07-72d6ddcdafb7 #1080687d-be40-4b15-a567-a169edc7b77b #5db8e060-3c90-4899-99fb-c4f7d9bb550a #16c552ff-0121-45b5-9855-265dd3d0b8a6 #8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e #39f7c73d-3979-4df7-86fb-f60b2ef25491 #db778098-1408-4d4e-b24b-63bf6722fabe #49e95a2c-362c-46e7-b7d2-064c99893741 #fbf3c84c-6f5e-4561-85b7-97ef8069ee58 #80cd9218-b5e5-4da9-9399-235846684042 #bd6a1ed1-4538-45ed-9ae8-28632056955a #c845f7c0-97c9-422f-b281-e70fd918f57d #aa3e5b3b-6067-4c81-97e8-53722c5db4ba #812136f0-7284-41f1-a29d-d0c32d3faf35 #aa618122-c66f-4b83-a144-7acb530a30ec #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1d2c1d93-42e6-4131-b9f6-af62e989b195"/>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd"
+            name="Sealed data must not be accessible in plaintext" userID="SC-13"
+            hazards="#935f10d7-4877-49ab-99a0-7ee06a3332b9" responsibilities="#4cdad1e2-31da-4743-9980-46dd1eba2fb9 #885bff38-2c91-45b5-b056-e0c9b526c94d #bd113a0d-0d5f-431e-a913-12c516db21dd #6fa6ea8d-264d-4b3f-b222-997b9212843f #9454f05c-405a-4cf9-afc6-b707c27d93c7">
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="7445b7e2-1868-405c-9ac3-4135407139bb"
+              name="Sealing keys must not be weak or derivable" userID="SC-14" hazards="#935f10d7-4877-49ab-99a0-7ee06a3332b9"
+              responsibilities="#885bff38-2c91-45b5-b056-e0c9b526c94d #6fa6ea8d-264d-4b3f-b222-997b9212843f #9454f05c-405a-4cf9-afc6-b707c27d93c7"/>
+          <subSystemConstraints xsi:type="stpa:SystemConstraint" id="28d17566-3ac9-4cf5-8a25-b1aa8277d531"
+              name="Sealing algorithm must not be weak, broken or with poor randomness"
+              userID="SC-15" hazards="#935f10d7-4877-49ab-99a0-7ee06a3332b9" responsibilities="#885bff38-2c91-45b5-b056-e0c9b526c94d #6fa6ea8d-264d-4b3f-b222-997b9212843f #9454f05c-405a-4cf9-afc6-b707c27d93c7"/>
+        </rootSystemConstraints>
+        <rootSystemConstraints xsi:type="stpa:SystemConstraint" id="e08608f1-fe06-4f87-9670-bfbc401739c2"
+            name="Attestation Validation must guarantee the trustworthiness of the Attester party"
+            userID="SC-16" hazards="#e001dc43-262b-451a-84f8-607a9a007dff" responsibilities="#885bff38-2c91-45b5-b056-e0c9b526c94d #bd113a0d-0d5f-431e-a913-12c516db21dd #6d363363-1b1d-4786-8faf-417c43642cc3 #6fa6ea8d-264d-4b3f-b222-997b9212843f"
+            unsafeControlActions="#03a16dd7-5baa-46d4-929c-e837a749d0ac #6b919c38-438c-4ef2-bba0-208d6e057edb #9023bf75-04c9-4a36-b175-b85bb5bc9b24 #ceadc66f-c8e6-4617-b41e-6cba3c66f5ef #d641b698-d684-40a2-9bf9-2e02e0e488b5 #39aa9f66-609f-4cb5-aa3b-2af3431c5e8d #5f620784-e5dd-4a2d-b423-2f27f4fabb46 #cf72d55e-867b-4621-8d60-b22910845e39"/>
+      </hazardConstraintPackage>
+      <controlStructurePackage xsi:type="stpa:ControlStructurePackage" id="3a5ea49c-97f2-4bf4-8336-15e6a4be902a"
+          name="Control Structure">
+        <rootEntities xsi:type="stpa:ControlEntity" id="7a31a066-7339-4a52-9e72-41b48ed5328f"
+            name="Untrusted Supervisor Domain" userID="C-01">
+          <subEntities xsi:type="stpa:ControlEntity" id="d7bf32a8-6faf-460f-964e-13ade66b401f"
+              name="Host OS/VMM" userID="C-02">
+            <responsibilities xsi:type="stpa:Responsibility" id="dc749d89-98af-4a49-9a9d-6a40ca2a7a41"
+                name="Request Confidential Computing Services " userID="R-01" controlActions="#561eb47f-47f6-45f9-83ad-842d3668b7c9"
+                feedback="#ff0bcdce-ab1b-4887-bf50-f9857b549ef0"/>
+            <responsibilities xsi:type="stpa:Responsibility" id="6947c601-5982-4766-8219-fb873cdab0c1"
+                name="Request Non Confidential Services" userID="R-02" controlActions="#7e66eff7-a89e-400a-b5d9-75e53ebfaaf8"
+                feedback="#169d8dc7-4ab2-4324-84bb-9daf9339af50"/>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="049efd87-b993-4e0a-a308-26724aee3fce"
+                target="#9b1ace03-d370-4c3c-ab2f-01bfaac80158">
+              <controlActions xsi:type="stpa:ControlAction" id="561eb47f-47f6-45f9-83ad-842d3668b7c9"
+                  name="CoVE-H SBI" userID="CA-01" exercisedResponsibilities="#dc749d89-98af-4a49-9a9d-6a40ca2a7a41">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="560bc23c-bb9e-4e6f-883f-51bd063c91e7"
+                    name="Missing parameters" userID="UCA-01" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
+                    name="Wrong parameters" userID="UCA-02" kind="PROVIDING" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+              </controlActions>
+              <controlActions xsi:type="stpa:ControlAction" id="7e66eff7-a89e-400a-b5d9-75e53ebfaaf8"
+                  name="Non-Confidential SBI" userID="CA-02" exercisedResponsibilities="#6947c601-5982-4766-8219-fb873cdab0c1">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="051c1154-1809-4ca0-8ba5-3cf9ad93935e"
+                    name="Invalid SBI parameters" userID="UCA-03" kind="PROVIDING"
+                    violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74" hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="dfe73db9-c63f-4126-ab18-19c6820e803b"
+                target="#9b1ace03-d370-4c3c-ab2f-01bfaac80158">
+              <feedback xsi:type="stpa:FeedbackElement" id="ff0bcdce-ab1b-4887-bf50-f9857b549ef0"
+                  name="CoVE-H SBI result" userID="FB-01" exercisedResponsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+                  responsibilities="#dc749d89-98af-4a49-9a9d-6a40ca2a7a41"/>
+              <feedback xsi:type="stpa:FeedbackElement" id="169d8dc7-4ab2-4324-84bb-9daf9339af50"
+                  name="Non-Confidential operations" userID="FB-02" exercisedResponsibilities="#4f29480d-ebcd-453e-bcae-e570f755def4"
+                  responsibilities="#6947c601-5982-4766-8219-fb873cdab0c1"/>
+            </outgoingRelations>
+          </subEntities>
+        </rootEntities>
+        <rootEntities xsi:type="stpa:ControlEntity" id="2bc2cb93-7316-4e8a-8797-843c50be2cbf"
+            name="Confidential Supervisor Domain" userID="C-06">
+          <subEntities xsi:type="stpa:ControlEntity" id="93e79e95-9725-4f04-a585-67dcd976cc48"
+              name="TSM" userID="C-07">
+            <subEntities xsi:type="stpa:ControlEntity" id="98e2f76d-e0cf-476e-9964-719e6a99221b"
+                name="Guest Routine" userID="C-08" incomingRelations="#84cadcf7-d311-4ab3-9f84-71228078ca93 #c9208873-e855-418e-acd1-862028d8c9da #8f5afb25-7316-4a2c-a8df-824f123010a6 #3617d3b7-0718-4baf-81ad-1517915e0e4e">
+              <responsibilities xsi:type="stpa:Responsibility" id="bd113a0d-0d5f-431e-a913-12c516db21dd"
+                  name="Provide TVM Confidential services (CoVE-G SBI)" userID="R-05"
+                  systemConstraints="#84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #088e55b8-c450-4839-8765-db8f308eec34 #72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd #e08608f1-fe06-4f87-9670-bfbc401739c2 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #c501898d-fea1-401a-af38-b4670711196a"
+                  controlActions="#fae0bcdd-c34b-4aa3-936b-86ea2e46bc7e #64054562-4473-4012-8059-2267a88360c5 #a4caf032-b3fa-42c6-89ec-13c99d9b851d"
+                  feedback="#2f976dbe-eaa5-4064-8fb5-95cdea831942"/>
+              <responsibilities xsi:type="stpa:Responsibility" id="6aec348b-4d04-4183-9989-6542b43b6e87"
+                  name="Provide TVM Non-Confidential services (standard SBI)" userID="R-06"
+                  systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                  controlActions="#2157187c-51e9-4354-b02b-89240004aad3 #d3a527ca-642b-4a01-976c-ed0aabfdee07 #920513e7-6953-4234-a1d9-05e4b92d5020"
+                  feedback="#73e08167-8e47-4a12-a1c4-7d64aa67afbe"/>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="276f462d-876c-4ac8-b85f-fc4995ccee22"
+                  target="#9b1ace03-d370-4c3c-ab2f-01bfaac80158">
+                <controlActions xsi:type="stpa:ControlAction" id="fae0bcdd-c34b-4aa3-936b-86ea2e46bc7e"
+                    name="Platform-dependent CoVE-G" userID="CA-05" exercisedResponsibilities="#bd113a0d-0d5f-431e-a913-12c516db21dd">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="db778098-1408-4d4e-b24b-63bf6722fabe"
+                      name="Missing Forward Request" userID="UCA-04" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="49e95a2c-362c-46e7-b7d2-064c99893741"
+                      name="Invalid Forward Request" userID="UCA-05" kind="PROVIDING"
+                      violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d"
+                      hazards="#27ab6f9a-a943-4986-80e9-232a3e33690e #f333368a-63a9-467e-b640-0c01b2cd48f9 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                </controlActions>
+                <controlActions xsi:type="stpa:ControlAction" id="2157187c-51e9-4354-b02b-89240004aad3"
+                    name="Platform-dependent Non-Confidential services" userID="CA-06"
+                    exercisedResponsibilities="#6aec348b-4d04-4183-9989-6542b43b6e87">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="ef4c0387-c4a5-4867-923c-247753aa162a"
+                      name="Missing request" userID="UCA-06" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                      hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="cf3f3f65-aafe-4ed7-9e1d-93d563f40cbc"
+                      name="Invalid request" userID="UCA-07" kind="PROVIDING" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                      hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                </controlActions>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:FeedbackRelation" id="5425ec0e-6ea2-48cc-9a16-435c7f63a9b6"
+                  target="#9b1ace03-d370-4c3c-ab2f-01bfaac80158">
+                <feedback xsi:type="stpa:FeedbackElement" id="2f976dbe-eaa5-4064-8fb5-95cdea831942"
+                    name="Platform-dependent Confidential operations" userID="FB-05"
+                    exercisedResponsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+                    responsibilities="#bd113a0d-0d5f-431e-a913-12c516db21dd"/>
+                <feedback xsi:type="stpa:FeedbackElement" id="73e08167-8e47-4a12-a1c4-7d64aa67afbe"
+                    name="Platform-dependent Non-Confidential operations" userID="FB-06"
+                    exercisedResponsibilities="#4f29480d-ebcd-453e-bcae-e570f755def4"
+                    responsibilities="#6aec348b-4d04-4183-9989-6542b43b6e87"/>
+              </outgoingRelations>
+            </subEntities>
+            <subEntities xsi:type="stpa:ControlEntity" id="faa918f4-d8d6-4510-9337-2bb58ae684c5"
+                name="Host Routine" userID="C-09" incomingRelations="#21896454-9154-46a7-a566-a90e66d3b201 #f07955d2-c267-4236-9b51-c30b8428a213">
+              <responsibilities xsi:type="stpa:Responsibility" id="3377b52b-1a31-4cf8-a3da-85a40de72058"
+                  name="Manage TVM lifecycle (CoVE-H SBI)" userID="R-07" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #c501898d-fea1-401a-af38-b4670711196a"
+                  controlActions="#cd73dc6d-0171-44c4-ae88-7dd6240ad0d1 #1a7cc781-5eb1-4c3a-86ba-d40972fae787 #a8348b51-5abe-423e-9dfe-7d192d7abb31"
+                  feedback="#60c9faa9-a5c6-40b0-8e56-380251602255 #63c6420b-8a66-4804-80b4-7595cf83dd1f"/>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="e82e90ee-9245-4bc3-b6e6-f391bfa92c39"
+                  target="#13fa0ddc-f66f-4d2b-8613-db3fa9ff6fbf">
+                <controlActions xsi:type="stpa:ControlAction" id="cd73dc6d-0171-44c4-ae88-7dd6240ad0d1"
+                    name="CoVE-H SBI" userID="CA-07" exercisedResponsibilities="#3377b52b-1a31-4cf8-a3da-85a40de72058">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="7a1e6cc7-0c88-4ea0-8152-c8a4c7a86365"
+                      name="Invalid TVM ID [coveh06, coveh08, coveh09, coveh10, coveh11, coveh12, coveh13, coveh14, coveh15, coveh16, coveh17, coveh18, coveh19]"
+                      userID="UCA-08" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="812136f0-7284-41f1-a29d-d0c32d3faf35"
+                      name="Invalid virtual CPU ID [coveh14, coveh15]" userID="UCA-09"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="aa618122-c66f-4b83-a144-7acb530a30ec"
+                      name="Invalid Guest Physical Address [coveh11, coveh17, coveh18, coveh19]"
+                      userID="UCA-10" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="5f620784-e5dd-4a2d-b423-2f27f4fabb46"
+                      name="Tampered TVM Attestaion Payload  [cove06, cov07]" userID="UCA-11"
+                      kind="PROVIDING" violatedConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2"
+                      hazards="#e001dc43-262b-451a-84f8-607a9a007dff"/>
+                </controlActions>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:FeedbackRelation" id="30ea5b00-7bcb-4339-a3a6-b11a5a45d302"
+                  target="#13fa0ddc-f66f-4d2b-8613-db3fa9ff6fbf">
+                <feedback xsi:type="stpa:FeedbackElement" id="60c9faa9-a5c6-40b0-8e56-380251602255"
+                    name="CoVE-H SBI result" userID="FB-07" responsibilities="#3377b52b-1a31-4cf8-a3da-85a40de72058"/>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="ba3d5f1b-4b6b-4495-8d72-5eabd24f5c3a"
+                  target="#292a4d55-413a-442c-8d5b-e95b80450998">
+                <controlActions xsi:type="stpa:ControlAction" id="1a7cc781-5eb1-4c3a-86ba-d40972fae787"
+                    name="CoVE-H SBI" userID="CA-08" exercisedResponsibilities="#3377b52b-1a31-4cf8-a3da-85a40de72058">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="619443b0-0ea2-4c31-be07-72d6ddcdafb7"
+                      name="Invalid TVM ID [coveh06, coveh08, coveh09, coveh10, coveh11, coveh12, coveh13, coveh14, coveh15, coveh16, coveh17, coveh18, coveh19]"
+                      userID="UCA-12" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1080687d-be40-4b15-a567-a169edc7b77b"
+                      name="Invalid virtual CPU ID [coveh14, coveh15]" userID="UCA-13"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1d2c1d93-42e6-4131-b9f6-af62e989b195"
+                      name="Invalid Guest Physical Address [coveh11, coveh17, coveh18, coveh19]"
+                      userID="UCA-14" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="cf72d55e-867b-4621-8d60-b22910845e39"
+                      name="Tampered TVM Attestaion Payload  [cove06, cov07]" userID="UCA-15"
+                      kind="PROVIDING" violatedConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2"
+                      hazards="#e001dc43-262b-451a-84f8-607a9a007dff"/>
+                </controlActions>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:FeedbackRelation" id="ff2773ac-9e78-4053-b55a-983f136b15a4"
+                  target="#292a4d55-413a-442c-8d5b-e95b80450998">
+                <feedback xsi:type="stpa:FeedbackElement" id="63c6420b-8a66-4804-80b4-7595cf83dd1f"
+                    name="CoVE-H SBI result" userID="FB-08" responsibilities="#3377b52b-1a31-4cf8-a3da-85a40de72058"/>
+              </outgoingRelations>
+            </subEntities>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="5db58da9-4cd5-403c-9c13-d12b286cc226"
+              name="CoVE TVM" userID="C-10">
+            <subEntities xsi:type="stpa:ControlEntity" id="8d37fe00-e470-463c-81dc-1c288a88202b"
+                name="Confidential Workload" userID="C-11">
+              <responsibilities xsi:type="stpa:Responsibility" id="e6df4682-e95a-4f8d-9950-02c06edc1cd8"
+                  name="Request Non-Confidential Services" userID="R-08" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                  feedback="#d3a527ca-642b-4a01-976c-ed0aabfdee07"/>
+              <responsibilities xsi:type="stpa:Responsibility" id="6fa6ea8d-264d-4b3f-b222-997b9212843f"
+                  name="Request Confidential Computing Services" userID="R-09" systemConstraints="#72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd #7445b7e2-1868-405c-9ac3-4135407139bb #28d17566-3ac9-4cf5-8a25-b1aa8277d531 #e08608f1-fe06-4f87-9670-bfbc401739c2 #c501898d-fea1-401a-af38-b4670711196a"
+                  feedback="#64054562-4473-4012-8059-2267a88360c5"/>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="84cadcf7-d311-4ab3-9f84-71228078ca93"
+                  target="#98e2f76d-e0cf-476e-9964-719e6a99221b">
+                <controlActions xsi:type="stpa:ControlAction" id="607e4a97-fd49-4ce8-a123-013737775bf3"
+                    name="CoVE-G SBI" userID="CA-09">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="fbf3c84c-6f5e-4561-85b7-97ef8069ee58"
+                      name="Invalid Guest Physical Address [coveg00, coveg01, coveg02, coveg03, coveg06, coveg09, coveg10]"
+                      userID="UCA-16" kind="PROVIDING" violatedConstraints="#088e55b8-c450-4839-8765-db8f308eec34 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="80cd9218-b5e5-4da9-9399-235846684042"
+                      name="Unaligned memory region [coveg00, coveg01, coveg02, coveg03, coveg06, coveg07, coveg08, coveg09, coveg10]"
+                      userID="UCA-17" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="bd6a1ed1-4538-45ed-9ae8-28632056955a"
+                      name="Invalid Interrupt ID [coveg04, coveg05]" userID="UCA-18"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="c845f7c0-97c9-422f-b281-e70fd918f57d"
+                      name="Invalid measurement index [coveg07, coveg10]" userID="UCA-19"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="d641b698-d684-40a2-9bf9-2e02e0e488b5"
+                      name="Invalid measurement [coveg07]" userID="UCA-20" kind="PROVIDING"
+                      violatedConstraints="#088e55b8-c450-4839-8765-db8f308eec34 #e08608f1-fe06-4f87-9670-bfbc401739c2"
+                      hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc #e001dc43-262b-451a-84f8-607a9a007dff"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="39aa9f66-609f-4cb5-aa3b-2af3431c5e8d"
+                      name="Invalid attestation data [coveg08]" userID="UCA-21" kind="PROVIDING"
+                      violatedConstraints="#088e55b8-c450-4839-8765-db8f308eec34 #e08608f1-fe06-4f87-9670-bfbc401739c2"
+                      hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc #e001dc43-262b-451a-84f8-607a9a007dff"/>
+                </controlActions>
+                <controlActions xsi:type="stpa:ControlAction" id="8ec96f20-89f8-4743-b452-19232a1e7f78"
+                    name="Non-Confidential SBI" userID="CA-10">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="f0cc9850-4215-4968-88fd-6f03c3cceef6"
+                      name="Invalid SBI parameters" userID="UCA-22" kind="PROVIDING"
+                      violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                      hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                </controlActions>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:FeedbackRelation" id="c9208873-e855-418e-acd1-862028d8c9da"
+                  target="#98e2f76d-e0cf-476e-9964-719e6a99221b">
+                <feedback xsi:type="stpa:FeedbackElement" id="64054562-4473-4012-8059-2267a88360c5"
+                    name="CoVE-G SBI result" userID="FB-09" exercisedResponsibilities="#bd113a0d-0d5f-431e-a913-12c516db21dd"
+                    responsibilities="#6fa6ea8d-264d-4b3f-b222-997b9212843f"/>
+                <feedback xsi:type="stpa:FeedbackElement" id="d3a527ca-642b-4a01-976c-ed0aabfdee07"
+                    name="Non-Confidential SBI result" userID="FB-10" exercisedResponsibilities="#6aec348b-4d04-4183-9989-6542b43b6e87"
+                    responsibilities="#e6df4682-e95a-4f8d-9950-02c06edc1cd8"/>
+              </outgoingRelations>
+            </subEntities>
+            <subEntities xsi:type="stpa:ControlEntity" id="292a4d55-413a-442c-8d5b-e95b80450998"
+                name="Confidential Workload" userID="C-12" process="true" incomingRelations="#ba3d5f1b-4b6b-4495-8d72-5eabd24f5c3a #ff2773ac-9e78-4053-b55a-983f136b15a4"/>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="96269a40-4e07-47b3-84c5-0dd7d6ea6423"
+              name="CoVE TVM" userID="C-13">
+            <subEntities xsi:type="stpa:ControlEntity" id="890a7120-1081-4268-8075-6201de2d763f"
+                name="Confidential Workload" userID="C-14">
+              <responsibilities xsi:type="stpa:Responsibility" id="16059577-7552-4205-891e-b1634f8cd011"
+                  name="Request Non-Confidential Services" userID="R-10" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                  controlActions="#667a8650-84a7-450b-91e4-eb0424ae0d0c" feedback="#920513e7-6953-4234-a1d9-05e4b92d5020"/>
+              <responsibilities xsi:type="stpa:Responsibility" id="9454f05c-405a-4cf9-afc6-b707c27d93c7"
+                  name="Request Confidential Computing Services" userID="R-11" systemConstraints="#72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd #7445b7e2-1868-405c-9ac3-4135407139bb #28d17566-3ac9-4cf5-8a25-b1aa8277d531 #c501898d-fea1-401a-af38-b4670711196a"
+                  controlActions="#70e34a3a-7322-41e3-bd0b-344f84baea6f" feedback="#a4caf032-b3fa-42c6-89ec-13c99d9b851d"/>
+              <outgoingRelations xsi:type="stpa:ControlRelation" id="8f5afb25-7316-4a2c-a8df-824f123010a6"
+                  target="#98e2f76d-e0cf-476e-9964-719e6a99221b">
+                <controlActions xsi:type="stpa:ControlAction" id="70e34a3a-7322-41e3-bd0b-344f84baea6f"
+                    name="CoVE-G SBI" userID="CA-11" exercisedResponsibilities="#9454f05c-405a-4cf9-afc6-b707c27d93c7">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="8c012fb3-e572-4ef6-8b58-b1fbb8c67d9e"
+                      name="Invalid Guest Physical Address [coveg00, coveg01, coveg02, coveg03, coveg06, coveg09, coveg10]"
+                      userID="UCA-23" kind="PROVIDING" violatedConstraints="#088e55b8-c450-4839-8765-db8f308eec34 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="39f7c73d-3979-4df7-86fb-f60b2ef25491"
+                      name="Unaligned memory region [coveg00, coveg01, coveg02, coveg03, coveg06, coveg07, coveg08, coveg09, coveg10]"
+                      userID="UCA-24" kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="5db8e060-3c90-4899-99fb-c4f7d9bb550a"
+                      name="Invalid Interrupt ID [coveg04, coveg05]" userID="UCA-25"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="16c552ff-0121-45b5-9855-265dd3d0b8a6"
+                      name="Invalid measurement index [coveg07, coveg10]" userID="UCA-26"
+                      kind="PROVIDING" violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a"
+                      hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="9023bf75-04c9-4a36-b175-b85bb5bc9b24"
+                      name="Invalid measurement [coveg07]" userID="UCA-27" kind="PROVIDING"
+                      violatedConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2 #088e55b8-c450-4839-8765-db8f308eec34"
+                      hazards="#e001dc43-262b-451a-84f8-607a9a007dff #27b22db6-d572-4f73-99d3-7d49986c8bdc"/>
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="ceadc66f-c8e6-4617-b41e-6cba3c66f5ef"
+                      name="Invalid attestation data [coveg08]" userID="UCA-28" kind="PROVIDING"
+                      violatedConstraints="#088e55b8-c450-4839-8765-db8f308eec34 #e08608f1-fe06-4f87-9670-bfbc401739c2"
+                      hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc #e001dc43-262b-451a-84f8-607a9a007dff"/>
+                </controlActions>
+                <controlActions xsi:type="stpa:ControlAction" id="667a8650-84a7-450b-91e4-eb0424ae0d0c"
+                    name="Non-Confidential SBI" userID="CA-12" exercisedResponsibilities="#16059577-7552-4205-891e-b1634f8cd011">
+                  <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="f9568e62-d07c-4ae8-99d9-5d5b6e022372"
+                      name="Invalid SBI parameters" userID="UCA-29" kind="PROVIDING"
+                      violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                      hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                </controlActions>
+              </outgoingRelations>
+              <outgoingRelations xsi:type="stpa:FeedbackRelation" id="3617d3b7-0718-4baf-81ad-1517915e0e4e"
+                  target="#98e2f76d-e0cf-476e-9964-719e6a99221b">
+                <feedback xsi:type="stpa:FeedbackElement" id="a4caf032-b3fa-42c6-89ec-13c99d9b851d"
+                    name="CoVE-G SBI result" userID="FB-11" exercisedResponsibilities="#bd113a0d-0d5f-431e-a913-12c516db21dd"
+                    responsibilities="#9454f05c-405a-4cf9-afc6-b707c27d93c7"/>
+                <feedback xsi:type="stpa:FeedbackElement" id="920513e7-6953-4234-a1d9-05e4b92d5020"
+                    name="Non-Confidential SBI result" userID="FB-12" exercisedResponsibilities="#6aec348b-4d04-4183-9989-6542b43b6e87"
+                    responsibilities="#16059577-7552-4205-891e-b1634f8cd011"/>
+              </outgoingRelations>
+            </subEntities>
+            <subEntities xsi:type="stpa:ControlEntity" id="13fa0ddc-f66f-4d2b-8613-db3fa9ff6fbf"
+                name="Confidential Workload" userID="C-15" process="true" incomingRelations="#e82e90ee-9245-4bc3-b6e6-f391bfa92c39 #30ea5b00-7bcb-4339-a3a6-b11a5a45d302"/>
+          </subEntities>
+        </rootEntities>
+        <rootEntities xsi:type="stpa:ControlEntity" id="74f6bee9-54e2-46ba-8a71-dc08e5d916a6"
+            name="TSM Driver" userID="C-16">
+          <subEntities xsi:type="stpa:ControlEntity" id="508eb72b-d991-4e19-a47d-90a0d66756e8"
+              name="Attestation Context" userID="C-17" incomingRelations="#d7ac9467-fc84-4d4c-a9e2-05e145364239 #0da1785a-d693-40bc-b9b1-5618fd7a323b">
+            <responsibilities xsi:type="stpa:Responsibility" id="885bff38-2c91-45b5-b056-e0c9b526c94d"
+                name="Provide Attestation capabilities" userID="R-12" systemConstraints="#72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd #7445b7e2-1868-405c-9ac3-4135407139bb #28d17566-3ac9-4cf5-8a25-b1aa8277d531 #e08608f1-fe06-4f87-9670-bfbc401739c2"
+                controlActions="#0837c513-c697-4858-a70d-a30a38d44a5c"/>
+            <responsibilities xsi:type="stpa:Responsibility" id="6d363363-1b1d-4786-8faf-417c43642cc3"
+                name="Provide Attestation payload on TVM creation" userID="R-13" systemConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2 #c501898d-fea1-401a-af38-b4670711196a"
+                controlActions="#0837c513-c697-4858-a70d-a30a38d44a5c"/>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="7d10a387-8415-4cd7-b55f-ba0fea849f24"
+              name="Domain Manager" userID="C-18" incomingRelations="#24f14150-ac3e-4d9c-b073-e1f91eeebd69 #104cdbcc-72d2-4524-a2c1-ca99b2160346">
+            <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                id="b9f76694-475e-4b90-86f9-c76f12c02e4e" name="Validate Address Domain Owner"
+                summary="Check Address Domain Owner " constrainedElements="#7d10a387-8415-4cd7-b55f-ba0fea849f24">
+              <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                  id="5539c2a1-df7b-4e28-9c09-aeca3fbada07">
+                <bodies></bodies>
+                <languages>capella:linkedText</languages>
+              </ownedSpecification>
+            </ownedConstraints>
+            <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                id="1e8541d1-5ee4-4dc1-a9d6-36b22126e988" name="Clear reclaimed memory pages "
+                constrainedElements="#7d10a387-8415-4cd7-b55f-ba0fea849f24">
+              <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                  id="52b391ac-4118-417d-bf61-80ab82ada013">
+                <bodies></bodies>
+                <languages>capella:linkedText</languages>
+              </ownedSpecification>
+            </ownedConstraints>
+            <responsibilities xsi:type="stpa:Responsibility" id="3ce88aee-75cb-4daf-a061-0dc75f7e21b1"
+                name="Manage supervisor domains metadata" userID="R-14" systemConstraints="#cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #49386ed4-3e37-4b57-be1b-91849262da74 #2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #c501898d-fea1-401a-af38-b4670711196a"
+                controlActions="#fb836deb-c22a-4a47-92bf-413325041f52 #57915619-b281-4011-8195-3e6c0ad3fa3a"
+                feedback="#513bf6f6-09f8-4a5c-be2b-2bbd3eca81a7" variables="#a3aa4a7c-b6d9-4a40-9538-d592583fd9e5"/>
+            <responsibilities xsi:type="stpa:Responsibility" id="6959218f-de11-4797-a753-ffe401cb8590"
+                name="Provide Domain Isolation" userID="R-15" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #de5aa1d9-73d4-44f1-93b7-163ec201a25c #49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                controlActions="#010d2bb6-1fe8-4f42-938a-619a1704d4d9 #57915619-b281-4011-8195-3e6c0ad3fa3a"
+                feedback="#91fc469d-ff40-4e4a-a263-d0b45473fbb6" variables="#a3aa4a7c-b6d9-4a40-9538-d592583fd9e5"/>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="9fbd89d4-b9cb-4034-8cb1-516536872e66"
+                target="#b8576c69-c740-48e2-8515-9da7f1e7a178">
+              <controlActions xsi:type="stpa:ControlAction" id="010d2bb6-1fe8-4f42-938a-619a1704d4d9"
+                  name="Apply Domain Metadata" userID="CA-13" exercisedResponsibilities="#6959218f-de11-4797-a753-ffe401cb8590"
+                  lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"
+                  supportingProcessModel="#a3aa4a7c-b6d9-4a40-9538-d592583fd9e5">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="fdd06fe0-ea3d-44ae-bc88-fc60ba591c81"
+                    name="Missing PMP Configuration" userID="UCA-30" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="09998f14-08a0-4911-a3e3-00d6b33d2b6f"
+                    name="Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]"
+                    userID="UCA-31" kind="PROVIDING" lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"
+                    violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #2a160f6e-8408-469f-8336-c4e25f24bc3f">
+                  <controlFlawSet xsi:type="stpa:ControlFlawSet" id="9819112e-8447-4a59-96b0-409802333247">
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="68ee7a6a-173c-4c64-82ab-c2cf32c7082e"
+                        name="Input from the Untrusted Domain" countermeasures="#b9f76694-475e-4b90-86f9-c76f12c02e4e"
+                        verdict="KO" justification="A malicious memory address can be provided by an Untrusted Domain"
+                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="5a55eede-d21d-4ea9-9bfb-62d5553a112d"
+                        kind="CONTROL_ALGORITHM" verdict="KO" justification="The Domain Manager is responsible for properly controlling the PMP"
+                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="5388c6e5-b55b-44db-b384-dfb57543f4ac"
+                        kind="PROCESS_MODEL"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="9aba538b-e6e4-413e-a5d4-141c706dcff1"
+                        kind="PROCESS_FAILURE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="b2720ec3-d6c8-4e3f-9744-24bb7ce63ff0"
+                        kind="PROCESS_CHANGE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="26616778-a7d3-472e-a499-dafa4360b9b5"
+                        kind="PROCESS_CONFLICT" verdict="NA" justification="There are no other inputs"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="6a5e10a7-3e5b-4a5e-b927-0d97c785bd23"
+                        name="" kind="PROCESS_INPUT" verdict="NA" justification="There are no other inputs"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="504909aa-c0a6-4add-9a27-1abebe5239af"
+                        kind="PROCESS_DISTURBANCE" justification=""/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="4a8cc048-8acf-4e67-8fee-f398eb1f5331"
+                        kind="PROCESS_OUTPUT" verdict="NA" justification="There are no other outputs"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="ece1e2ad-ef3b-4fb8-b9d0-cec947f78c6c"
+                        kind="PROCESS_TO_SENSOR_DELAY" verdict="NA" justification="Not applicable in this scenario "/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="06671003-ab1c-4f94-a96f-9b7d6ee68921"
+                        kind="PROCESS_TO_SENSOR_INACCURATE" verdict="NA" justification="Not applicable in this scenario"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="10d85679-52aa-442d-8b04-6f2764b6ec65"
+                        kind="PROCESS_TO_SENSOR_INCORRECT" verdict="OK" justification="We assume that the PMP works correctly"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="68de59f3-07fc-4d44-819e-8f2129ee6195"
+                        kind="SENSOR"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="7ecacc9f-232b-444a-ae41-3e154580c95d"
+                        kind="SENSOR_TO_CONTROLLER_DELAY" verdict="NA" justification="Not applicable in this scenario"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="657e5d23-71dd-44ba-9418-0918e0284aab"
+                        kind="SENSOR_TO_CONTROLLER_INADEQUATE" verdict="OK" justification="We assume that the PMP works correctly"/>
+                  </controlFlawSet>
+                </unsafeControlActions>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="34f6d8ea-873d-4d12-a829-79a7c63a68c7"
+                    name="Non Atomic PMP Configuration" userID="UCA-32" kind="WRONG_TIMING"
+                    violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f #d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="aa3e5b3b-6067-4c81-97e8-53722c5db4ba"
+                    name="Unaligned memory address [coveh00, coveh01, coveh05, coveh09, coveh10, coveh11, coveh12, coveh13, coveh14]"
+                    userID="UCA-33" kind="PROVIDING" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="84662b72-3b88-4c59-9aff-0c81f1b1d29d"
+                    name="A TVM access a non-confidential memory region [coveh05, coveh06, coveh11, coveh12, coveh13]"
+                    userID="UCA-34" kind="PROVIDING" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
+                    name="Not cleaning memory pages before reclaim [coveh02]" userID="UCA-35"
+                    kind="PROVIDING" lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"
+                    violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f">
+                  <controlFlawSet xsi:type="stpa:ControlFlawSet" id="dbe979fd-e56f-4e51-bc2a-a9c53f8a19cb">
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="f6e648c6-748c-4700-aac9-bac7f8d167c6"
+                        name="Input from the Interrupt Manager" verdict="NA" justification="The input from the Interrupt Manager is correct"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="355d878f-35ab-43f7-8e60-1e341ad92027"
+                        kind="CONTROL_ALGORITHM" verdict="OK" justification="Because we assume that the control algorithm is correct"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="1604f5eb-cb80-4721-a26e-df7052e8b948"
+                        countermeasures="#1e8541d1-5ee4-4dc1-a9d6-36b22126e988" kind="PROCESS_MODEL"
+                        verdict="KO" justification="There is an error inside the Domain Manager logic and implementation of the function"
+                        lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="aa4e938c-d4e7-4e36-8bb0-467f43272c4d"
+                        kind="PROCESS_FAILURE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="ece7e730-f5d7-48fd-9c45-822cdcb9c8c7"
+                        kind="PROCESS_CHANGE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="f990fc31-ad17-44c5-9c10-a25f94117e67"
+                        kind="PROCESS_CONFLICT" verdict="NA" justification="No other control actions"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="99742ff8-d04e-450a-92f2-81adb55569ef"
+                        kind="PROCESS_INPUT" verdict="NA" justification="No other inputs"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="d6295fbf-163b-4daa-b265-4331e949ef84"
+                        kind="PROCESS_DISTURBANCE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="fe8e418a-4cf2-4399-8cac-1e7b82892671"
+                        kind="PROCESS_OUTPUT" verdict="NA" justification="No other outputs"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="c2cbb21f-6448-4845-acd6-b044250aed82"
+                        kind="PROCESS_TO_SENSOR_DELAY" verdict="NA" justification="Not applicable in this context"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="deec8a26-5cbf-4697-a7b6-e2933a84d86f"
+                        kind="PROCESS_TO_SENSOR_INACCURATE" verdict="NA" justification="Not applicable in this context"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="1922777e-321f-4398-ab7a-34e0f3be49e2"
+                        kind="PROCESS_TO_SENSOR_INCORRECT" verdict="OK" justification="We assume that the PMP works correctly"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="2f2e8121-1027-4d34-8d34-af5609ee9c1d"
+                        kind="SENSOR"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="86ecb6cf-a567-4f6b-8c42-12daffacf64d"
+                        kind="SENSOR_TO_CONTROLLER_DELAY" verdict="NA" justification="Not applicable in this context"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="b4c2f96e-f616-41d5-a667-3bf9feeb3880"
+                        kind="SENSOR_TO_CONTROLLER_INADEQUATE" verdict="OK" justification="We assume that the PMP works correctly"/>
+                  </controlFlawSet>
+                </unsafeControlActions>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="a8216ccf-a830-4c2f-aaef-898990b65522"
+                target="#5b8fdf92-c273-4748-9075-9087f8d990b2">
+              <controlActions xsi:type="stpa:ControlAction" id="fb836deb-c22a-4a47-92bf-413325041f52"
+                  name="Change Current Running Supervisor Domain" userID="CA-14" exercisedResponsibilities="#3ce88aee-75cb-4daf-a061-0dc75f7e21b1">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="5e3f3fef-4c26-4514-827c-1d2c9f2e3103"
+                    name="Wrong Current Supervisor Domain" userID="UCA-36" kind="PROVIDING"
+                    violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="b88702cd-8754-44bf-a9fa-2de79445ede1"
+                    name="Not Updating Current Supervisor Domain" userID="UCA-37"
+                    violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="d11157f5-0c0c-421f-be82-41a48d4d9bf4"
+                target="#5b8fdf92-c273-4748-9075-9087f8d990b2">
+              <feedback xsi:type="stpa:FeedbackElement" id="513bf6f6-09f8-4a5c-be2b-2bbd3eca81a7"
+                  name="Switched Active Domain" userID="FB-13" exercisedResponsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12"
+                  responsibilities="#3ce88aee-75cb-4daf-a061-0dc75f7e21b1"/>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="e3a62a77-028c-45a5-8461-84cd64dc1518"
+                target="#b8576c69-c740-48e2-8515-9da7f1e7a178">
+              <feedback xsi:type="stpa:FeedbackElement" id="91fc469d-ff40-4e4a-a263-d0b45473fbb6"
+                  name="Domain Isolation" userID="FB-14" exercisedResponsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6"
+                  responsibilities="#6959218f-de11-4797-a753-ffe401cb8590"/>
+            </outgoingRelations>
+            <processModel xsi:type="stpa:ProcessModelVariable" id="a3aa4a7c-b6d9-4a40-9538-d592583fd9e5"
+                name="Memory Block" userID="PM-01" responsibilities="#3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
+                controlActions="#010d2bb6-1fe8-4f42-938a-619a1704d4d9">
+              <values xsi:type="stpa:ProcessModelValue" id="af8a588e-8ec9-46ba-9fb3-fce3815fa95f"
+                  name="Trusted"/>
+              <values xsi:type="stpa:ProcessModelValue" id="c821bb7b-3f66-49d0-bb77-ec8555c5412f"
+                  name="Untrusted"/>
+              <values xsi:type="stpa:ProcessModelValue" id="2fbefc19-d332-4eae-8470-8bbdbc7f941c"
+                  name="Domain Owner ID"/>
+            </processModel>
+          </subEntities>
+          <subEntities xsi:type="stpa:ControlEntity" id="9b1ace03-d370-4c3c-ab2f-01bfaac80158"
+              name="Interrupt Manager" userID="C-19" incomingRelations="#276f462d-876c-4ac8-b85f-fc4995ccee22 #5425ec0e-6ea2-48cc-9a16-435c7f63a9b6 #049efd87-b993-4e0a-a308-26724aee3fce #dfe73db9-c63f-4126-ab18-19c6820e803b">
+            <responsibilities xsi:type="stpa:Responsibility" id="4f29480d-ebcd-453e-bcae-e570f755def4"
+                name="Manage non-confidential requests" userID="R-16" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                controlActions="#d2ded130-8582-4f49-b99a-40c3ac2a038e #169d8dc7-4ab2-4324-84bb-9daf9339af50 #73e08167-8e47-4a12-a1c4-7d64aa67afbe"
+                feedback="#b008f229-b9ba-4168-95b2-6c73dd594045"/>
+            <responsibilities xsi:type="stpa:Responsibility" id="c402b161-7a24-4458-9870-f9f0f7c0cdd1"
+                name="Manage confidential requests" userID="R-17" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #c501898d-fea1-401a-af38-b4670711196a"
+                controlActions="#5d58d2e8-1d39-499c-ace9-47b32afd2d13 #49f9d95b-24c8-4d15-9501-1d1f71f56545 #c4b0d78b-780d-434d-ab7a-f4424b326dfa #ff0bcdce-ab1b-4887-bf50-f9857b549ef0 #2f976dbe-eaa5-4064-8fb5-95cdea831942"
+                feedback="#0837c513-c697-4858-a70d-a30a38d44a5c #57915619-b281-4011-8195-3e6c0ad3fa3a #a8348b51-5abe-423e-9dfe-7d192d7abb31"/>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="21896454-9154-46a7-a566-a90e66d3b201"
+                target="#faa918f4-d8d6-4510-9337-2bb58ae684c5">
+              <controlActions xsi:type="stpa:ControlAction" id="5d58d2e8-1d39-499c-ace9-47b32afd2d13"
+                  name="CoVE-H SBI" userID="CA-15" exercisedResponsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="bf4d558f-b67d-4673-8d45-36a34185fbdc"
+                    name="Forward a function with missing parameters" userID="UCA-38"
+                    violatedConstraints="#c501898d-fea1-401a-af38-b4670711196a" hazards="#85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="42e2f8eb-d8de-424b-b700-35dbba17b8e5"
+                    name="Forward a function with invalid or malicious parameters"
+                    userID="UCA-39" kind="PROVIDING" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="f07955d2-c267-4236-9b51-c30b8428a213"
+                target="#faa918f4-d8d6-4510-9337-2bb58ae684c5">
+              <feedback xsi:type="stpa:FeedbackElement" id="a8348b51-5abe-423e-9dfe-7d192d7abb31"
+                  name="CoVE-H SBI result" userID="FB-15" exercisedResponsibilities="#3377b52b-1a31-4cf8-a3da-85a40de72058"
+                  responsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="24f14150-ac3e-4d9c-b073-e1f91eeebd69"
+                target="#7d10a387-8415-4cd7-b55f-ba0fea849f24">
+              <controlActions xsi:type="stpa:ControlAction" id="49f9d95b-24c8-4d15-9501-1d1f71f56545"
+                  name="Request Domain Manager Services" userID="CA-16" exercisedResponsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="6c5f1408-0264-4f6f-bcff-62c694dfb71e"
+                    name="Missing Source Domain ID " userID="UCA-40" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="340d377c-6d73-4ec6-85d7-3e2afc2995d5"
+                    name="Wrong Source Domain ID  [coveh06, coveh08, coveh09, coveh10, coveh11, coveh12, coveh13, coveh14, coveh15, coveh16, coveh17, coveh18, coveh19]"
+                    userID="UCA-41" kind="PROVIDING" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #c501898d-fea1-401a-af38-b4670711196a #49386ed4-3e37-4b57-be1b-91849262da74"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="d2c3c757-efd2-4e79-a881-47e254008d52"
+                    name="Wrong Destination Domain ID  [coveh06, coveh08, coveh09, coveh10, coveh11, coveh12, coveh13, coveh14, coveh15, coveh16, coveh17, coveh18, coveh19]"
+                    userID="UCA-42" kind="PROVIDING" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d"
+                    hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109">
+                  <controlFlawSet xsi:type="stpa:ControlFlawSet" id="56060603-4eb3-4c27-9f77-1af4f9e68edf">
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="914cfb67-d547-4b0a-b371-d477a4762f43"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="3e0069a1-0868-48f3-8385-5fdfc01c5cee"
+                        kind="CONTROL_ALGORITHM"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="69447080-0a11-4675-8107-8293b27c963e"
+                        kind="PROCESS_MODEL"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="ab160f14-e132-4ec5-b754-588846b559b8"
+                        kind="PROCESS_FAILURE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="a24edfa0-e28a-4305-8c1a-7705d77ca867"
+                        kind="PROCESS_CHANGE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="88a1ca14-babf-4dfb-b2d6-1ed89e37b276"
+                        kind="PROCESS_CONFLICT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="8df3fdfa-1ba8-455d-b40f-03e5d164cb8f"
+                        kind="PROCESS_INPUT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="cbaca899-bab4-42c4-a8f3-000ea1aa6ccb"
+                        kind="PROCESS_DISTURBANCE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="0c299ed4-22f2-4291-88cd-bffcd153c285"
+                        kind="PROCESS_OUTPUT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="4fca92c3-caaa-4cde-b90c-7296fcab07cd"
+                        kind="PROCESS_TO_SENSOR_DELAY"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="7f7c39f0-186e-4954-a5ed-63963b4b2e09"
+                        kind="PROCESS_TO_SENSOR_INACCURATE"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="7bf8875d-9276-4891-af58-5d4ad347224a"
+                        kind="PROCESS_TO_SENSOR_INCORRECT"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="2545fe27-cfdf-409d-8992-ff7529886c12"
+                        kind="SENSOR"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="5b3d3b11-a355-49d6-b8a0-cac8e77ad67d"
+                        kind="SENSOR_TO_CONTROLLER_DELAY"/>
+                    <controlFlaws xsi:type="stpa:ControlFlaw" id="91a3e464-0a62-4eff-bfc5-6f0f472f7f27"
+                        kind="SENSOR_TO_CONTROLLER_INADEQUATE"/>
+                  </controlFlawSet>
+                </unsafeControlActions>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="b32c21a1-379a-4fcb-8da3-566bca8a86b1"
+                    name="Missing Destination Domain ID" userID="UCA-43" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="104cdbcc-72d2-4524-a2c1-ca99b2160346"
+                target="#7d10a387-8415-4cd7-b55f-ba0fea849f24">
+              <feedback xsi:type="stpa:FeedbackElement" id="57915619-b281-4011-8195-3e6c0ad3fa3a"
+                  name="Domain Isolation" userID="FB-16" exercisedResponsibilities="#3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
+                  responsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="d7ac9467-fc84-4d4c-a9e2-05e145364239"
+                target="#508eb72b-d991-4e19-a47d-90a0d66756e8">
+              <controlActions xsi:type="stpa:ControlAction" id="c4b0d78b-780d-434d-ab7a-f4424b326dfa"
+                  name="Request Attestation Services" userID="CA-17" exercisedResponsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="6b919c38-438c-4ef2-bba0-208d6e057edb"
+                    name="Missing Request" userID="UCA-44" violatedConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2"
+                    hazards="#e001dc43-262b-451a-84f8-607a9a007dff"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="03a16dd7-5baa-46d4-929c-e837a749d0ac"
+                    name="Outdated TVM measurements" userID="UCA-45" kind="WRONG_TIMING"
+                    violatedConstraints="#e08608f1-fe06-4f87-9670-bfbc401739c2" hazards="#e001dc43-262b-451a-84f8-607a9a007dff"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="0da1785a-d693-40bc-b9b1-5618fd7a323b"
+                target="#508eb72b-d991-4e19-a47d-90a0d66756e8">
+              <feedback xsi:type="stpa:FeedbackElement" id="0837c513-c697-4858-a70d-a30a38d44a5c"
+                  name="Attestation Services" userID="FB-17" exercisedResponsibilities="#885bff38-2c91-45b5-b056-e0c9b526c94d #6d363363-1b1d-4786-8faf-417c43642cc3"
+                  responsibilities="#c402b161-7a24-4458-9870-f9f0f7c0cdd1"/>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:ControlRelation" id="378ad5d3-4be5-49bc-b6c1-b00352f5c173"
+                target="#5b8fdf92-c273-4748-9075-9087f8d990b2">
+              <controlActions xsi:type="stpa:ControlAction" id="d2ded130-8582-4f49-b99a-40c3ac2a038e"
+                  name="Request Non-Confidential Services" userID="CA-18" exercisedResponsibilities="#4f29480d-ebcd-453e-bcae-e570f755def4">
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="75a68c71-eac7-4e69-b12d-6f0086ecb780"
+                    name="Missing Request Forward" userID="UCA-46" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
+                    hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+                <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="1a624da3-1636-4833-90b4-fd842b98067c"
+                    name="Tampered Request Forward" userID="UCA-47" kind="PROVIDING"
+                    violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74" hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2"/>
+              </controlActions>
+            </outgoingRelations>
+            <outgoingRelations xsi:type="stpa:FeedbackRelation" id="09c3fab9-aede-4fa2-bb5f-adc555387961"
+                target="#5b8fdf92-c273-4748-9075-9087f8d990b2">
+              <feedback xsi:type="stpa:FeedbackElement" id="b008f229-b9ba-4168-95b2-6c73dd594045"
+                  name="Non-Confidential Firmware Services" userID="FB-18" exercisedResponsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12"
+                  responsibilities="#4f29480d-ebcd-453e-bcae-e570f755def4"/>
+            </outgoingRelations>
+          </subEntities>
+        </rootEntities>
+        <rootEntities xsi:type="stpa:ControlEntity" id="b3fd3877-c0ed-472a-8d99-14a6b28f06dd"
+            name="RISC V platform " userID="C-20" incomingRelations="#8fdb19d5-1bb5-4482-89a2-7a6f18ac418c #1a1d1500-dc1d-499a-b97d-8bb1e3508b61">
+          <subEntities xsi:type="stpa:ControlEntity" id="b8576c69-c740-48e2-8515-9da7f1e7a178"
+              name="PMP" userID="C-21" incomingRelations="#9fbd89d4-b9cb-4034-8cb1-516536872e66 #e3a62a77-028c-45a5-8461-84cd64dc1518">
+            <responsibilities xsi:type="stpa:Responsibility" id="899b2f75-75e8-466b-9e7e-c1a73bc65ac6"
+                name="Ensure memory isolation" userID="R-21" systemConstraints="#cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #49386ed4-3e37-4b57-be1b-91849262da74"
+                controlActions="#91fc469d-ff40-4e4a-a263-d0b45473fbb6"/>
+          </subEntities>
+          <responsibilities xsi:type="stpa:Responsibility" id="bfa26d30-ef10-4b39-8335-c7519a86ae73"
+              name="Provide hardware resources and services" userID="R-18" systemConstraints="#de5aa1d9-73d4-44f1-93b7-163ec201a25c #49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+              controlActions="#c2cc158a-c87c-4c54-993e-206d8cec5a1f"/>
+          <responsibilities xsi:type="stpa:Responsibility" id="4cdad1e2-31da-4743-9980-46dd1eba2fb9"
+              name="Avoid microarchitectural data leakage" userID="R-19" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775 #72490d8f-ccb9-43ba-be65-f6b2e1c6f9fd"
+              controlActions="#c2cc158a-c87c-4c54-993e-206d8cec5a1f"/>
+          <responsibilities xsi:type="stpa:Responsibility" id="78cda357-ba2e-4cf1-8547-4101d4c10f2b"
+              name="Guarantee that the system is working under admissible operational conditions"
+              userID="R-20" systemConstraints="#de5aa1d9-73d4-44f1-93b7-163ec201a25c"
+              controlActions="#c2cc158a-c87c-4c54-993e-206d8cec5a1f"/>
+        </rootEntities>
+        <rootEntities xsi:type="stpa:ControlEntity" id="5b8fdf92-c273-4748-9075-9087f8d990b2"
+            name="OpenSBI" userID="C-22" incomingRelations="#a8216ccf-a830-4c2f-aaef-898990b65522 #d11157f5-0c0c-421f-be82-41a48d4d9bf4 #378ad5d3-4be5-49bc-b6c1-b00352f5c173 #09c3fab9-aede-4fa2-bb5f-adc555387961">
+          <responsibilities xsi:type="stpa:Responsibility" id="dd8ec319-9a6f-4a08-a4a7-2b7afec50e12"
+              name="Manage all non-confidential computing operations " userID="R-22"
+              systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #de5aa1d9-73d4-44f1-93b7-163ec201a25c"
+              controlActions="#e74b9dd0-f4a1-49ff-b7df-2d2b72778992 #513bf6f6-09f8-4a5c-be2b-2bbd3eca81a7 #b008f229-b9ba-4168-95b2-6c73dd594045"
+              feedback="#c2cc158a-c87c-4c54-993e-206d8cec5a1f"/>
+          <outgoingRelations xsi:type="stpa:ControlRelation" id="8fdb19d5-1bb5-4482-89a2-7a6f18ac418c"
+              target="#b3fd3877-c0ed-472a-8d99-14a6b28f06dd">
+            <controlActions xsi:type="stpa:ControlAction" id="e74b9dd0-f4a1-49ff-b7df-2d2b72778992"
+                name="Manage hardware-resources" userID="CA-19" exercisedResponsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12">
+              <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="ce7fe11e-059f-4c2b-adff-f35716864b86"
+                  name="Missing Peripheral Configuration" userID="UCA-48" violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                  hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+              <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="eb973b58-694e-42ce-b4c9-eddcf4cdf9c9"
+                  name="Peripheral Misconfiguration" userID="UCA-49" kind="PROVIDING"
+                  violatedConstraints="#49386ed4-3e37-4b57-be1b-91849262da74 #c501898d-fea1-401a-af38-b4670711196a"
+                  hazards="#d9048faa-02bc-4a37-9d9f-f7d00f687bf2 #85bd1f19-a77c-471c-8ebb-57a72530c796"/>
+            </controlActions>
+          </outgoingRelations>
+          <outgoingRelations xsi:type="stpa:FeedbackRelation" id="1a1d1500-dc1d-499a-b97d-8bb1e3508b61"
+              target="#b3fd3877-c0ed-472a-8d99-14a6b28f06dd">
+            <feedback xsi:type="stpa:FeedbackElement" id="c2cc158a-c87c-4c54-993e-206d8cec5a1f"
+                name="Hardware-Resources " userID="FB-19" exercisedResponsibilities="#bfa26d30-ef10-4b39-8335-c7519a86ae73 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #78cda357-ba2e-4cf1-8547-4101d4c10f2b"
+                responsibilities="#dd8ec319-9a6f-4a08-a4a7-2b7afec50e12"/>
+          </outgoingRelations>
+        </rootEntities>
+      </controlStructurePackage>
+      <lossScenarioPackage xsi:type="stpa:LossScenarioPackage" id="edb0289f-dacc-4abc-8399-6d6b14730c06"
+          name="Loss Scenarios">
+        <lossScenarios xsi:type="stpa:LossScenario" id="1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"
+            name="Confidential Memory Accessed by an Untrusted Domain " userID="LS-01"
+            countermeasures="#b9f76694-475e-4b90-86f9-c76f12c02e4e" controlAction="#010d2bb6-1fe8-4f42-938a-619a1704d4d9"
+            unsafeControlAction="#09998f14-08a0-4911-a3e3-00d6b33d2b6f" causalFactors="#5a55eede-d21d-4ea9-9bfb-62d5553a112d #68ee7a6a-173c-4c64-82ab-c2cf32c7082e"
+            violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+            hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #697c43c0-a969-4b13-86dc-cf4ef58a5322"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"
+            name="Confidential Data Exposed to Untrusted Domain after reclaim" userID="LS-02"
+            countermeasures="#1e8541d1-5ee4-4dc1-a9d6-36b22126e988" controlAction="#010d2bb6-1fe8-4f42-938a-619a1704d4d9"
+            unsafeControlAction="#1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb" causalFactors="#1604f5eb-cb80-4721-a26e-df7052e8b948"
+            violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+            hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
+      </lossScenarioPackage>
+    </ownedExtensions>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"
+        id="b3545e0b-27a0-4c25-a619-d6c879b5ea2b" name="Operational Analysis">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
+          id="72657734-4bbe-49f9-aa5b-aaabc93503e6" name="Operational Activities">
+        <ownedOperationalActivities xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+            id="b9e278e6-7375-49a5-83cb-4afd77e33f2b" name="Root Operational Activity"/>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
+          id="d8d76cb6-893d-4d8a-ae86-8db30f7ee382" name="Operational Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="aeea3ace-845d-4125-9df2-eebd10004b86" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="0ce48b18-3a26-4bbe-9f7d-f1216e9cc444" name="Data"/>
+      <ownedRolePkg xsi:type="org.polarsys.capella.core.data.oa:RolePkg" id="70906cc5-9029-4fde-9aa1-b1af6e09c5cc"
+          name="Roles"/>
+      <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="c75ce9ef-d889-431c-9732-17be5a6ef819"
+          name="Operational Entities"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
+        id="1576deaf-f9ef-4ca8-86fa-066730012c44" name="System Analysis">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemFunctionPkg"
+          id="670f98dc-fe77-473f-8e3c-c3ba3632b2c9" name="System Functions">
+        <ownedSystemFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+            id="662afd2c-5db1-4bbf-8f95-24b72c5c0deb" name="Root System Function">
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="29a82c19-62f1-4339-9252-a970fa83061f" targetElement="#b9e278e6-7375-49a5-83cb-4afd77e33f2b"
+              sourceElement="#662afd2c-5db1-4bbf-8f95-24b72c5c0deb"/>
+        </ownedSystemFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.ctx:CapabilityPkg"
+          id="e6cca45a-8abd-427b-b2b6-e9ce7bd90917" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="70f9c384-46dd-4697-a85f-9def513bdd01" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="f78e3040-baa7-4d22-8055-c64828a9160e" name="Data">
+        <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+            id="c254c50c-a3c7-4089-99ec-5ac8cd8b7dbc" name="Predefined Types">
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:BooleanType"
+              id="fbf2bab7-8c64-4836-bfb8-0431792758d1" name="Boolean" visibility="PUBLIC">
+            <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralBooleanValue"
+                id="b536061f-5ad3-4912-9fdc-96885f9af864" name="True" abstractType="#fbf2bab7-8c64-4836-bfb8-0431792758d1"
+                value="true"/>
+            <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralBooleanValue"
+                id="1e8ce568-5b36-42e7-b3d2-3557e93c4f90" name="False" abstractType="#fbf2bab7-8c64-4836-bfb8-0431792758d1"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="646d64c0-b5b2-4d37-8b78-0afef6d90a89" name="Byte" visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="0928aede-33a9-4756-8c5b-cec39c3d3bdf" name="" abstractType="#646d64c0-b5b2-4d37-8b78-0afef6d90a89"
+                value="0"/>
+            <ownedMaxValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="dd4e5656-9c47-4dc6-843b-2eba68143d66" name="" abstractType="#646d64c0-b5b2-4d37-8b78-0afef6d90a89"
+                value="255"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
+              id="9b5823ec-b0b4-470c-ba6a-ca484fa98784" name="Char" visibility="PUBLIC">
+            <ownedMinLength xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="e8f5b634-0f1e-4786-b244-427bfc632e17" name="" abstractType="#6ad75886-61ac-484a-a519-8d6d37bc15c4"
+                value="1"/>
+            <ownedMaxLength xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="d9ccfe66-7e9e-4a47-9967-e583d9b1d14b" name="" abstractType="#6ad75886-61ac-484a-a519-8d6d37bc15c4"
+                value="1"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="82a7dec3-f2e5-48b9-9656-036c76a5b1c7" name="Double" discrete="false"
+              visibility="PUBLIC" kind="FLOAT"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="cce9ccc5-5c8c-42bc-b425-dcc6908afa95" name="Float" discrete="false"
+              visibility="PUBLIC" kind="FLOAT"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="7d534d8a-1ac7-4c60-8702-e617c0dd23db" name="Hexadecimal" visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="c1a19707-1b62-4a0c-9ce8-1714a906dc36" name="" abstractType="#7d534d8a-1ac7-4c60-8702-e617c0dd23db"
+                value="0"/>
+            <ownedMaxValue xsi:type="org.polarsys.capella.core.data.information.datavalue:BinaryExpression"
+                id="436d7429-03d5-4887-a278-d5bcd0331ee2" abstractType="#7d534d8a-1ac7-4c60-8702-e617c0dd23db"
+                operator="SUB">
+              <ownedLeftOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:BinaryExpression"
+                  id="e9c46e02-a6ea-4de6-b395-76c7434f9765" operator="POW">
+                <ownedLeftOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="d2518651-562b-4a5e-9fd2-47f816fa4812" value="2"/>
+                <ownedRightOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="4c4db7cd-1df1-4e39-b3ed-91a48f730dd0" value="64"/>
+              </ownedLeftOperand>
+              <ownedRightOperand xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                  id="1e7be548-f4e8-4892-ba61-65efc9906883" value="1"/>
+            </ownedMaxValue>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="ed6d061a-f154-452c-bbb9-3153ca9fc925" name="Integer" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="4ae28f18-ced8-41c1-887f-3116f8592c1a" name="Long" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="28d9993d-78f9-4d37-b78b-d99cc281aa21" name="LongLong" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="b46b1709-99d2-4059-b860-55c2361b3b56" name="Short" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
+              id="81e3dc93-aac5-4a13-b6cf-9b27d9b7ecc0" name="String" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="4ed67897-ac1f-476a-b891-536edd9ba329" name="UnsignedInteger" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="5c8b819b-6785-40cc-a383-b57229280d41" name="" abstractType="#4ed67897-ac1f-476a-b891-536edd9ba329"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="6ad75886-61ac-484a-a519-8d6d37bc15c4" name="UnsignedShort" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="54cb1781-5ddb-4dcc-ab12-c3e55b0d0ec8" name="" abstractType="#6ad75886-61ac-484a-a519-8d6d37bc15c4"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="4434be57-83b1-4956-9cc2-8fcc7820bf1d" name="UnsignedLong" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="b449be1f-5ebd-4f69-826b-d4d427846702" name="" abstractType="#4434be57-83b1-4956-9cc2-8fcc7820bf1d"
+                value="0"/>
+          </ownedDataTypes>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:NumericType"
+              id="92841611-38c2-4dd4-8e56-450327470504" name="UnsignedLongLong" maxInclusive="false"
+              visibility="PUBLIC">
+            <ownedMinValue xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                id="88d01c6b-98bd-4700-9ab2-bc8e9c972736" name="" abstractType="#92841611-38c2-4dd4-8e56-450327470504"
+                value="0"/>
+          </ownedDataTypes>
+        </ownedDataPkgs>
+      </ownedDataPkg>
+      <ownedSystemComponentPkg xsi:type="org.polarsys.capella.core.data.ctx:SystemComponentPkg"
+          id="5d15762d-ef19-4b1c-bd8c-6cefdce3976d" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="044ac7b2-5337-412a-a682-0f35be254e82"
+            name="System" abstractType="#09993234-e2d5-4d30-b3c2-8d24a8a148ba"/>
+        <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
+            id="09993234-e2d5-4d30-b3c2-8d24a8a148ba" name="System">
+          <ownedStateMachines xsi:type="org.polarsys.capella.core.data.capellacommon:StateMachine"
+              id="93bf3449-95d9-45d8-a228-216c2ecb0e08" name="System State Machine">
+            <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                id="f3c6446a-30bb-4426-a744-d002ec50a042" name="Default Region"/>
+          </ownedStateMachines>
+        </ownedSystemComponents>
+      </ownedSystemComponentPkg>
+      <ownedMissionPkg xsi:type="org.polarsys.capella.core.data.ctx:MissionPkg" id="c419d625-d923-4057-95a3-0e9ce3208355"
+          name="Missions"/>
+      <ownedOperationalAnalysisRealizations xsi:type="org.polarsys.capella.core.data.ctx:OperationalAnalysisRealization"
+          id="3d218c0c-34e2-4a62-9980-250bb90a75fb" targetElement="#b3545e0b-27a0-4c25-a619-d6c879b5ea2b"
+          sourceElement="#1576deaf-f9ef-4ca8-86fa-066730012c44"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.la:LogicalArchitecture"
+        id="66ef9355-d7de-4517-b46f-5bad037f644d" name="Logical Architecture">
+      <ownedExtensions xsi:type="cybersecurity:CybersecurityPkg" id="32088b51-9b5b-4c7c-8e0b-fd06ca51a696"
+          name="Cybersecurity">
+        <ownedThreats xsi:type="cybersecurity:Threat" id="09361786-7e96-44f6-82b8-4fed83a54ce7"
+            name="TVM Confidential Data Leakage" kind="#782681f3-3d73-4bdf-9328-f463aa3433a0"
+            level="5">
+          <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="7da3fedc-addb-4dd7-99a9-11c3891925e6"
+              confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"/>
+          <ownedThreatApplications xsi:type="cybersecurity:ThreatApplication" id="01f31d7d-a3ba-4cee-a013-cbaa375bcef9"
+              asset="#aeb6e52c-f934-4d8f-a0fd-9c7b4447bf69"/>
+          <ownedThreatInvolvements xsi:type="cybersecurity:ThreatInvolvement" id="ab9a1e0c-bf85-4a73-b6a9-153074c27453"
+              component="#2d410dc9-f67f-46c2-af72-88e6240ab71d"/>
+        </ownedThreats>
+        <ownedPrimaryAssets xsi:type="cybersecurity:FunctionalPrimaryAsset" id="aeb6e52c-f934-4d8f-a0fd-9c7b4447bf69"
+            name="TVM Data Confidentiality">
+          <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="2856e80d-e5d0-4941-8aa4-5e44a04421b3"
+              confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="5524e0de-631f-408f-86b4-df47b458bede"
+              member="#21f51550-7d45-4cd3-9c80-78072ac5852b"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="872e4b77-b1ff-459a-becd-dacd57ebec1a"
+              member="#8ff89574-9f7d-4029-9660-df40d8336fd0"/>
+          <ownedMembers xsi:type="cybersecurity:PrimaryAssetMember" id="60137e56-cbcc-4d5a-adbe-9294e2b5d3e3"
+              member="#5f18300e-16e9-4651-8195-3b41a6f720ae"/>
+        </ownedPrimaryAssets>
+      </ownedExtensions>
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.la:LogicalFunctionPkg"
+          id="71bfee34-1d4f-443a-9a2c-fd77d7dc43f7" name="Logical Functions">
+        <ownedLogicalFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+            id="0aef910e-21a3-4cbf-83f5-14bc86b9bd88" name="Root Logical Function">
+          <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+              id="5f18300e-16e9-4651-8195-3b41a6f720ae" name="Unsafe PMP control">
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="73951b73-210e-411d-8c7d-bcc274d1d9d4" involved="#83ab098b-bbc7-486a-a485-c8ff24e04b54"
+                source="#50c9dcf0-dc47-4900-b74c-bd0540d2574f" target="#de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e" involved="#36cbe0ba-6ad7-49a4-90b5-1d60a1648c26"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="50c9dcf0-dc47-4900-b74c-bd0540d2574f" involved="#2c8d463c-1768-4ec8-ae28-9712b37dfb2f"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="ace4e64c-c284-4938-85cd-cf55da69cb48" involved="#ad5e05d7-6cd9-4159-9491-a6b807891b34"
+                source="#de7a9fe3-b5d4-4f0e-8b43-06a3f92a253e" target="#309d74c5-db80-4f32-b394-3c7b6e815587"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="309d74c5-db80-4f32-b394-3c7b6e815587" involved="#21f51550-7d45-4cd3-9c80-78072ac5852b"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="13edeea3-2e83-4771-9cc5-83667d00d838" involved="#6267a253-c934-4573-839e-4c2dec414842"
+                source="#309d74c5-db80-4f32-b394-3c7b6e815587" target="#038fb6d1-5682-4a75-b30e-9f57f50dca4c"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="038fb6d1-5682-4a75-b30e-9f57f50dca4c" involved="#8ff89574-9f7d-4029-9660-df40d8336fd0"/>
+          </ownedFunctionalChains>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="2c8d463c-1768-4ec8-ae28-9712b37dfb2f" name="Request Confidential Computing Services">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="f6dd8159-dfe5-4ece-96a2-197e227a20ab" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="d951ba26-1021-4cbb-8f75-bac96d0cf510" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="36cbe0ba-6ad7-49a4-90b5-1d60a1648c26" name="Manage Confidential Requests">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="5661f948-1a12-4050-9829-250ea179820a"
+                integrityValue="#88060c64-793d-4213-a6f0-7bcee5f68a7c"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="a69b5e3d-3508-4b01-95b2-c7ed781adf8d" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="17ad5337-bc45-4d53-9143-ac518a753fc7" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="503ecb0f-baf2-4040-a35a-ce99ba40c893" name="FOP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="2908e344-9774-40cb-b9c6-55a8f0094b71" name="FOP 2"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="21f51550-7d45-4cd3-9c80-78072ac5852b" name="Provide Domain Isolation and Manage Supervisor Domain Metadata">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="ab337e37-8de7-4cf7-b120-630eb11b7a91"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="cc806083-ecfc-4f37-a5dd-9c83f87c0d44" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="a146fe18-1189-424e-bb8d-ae1cff2de30c" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="7f8eecea-4e53-47a6-a40e-c28e245c358c" name="FOP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="c2aa3695-4761-482e-9e25-301a9ed8b85d" name="FOP 2"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="8ff89574-9f7d-4029-9660-df40d8336fd0" name="Ensure Memory Isolation">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="bba3f242-abda-4c8b-904c-065c877181f0"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="ad2f2703-71ca-46e6-90de-667b0fbb87db" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="b2e0a0c8-434a-4f66-8e7b-49184c9f882e" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="6bda9175-99bc-4ae2-9c46-4c075dd2f7c7" name=""/>
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="3b2037b1-53ee-49a0-8cda-f0768493a021" targetElement="#662afd2c-5db1-4bbf-8f95-24b72c5c0deb"
+              sourceElement="#0aef910e-21a3-4cbf-83f5-14bc86b9bd88"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="83ab098b-bbc7-486a-a485-c8ff24e04b54" name="CoVE-H SBI" target="#a69b5e3d-3508-4b01-95b2-c7ed781adf8d"
+              source="#d951ba26-1021-4cbb-8f75-bac96d0cf510"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="ad5e05d7-6cd9-4159-9491-a6b807891b34" name="Request Domain Manager Services"
+              target="#cc806083-ecfc-4f37-a5dd-9c83f87c0d44" source="#503ecb0f-baf2-4040-a35a-ce99ba40c893"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="6267a253-c934-4573-839e-4c2dec414842" name="Apply Domain Metadata"
+              target="#ad2f2703-71ca-46e6-90de-667b0fbb87db" source="#7f8eecea-4e53-47a6-a40e-c28e245c358c">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="4d881373-9309-4ce6-bbe2-73db9656b3d3"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="e4d87a11-d0ec-48aa-b4c4-cfc9973c847e" name="Domain Isolation" target="#a146fe18-1189-424e-bb8d-ae1cff2de30c"
+              source="#b2e0a0c8-434a-4f66-8e7b-49184c9f882e">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="89bdfda8-c0bb-4c73-97fc-3757a989f762"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="59064152-5dae-4c88-8ed0-50e5bf19954c" name="Domain Isolation" target="#17ad5337-bc45-4d53-9143-ac518a753fc7"
+              source="#c2aa3695-4761-482e-9e25-301a9ed8b85d">
+            <ownedExtensions xsi:type="cybersecurity:SecurityNeeds" id="d644d305-49f7-4a60-bf17-23582f4f6932"
+                confidentialityValue="#e3c0386a-2ff7-48ae-9f52-303ea560f517" integrityValue="#3e5f8859-f3b5-4c29-a668-542d1197f1e5"
+                availabilityValue="#29481d64-33a4-4ab8-8eec-1a36cd512365"/>
+          </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="2cd9f158-862e-42e3-a86f-4a5013a58411" name="CoVE-H SBI result" target="#f6dd8159-dfe5-4ece-96a2-197e227a20ab"
+              source="#2908e344-9774-40cb-b9c6-55a8f0094b71"/>
+        </ownedLogicalFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="70b39f16-5e61-460c-ad23-8e247f6549af" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="ac196b7a-3a5c-44d5-b52c-041f592fd19b" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="2b453b7e-b6d9-4e5e-a155-686d335621d9" name="Data"/>
+      <ownedLogicalComponentPkg xsi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg"
+          id="5b2debf1-5095-4676-910c-80575f1b9732" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="9eb1821e-5e20-41d3-8fe3-214ca1ad8b50"
+            name="Logical System" abstractType="#37881e02-0e7e-42bc-9e39-05905efafc24"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4dfddab0-d859-4a92-b301-4e4e8354abea"
+            name="Untrusted Supervisor Domain" abstractType="#c0063f2a-3279-418d-a03b-2f87dbbe59e1"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="4c0ffaab-ac90-479e-8225-3e19d7d7e777"
+            name="Untrusted Supervisor Domain" abstractType="#2d410dc9-f67f-46c2-af72-88e6240ab71d"/>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="37881e02-0e7e-42bc-9e39-05905efafc24" name="Logical System">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="cbb2f57b-5eef-4e29-bb00-6832353dc65b"
+              name="RISC V Platform" abstractType="#2d79285d-b596-4d0d-81e5-f63e1fc2786e"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="393be30f-142f-4c89-8bd1-bca2228e176a"
+              name="TSM-driver" abstractType="#2a572a60-9a45-4163-b866-bbb48df90a4e"/>
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="01b2d7ab-2e4b-496a-ace3-e46eaf159908" targetElement="#09993234-e2d5-4d30-b3c2-8d24a8a148ba"
+              sourceElement="#37881e02-0e7e-42bc-9e39-05905efafc24"/>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="2d79285d-b596-4d0d-81e5-f63e1fc2786e" name="RISC V Platform">
+            <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="a38c0d24-65fb-4531-83ac-fbf19bde5337"
+                trusted="false"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="665edb0b-5039-459a-a6d1-fec7b253e632"
+                name="PMP" abstractType="#9298bacb-eea8-40a5-9cfa-f2d04a1af8d3"/>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="9298bacb-eea8-40a5-9cfa-f2d04a1af8d3" name="PMP">
+              <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="84bd598f-bb5e-4c75-94a1-02726b8433c4"
+                  trusted="false"/>
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="3b82c0eb-d752-472c-8776-0e71fc0a5e8c" targetElement="#8ff89574-9f7d-4029-9660-df40d8336fd0"
+                  sourceElement="#9298bacb-eea8-40a5-9cfa-f2d04a1af8d3"/>
+            </ownedLogicalComponents>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="2a572a60-9a45-4163-b866-bbb48df90a4e" name="TSM-driver">
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="9fcf92d7-8a62-4f26-b66b-125c6480d5d0"
+                name="Interrupt Manager" abstractType="#7a81909f-53c0-420d-adc5-4c10a4c59f66"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="070c5bd4-e5d1-4cd5-8c7c-f74f26626e82"
+                name="Domain Manager" abstractType="#4ee4093f-2344-4887-9dd3-b448f4a4baaf"/>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="7a81909f-53c0-420d-adc5-4c10a4c59f66" name="Interrupt Manager">
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="9ac3c808-ecf4-4655-9077-5b21cf8970d3" targetElement="#36cbe0ba-6ad7-49a4-90b5-1d60a1648c26"
+                  sourceElement="#7a81909f-53c0-420d-adc5-4c10a4c59f66"/>
+            </ownedLogicalComponents>
+            <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+                id="4ee4093f-2344-4887-9dd3-b448f4a4baaf" name="Domain Manager">
+              <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                  id="ce4f4ce1-efef-41a9-951f-c13a206474a8" targetElement="#21f51550-7d45-4cd3-9c80-78072ac5852b"
+                  sourceElement="#4ee4093f-2344-4887-9dd3-b448f4a4baaf"/>
+            </ownedLogicalComponents>
+          </ownedLogicalComponents>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="c0063f2a-3279-418d-a03b-2f87dbbe59e1" name="Untrusted Supervisor Domain"
+            actor="true">
+          <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="cdfe75c3-a07a-4809-9cf4-8542965a7772"
+              threatSource="true" threatSourceProfile="5" trusted="false" rationale="The Untrusted Supervisor Domain can have interest in leaking Confidential TVM Data"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="21ba81e5-16aa-4c8b-887e-ad085475ac48" targetElement="#2c8d463c-1768-4ec8-ae28-9712b37dfb2f"
+              sourceElement="#c0063f2a-3279-418d-a03b-2f87dbbe59e1"/>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="2d410dc9-f67f-46c2-af72-88e6240ab71d" name="Untrusted Supervisor Domain"
+            actor="true">
+          <ownedExtensions xsi:type="cybersecurity:TrustBoundaryStorage" id="1c292181-3fec-4c35-8e17-4567ef6633a6"
+              threatSource="true" threatSourceProfile="5" trusted="false"/>
+        </ownedLogicalComponents>
+      </ownedLogicalComponentPkg>
+      <ownedSystemAnalysisRealizations xsi:type="org.polarsys.capella.core.data.la:SystemAnalysisRealization"
+          id="06120e40-561e-43b7-b51f-c66e881ed0f7" targetElement="#1576deaf-f9ef-4ca8-86fa-066730012c44"
+          sourceElement="#66ef9355-d7de-4517-b46f-5bad037f644d"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.pa:PhysicalArchitecture"
+        id="ff1318e5-ea28-4c8f-b5ab-892445fc3766" name="Physical Architecture">
+      <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunctionPkg"
+          id="d52be682-061e-4964-b0e5-950b1e26175e" name="Physical Functions">
+        <ownedPhysicalFunctions xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunction"
+            id="f98ad032-5316-4994-a46f-8260db653741" name="Root Physical Function">
+          <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+              id="8baffbf4-73dc-4464-8b1c-df17d6e00a45" targetElement="#0aef910e-21a3-4cbf-83f5-14bc86b9bd88"
+              sourceElement="#f98ad032-5316-4994-a46f-8260db653741"/>
+        </ownedPhysicalFunctions>
+      </ownedFunctionPkg>
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="3a5681c2-8d32-4a9b-8f20-0340b162c85c" name="Capabilities"/>
+      <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
+          id="1f2abb9f-c30d-4144-8083-815de63356a2" name="Interfaces"/>
+      <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
+          id="06d84f2d-cef2-4dff-85b6-d8d5f38ab134" name="Data"/>
+      <ownedPhysicalComponentPkg xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponentPkg"
+          id="de71e5c0-7a99-4b3a-8b27-d90a2c91c2fc" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="e26f8ced-ed33-45ac-8b04-f1c2d029ff81"
+            name="Physical System" abstractType="#4c76334c-ce79-4fc4-b8fc-6af1bf19792d"/>
+        <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
+            id="4c76334c-ce79-4fc4-b8fc-6af1bf19792d" name="Physical System">
+          <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
+              id="a23b15ca-b0ec-4d88-9d61-865cdecf09f2" targetElement="#37881e02-0e7e-42bc-9e39-05905efafc24"
+              sourceElement="#4c76334c-ce79-4fc4-b8fc-6af1bf19792d"/>
+        </ownedPhysicalComponents>
+      </ownedPhysicalComponentPkg>
+      <ownedLogicalArchitectureRealizations xsi:type="org.polarsys.capella.core.data.pa:LogicalArchitectureRealization"
+          id="e2a0cf7b-e216-435b-bcc0-73540ab8c268" targetElement="#66ef9355-d7de-4517-b46f-5bad037f644d"
+          sourceElement="#ff1318e5-ea28-4c8f-b5ab-892445fc3766"/>
+    </ownedArchitectures>
+    <ownedArchitectures xsi:type="org.polarsys.capella.core.data.epbs:EPBSArchitecture"
+        id="176a26f4-08d3-4769-ae5c-233e8a0b4e16" name="EPBS Architecture">
+      <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
+          id="186a2c78-1702-43fb-8d37-0ae9480e5a33" name="Capabilities"/>
+      <ownedConfigurationItemPkg xsi:type="org.polarsys.capella.core.data.epbs:ConfigurationItemPkg"
+          id="538b5342-8a73-4ac8-b7af-a7fedf9518c2" name="Structure">
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="8ccc4c8d-a395-492a-a637-6a5c1fdf7fb9"
+            name="System" abstractType="#cecc672a-9a7f-4b20-94d5-8abbd7da9919"/>
+        <ownedConfigurationItems xsi:type="org.polarsys.capella.core.data.epbs:ConfigurationItem"
+            id="cecc672a-9a7f-4b20-94d5-8abbd7da9919" name="System" kind="SystemCI">
+          <ownedPhysicalArtifactRealizations xsi:type="org.polarsys.capella.core.data.epbs:PhysicalArtifactRealization"
+              id="8c398a7b-8b65-4f7d-8996-78197f88952b" targetElement="#4c76334c-ce79-4fc4-b8fc-6af1bf19792d"
+              sourceElement="#cecc672a-9a7f-4b20-94d5-8abbd7da9919"/>
+        </ownedConfigurationItems>
+      </ownedConfigurationItemPkg>
+      <ownedPhysicalArchitectureRealizations xsi:type="org.polarsys.capella.core.data.epbs:PhysicalArchitectureRealization"
+          id="c8263871-04cd-415e-a2f3-e3a3c7d589e8" targetElement="#ff1318e5-ea28-4c8f-b5ab-892445fc3766"
+          sourceElement="#176a26f4-08d3-4769-ae5c-233e8a0b4e16"/>
+    </ownedArchitectures>
+  </ownedModelRoots>
+</org.polarsys.capella.core.data.capellamodeller:Project>
