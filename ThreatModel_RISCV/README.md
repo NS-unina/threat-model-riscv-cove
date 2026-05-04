@@ -94,14 +94,14 @@ The security analysis is the additional step that transforms STPA into STPA-Sec.
 
     It is possible to have different views on the Logical Architecture, that individuate:
     *   **Cybersecurity Asset:** illustrates how each component is involvede and can mine the asset.
-          ![Logical Architecture (LAB) with assets](./figures/[LAB] Logical Architecture .png)  
+          ![Logical Architecture (LAB) with assets](./figures/[LAB]LogicalArchitecture.png)  
     *   **Confidentiality Property:** illustrates how each component is related with Confidentiality property (on a color scale ranging from green-0 to red-3).
-         ![Logical Architecture (LAB) with Confidentiality](./figures/[LAB] Logical ArchitectureC .png) 
+         ![Logical Architecture (LAB) with Confidentiality](./figures/[LAB]LogicalArchitectureConfidentiality.png) 
     *   **Integrity Property:** illustrates how each component is related with the Integrity property (on a color scale ranging from green-0 to red-3).
-         ![Logical Architecture (LAB) with Integrity](./figures/[LAB] Logical ArchitectureI .png)
+         ![Logical Architecture (LAB) with Integrity](./figures/[LAB]LogicalArchitectureIntegrity.png)
     *   **Availability Property:** illustrates how each component is related with the Availability property (on a color scale ranging from green-0 to red-3).
-         ![Logical Architecture (LAB) with Availability](./figures/[LAB] Logical ArchitectureA .png)
+         ![Logical Architecture (LAB) with Availability](./figures/[LAB]LogicalArchitectureAvailability.png)
     *   **System Trust Boundaries:** illustrates with are the system trust boundaries.
-         ![Logical Architecture (LAB) with Trust Boundaries](./figures/[LAB] Logical ArchitectureTB .png)
+         ![Logical Architecture (LAB) with Trust Boundaries](./figures/[LAB]LogicalArchitectureTB.png)
         
    
