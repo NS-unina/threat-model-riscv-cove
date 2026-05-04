@@ -82,7 +82,7 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
 The security analysis is the additional step that transforms STPA into STPA-Sec. This analysis is performed through DARC Capella add-on, that allows for analysing the system under a security perspective. It is possible to apply DARC analysis at different layers of the MBSE analysis, we focus on the logical one. Moreover, both loss scenarios can be modeled in the same way in the DARC analysis. 
 *   **Threats & Assets (TDB):**
     The first step is the identfication of the threats source, the threat and the violated asset.
-    ![Threats & Assets (TDB)](./figures/[TDB] Threats & Assets.png)
+    ![Threats & Assets (TDB)](./figures/[TDB]Threats&Assets.png)
 
 *   **Logical Architecture (LAB):**
     We identify the logical components involved into both loss scenarios and map their logical functions with the responsibilities previously identified.
