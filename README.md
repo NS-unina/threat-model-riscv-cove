@@ -6,7 +6,8 @@ This repository contains the threat model for RISC-V CoVE using STPA-SEC and DAR
 
 The repository is structured as follows:
 
-- [ThreatModel_RISCV](./ThreatModel_RISCV/): contains the Capella project used to model the architecture and perform the analysis
+- [ThreatModel_RISCV(**old**)](./ThreatModel_RISCV/): contains the Capella project used to model the architecture and perform the analysis
+- [stpa-sec-analysis(**old**)](./stpa-sec-analysis/): contains the Capella project used to model the architecture and perform the analysis
 - [attack-graphs](./attack-graphs/): contains the attack graphs files used for Mulval
 - [data](./data): contains tables (in CSVs format) extracted from Capella
 
