@@ -1,0 +1,13 @@
+1,"canDiscloseInformation(_)","OR",0
+2,"RULE 5 (Privilege Escalation)","AND",1
+3,"tnd(domainManager)","OR",0
+4,"RULE 1 (Modify Authentication Process)","AND",1
+5,"weaknessExist(domainManager,cwe459)","LEAF",1
+6,"controlFlow(interruptManager,domainManager,_)","LEAF",1
+7,"t1562(interruptDispacter)","OR",0
+8,"RULE 0 (Impair Defenses)","AND",1
+9,"weaknessExist(interruptManager,cwe20)","LEAF",1
+10,"controlFlow(untrustedSupervisorDomain,interruptManager,_)","LEAF",1
+11,"attackerType(directAttacker)","LEAF",1
+12,"attackerPrivilege(logicPrivilege)","LEAF",1
+13,"attackerLocated(untrustedSupervisorDomain)","LEAF",1

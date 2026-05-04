@@ -66,6 +66,8 @@ derived(canDoS(_flow)).
 derived(t1499(_host1)).
 derived(t1556(_host1)).
 derived(t1562(_host1)).
+derived(tnd(_host1)).
+
 
 meta(attackGoal(_)).
 meta(advances(_, _)).
@@ -101,6 +103,13 @@ interaction_rule(
     rule_desc('Impair Defenses', 'certain')).
 
 interaction_rule(
+    (tnd(Host) :-
+      t1562(interruptDispacter),
+      controlFlow(interruptManager, domainManager, _),
+      weaknessExist(domainManager, cwe459)),
+    rule_desc('Modify Authentication Process', 'certain')).
+
+interaction_rule(
     (t1556(Host) :-
       t1562(interruptDispacter),
       controlFlow(interruptManager, domainManager, _),
@@ -120,6 +129,10 @@ interaction_rule(
      controlFlow(_, interruptDispacter, Flow)),
     rule_desc('Denial of Service', 'certain')).
 
+interaction_rule(
+    (canDiscloseInformation(Flow) :-
+   	 tnd(domainManager)),
+    rule_desc('Privilege Escalation', 'certain')).
 
 interaction_rule(
     (canDiscloseInformation(Flow) :-
