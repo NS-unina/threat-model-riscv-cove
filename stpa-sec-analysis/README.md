@@ -45,7 +45,7 @@ Create a functional model of the system as a set of components that interact thr
 
 *   **Hierarchical Control Structure (HCS):**
     The HCS represents the system architecture in terms of control actions and feedback loop, compliant with the RISC-V Security Model.
-    ![Hierarchical Control Structure Diagram](./[HCS]%20Hierarchical%20Control%20Structure%20Diagram.jpg)
+    ![Hierarchical Control Structure Diagram](./[HCS]HierarchicalControlStructureDiagram.png)
 
 *   **Detailed Controller Diagram (DCD):**
     For critical components like the **Domain Manager**, we detail internal state (Process Model) with values and constraints.
