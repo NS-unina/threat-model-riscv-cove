@@ -2,10 +2,23 @@
 
 This directory contains the threat model for RISC-V CoVE (Confidential VM Extensions) developed using a systematic methodology combining **STPA-Sec** (System-Theoretic Process Analysis for Security) and **Attack Graphs**.
 
-The model was created within the Capella MBSE tool using the STPA and DARC Add-Ons, as detailed in our paper:
-> **A Systematic Threat Modeling Methodology for Confidential Computing Architectures: a Case Study on RISC-V CoVE**
+## STPA Table Extractor
+A Python utility is provided to automatically extract all STPA analysis tables (Stakeholders, Losses, Hazards, UCAs, Scenarios, etc.) from the Capella project files into CSV format.
+
+**Usage:**
+```bash
+# Using defaults (targets ThreatModel_RISCV.aird)
+python3 stpa-sec-analysis/extract_stpa_tables.py
+
+# Specifying custom input and output
+python3 stpa-sec-analysis/extract_stpa_tables.py --input path/to/model.aird --output ./custom_dir
+```
+Results are saved as CSV files in the output directory.
 
 ## Methodology Overview
+
+The model was created within the Capella MBSE tool using the STPA and DARC Add-Ons, as detailed in our paper:
+> **A Systematic Threat Modeling Methodology for Confidential Computing Architectures: a Case Study on RISC-V CoVE**
 
 Our approach follows a hybrid workflow that provides end-to-end traceability from high-level system hazards down to concrete attack paths:
 1.  **STPA Analysis:** Modeling components, control actions, and feedback loops to identify safety/security artifacts (losses, hazards, UCAs, scenarios).
