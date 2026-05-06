@@ -13,10 +13,10 @@ interaction_rule(
   (maliciousInput(IM) :-
     attackerLocated(UD),
     attackerPrivilege(LP),
-    attackType(DA),
+    attackType(directAttacker),
     controlFlow(UD, IM, _A1),
     weaknessExist(IM, cwe20)),
-  rule_desc('ExploitInputValidation', 1.0)).
+  rule_desc('Input Validation', 1.0)).
 
 interaction_rule(
   (disclosure(DM) :-

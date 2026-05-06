@@ -11,6 +11,6 @@ weaknessExist(interruptManager, cwe20).
 weaknessExist(domainManager, cwe459).
 
 /* Flows */
-controlFlow(untrustedSupervisorDomain, interruptManager, coveH_SBI_reclaim).
+controlFlow(untrustedSupervisorDomain, interruptManager, coveH_SBI).
 controlFlow(interruptManager, domainManager, requestDomainManagerServices).
-controlFlow(domainManager, pmp, reclaimMemory).
+controlFlow(domainManager, pmp, applyDomainMetadata).
