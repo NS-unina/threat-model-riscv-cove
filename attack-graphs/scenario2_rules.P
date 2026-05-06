@@ -21,5 +21,6 @@ interaction_rule(
 interaction_rule(
   (disclosure(DM) :-
     maliciousInput(IM),
+    weaknessExist(DM, cwe459),
     controlFlow(IM, DM, _A2)),
   rule_desc('information disclosure', 1.0)).
