@@ -1,23 +1,25 @@
 # Makefile for generating attack graphs using MulVAL
-# Targets:
-#   scenario1: Run MulVAL on scenario1.pl
-#   scenario2: Run MulVAL on scenario2.pl
-#   all: runs all scenario by default
-#
-# Requirements:
-#   - Docker must be installed and running.
-#   - The script genScript.sh must have execution permissions.
+
+# Configuration
+GEN = ./genScript.sh
+SHELL := /bin/bash
+
+.PHONY: all clean scenario1 scenario2
 
 all: scenario1 scenario2
 
-# Scenario 1: Basic architecture analysis
-scenario1:
-	./genScript.sh -a scenario1.pl -r interaction_rules.P -o ex1
+# Scenario 1: Page Donation (CWE-459)
+scenario1: scenario1_arch.pl scenario1_rules.P
+	@echo "Generating Attack Graph for Scenario 1..."
+	rm -rf scenario1
+	$(GEN) -a scenario1_arch.pl -r scenario1_rules.P -o scenario1
 
-# Scenario 2: Alternative scenario analysis
-scenario2:
-	./genScript.sh -a scenario2.pl -r interaction_rules.P -o ex2
+# Scenario 2: Memory Reclaim (CWE-459)
+scenario2: scenario2_arch.pl scenario2_rules.P
+	@echo "Generating Attack Graph for Scenario 2..."
+	rm -rf scenario2
+	$(GEN) -a scenario2_arch.pl -r scenario2_rules.P -o scenario2
 
-# Clean: removes build artifacts
+# Clean build artifacts
 clean:
-	rm -rf ex1 ex2
+	rm -rf scenario1 scenario2

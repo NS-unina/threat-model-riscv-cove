@@ -15,18 +15,18 @@ This directory contains the necessary files to generate attack graphs using [Mul
 You can generate attack graphs for different scenarios using the provided `Makefile`.
 
 ### Run Scenario 1
-To generate the attack graph for Scenario 1 (`scenario1.pl`):
+To generate the attack graph for Scenario 1 (`scenario1_arch.pl`):
 ```bash
 make scenario1
 ```
-The output will be generated in the `ex1/` directory.
+The output will be generated in the `scenario1/` directory.
 
 ### Run Scenario 2
-To generate the attack graph for Scenario 2 (`scenario2.pl`):
+To generate the attack graph for Scenario 2 (`scenario2_arch.pl`):
 ```bash
 make scenario2
 ```
-The output will be generated in the `ex2/` directory.
+The output will be generated in the `scenario2/` directory.
 
 ### Run All Scenarios
 To generate graphs for all defined scenarios:
