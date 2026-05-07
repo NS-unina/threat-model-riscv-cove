@@ -34,9 +34,11 @@ To remove the generated output directories:
 rm -rf scenario1 scenario2
 ```
 
-## How it works
+## Known Issues & Parser Constraints
 
-1. `run_mulval.sh` takes the architecture file (`-a`), interaction rules (`-r`), and output directory (`-o`).
-2. It creates the output directory (overwriting if it exists) and copies the input files into it.
-3. A Docker container (`wilbercui/mulval`) is started to process the files using `graph_gen.sh`.
-4. The container is removed automatically after execution, and the results are available in the specified output directory.
+### Rule Description Syntax
+MulVAL's underlying Prolog/Java trace parser is highly sensitive to the formatting of the `rule_desc` field in `interaction_rule` rules.
+- **Always use single quotes**: Use single quotes (e.g., `'my rule description'`). Double quotes (`"..."`) will cause the parser to treat the description as a list of ASCII codes, leading to runtime crashes.
+- **Use spaces for stability**: The parser often incorrectly strips quotes from single-word tokens (atoms) in the trace output, which then causes syntax errors in downstream tools. Always include at least one space in your rule description (e.g., `'my rule description'`) to force the parser to treat it as a quoted string literal.
+- **Avoid camelCase for labels**: Due to the same tokenization issue, avoid simple single-word camelCase labels as they are likely to be treated as unquoted Prolog atoms and stripped.
+
