@@ -1,5 +1,5 @@
 /* Goal */
-attackGoal(disclosure(domainManager)).
+attackGoal(informationDisclosure(domainManager)).
 
 /* Attacker */
 attackerLocated(untrustedSupervisorDomain).

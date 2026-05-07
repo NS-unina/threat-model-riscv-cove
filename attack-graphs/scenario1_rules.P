@@ -4,14 +4,13 @@ primitive(controlFlow(_s, _d, _a)).
 primitive(weaknessExist(_c, _w)).
 primitive(attackType(_t)).
 
-derived(maliciousInputPassed(_c)).
-derived(triggerVulnerability(_c)).
-derived(disclosure(_a)).
+derived(maliciousInputForwarded(_c)).
+derived(informationDisclosure(_a)).
 
 meta(attackGoal(_)).
 
 interaction_rule(
-  (maliciousInputPassed(IM) :-
+  (maliciousInputForwarded(IM) :-
     attackerLocated(UD),
     attackerPrivilege(LP),
     attackType(DA),
@@ -20,15 +19,8 @@ interaction_rule(
   rule_desc('exploit input validation', 1.0)).
 
 interaction_rule(
-  (triggerVulnerability(DM) :-
-    maliciousInputPassed(IM),
+  (informationDisclosure(DM) :-
+    maliciousInputForwarded(IM),
     weaknessExist(DM, cwe200),
     controlFlow(IM, DM, _A2)),
-  rule_desc('memory donation', 1.0)).
-
-interaction_rule(
-  (disclosure(DM) :-
-    triggerVulnerability(DM),
-    weaknessExist(DM, cwe200),
-    controlFlow(DM, PMP, _A3)),
-  rule_desc('metadata manipulation', 1.0)).
+  rule_desc('metadata misconfiguration', 1.0)).

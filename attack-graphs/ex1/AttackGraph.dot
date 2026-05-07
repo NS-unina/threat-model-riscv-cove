@@ -1,0 +1,30 @@
+digraph G {
+	1 [label="1:disclosure(domainManager)",shape=diamond];
+	2 [label="2:RULE 2 (metadata manipulation)",shape=ellipse];
+	3 [label="3:controlFlow(domainManager,pmp,applyDomainMetadata)",shape=box];
+	4 [label="4:weaknessExist(domainManager,cwe200)",shape=box];
+	5 [label="5:triggerVulnerability(domainManager)",shape=diamond];
+	6 [label="6:RULE 1 (memory donation)",shape=ellipse];
+	7 [label="7:controlFlow(interruptManager,domainManager,requestDomainManagerServices)",shape=box];
+	8 [label="8:maliciousInputPassed(interruptManager)",shape=diamond];
+	9 [label="9:RULE 0 (exploit input validation)",shape=ellipse];
+	10 [label="10:weaknessExist(interruptManager,cwe20)",shape=box];
+	11 [label="11:controlFlow(untrustedSupervisorDomain,interruptManager,coveH_SBI)",shape=box];
+	12 [label="12:attackType(directAttacker)",shape=box];
+	13 [label="13:attackerPrivilege(logicalPrivilege)",shape=box];
+	14 [label="14:attackerLocated(untrustedSupervisorDomain)",shape=box];
+	3 -> 	2;
+	4 -> 	2;
+	7 -> 	6;
+	4 -> 	6;
+	10 -> 	9;
+	11 -> 	9;
+	12 -> 	9;
+	13 -> 	9;
+	14 -> 	9;
+	9 -> 	8;
+	8 -> 	6;
+	6 -> 	5;
+	5 -> 	2;
+	2 -> 	1;
+}

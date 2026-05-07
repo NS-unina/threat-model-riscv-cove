@@ -1,0 +1,18 @@
+primitive(attackerLocated,1).
+primitive(attackerPrivilege,1).
+primitive(controlFlow,3).
+primitive(weaknessExist,2).
+primitive(attackType,1).
+derived(maliciousInputPassed,1).
+derived(triggerVulnerability,1).
+derived(disclosure,1).
+meta(attackGoal,1).
+
+attack(disclosure(domainManager)).
+
+possible_duplicate_trace_step(because(0,rule_desc('exploit input validation',1.0),maliciousInputPassed(interruptManager),[weaknessExist(interruptManager,cwe20),controlFlow(untrustedSupervisorDomain,interruptManager,coveH_SBI),attackType(directAttacker),attackerPrivilege(logicalPrivilege),attackerLocated(untrustedSupervisorDomain)])).
+
+possible_duplicate_trace_step(because(1,rule_desc('memory donation',1.0),triggerVulnerability(domainManager),[controlFlow(interruptManager,domainManager,requestDomainManagerServices),weaknessExist(domainManager,cwe200),maliciousInputPassed(interruptManager)])).
+
+possible_duplicate_trace_step(because(2,rule_desc('metadata manipulation',1.0),disclosure(domainManager),[controlFlow(domainManager,pmp,applyDomainMetadata),weaknessExist(domainManager,cwe200),triggerVulnerability(domainManager)])).
+

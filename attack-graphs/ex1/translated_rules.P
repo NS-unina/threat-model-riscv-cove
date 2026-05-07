@@ -1,0 +1,6 @@
+:-(mvTrc(maliciousInputPassed(_h3473,0)),','(attackerLocated(_h3478),','(attackerPrivilege(_h3483),','(attackType(_h3488),','(controlFlow(_h3478,_h3473,_h3495),','(weaknessExist(_h3473,cwe20),assert_trace(because(0,rule_desc('exploit input validation',1.0),maliciousInputPassed(_h3473),[weaknessExist(_h3473,cwe20),controlFlow(_h3478,_h3473,_h3495),attackType(_h3488),attackerPrivilege(_h3483),attackerLocated(_h3478)])))))))).
+
+:-(mvTrc(triggerVulnerability(_h3473,1)),','(mvTrc(maliciousInputPassed(_h3478,_h3527)),','(weaknessExist(_h3473,cwe200),','(controlFlow(_h3478,_h3473,_h3488),assert_trace(because(1,rule_desc('memory donation',1.0),triggerVulnerability(_h3473),[controlFlow(_h3478,_h3473,_h3488),weaknessExist(_h3473,cwe200),maliciousInputPassed(_h3478)])))))).
+
+:-(mvTrc(disclosure(_h3473,2)),','(mvTrc(triggerVulnerability(_h3473,_h3527)),','(weaknessExist(_h3473,cwe200),','(controlFlow(_h3473,_h3487,_h3488),assert_trace(because(2,rule_desc('metadata manipulation',1.0),disclosure(_h3473),[controlFlow(_h3473,_h3487,_h3488),weaknessExist(_h3473,cwe200),triggerVulnerability(_h3473)])))))).
+
