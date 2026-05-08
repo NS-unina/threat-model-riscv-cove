@@ -1,0 +1,26 @@
+primitive(attackerLocated(_h)).
+primitive(attackerPrivilege(_p)).
+primitive(controlFlow(_s, _d, _a)).
+primitive(weaknessExist(_c, _w)).
+primitive(attackType(_t)).
+
+derived(maliciousInputForwarded(_c)).
+derived(informationDisclosure(_a)).
+
+meta(attackGoal(_)).
+
+interaction_rule(
+  (maliciousInputForwarded(IM) :-
+    attackerLocated(UD),
+    attackerPrivilege(LP),
+    attackType(DA),
+    controlFlow(UD, IM, _A1),
+    weaknessExist(IM, cwe20)),
+  rule_desc('exploit input validation', 1.0)).
+
+interaction_rule(
+  (informationDisclosure(DM) :-
+    maliciousInputForwarded(IM),
+    weaknessExist(DM, cwe200),
+    controlFlow(IM, DM, _A2)),
+  rule_desc('metadata misconfiguration', 1.0)).

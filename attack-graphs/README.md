@@ -1,50 +1,44 @@
 # Attack Graphs Generation
 
-This directory contains the necessary files to generate attack graphs using [MulVAL](https://github.com/risksense/mulval). The generation process is automated via a script and a Makefile, utilizing a Docker container to avoid local installation of MulVAL.
+This directory contains the necessary files to generate attack graphs using [MulVAL](https://github.com/risksense/mulval). The generation process is automated via a script utilizing a Docker container to avoid local installation of MulVAL.
 
 ## Prerequisites
 
 - **Docker**: Ensure Docker is installed and the daemon is running.
-- **Execute Permissions**: The `genScript.sh` must be executable. If not, run:
+- **Execute Permissions**: The `run_mulval.sh` must be executable. If not, run:
   ```bash
-  chmod +x genScript.sh
+  chmod +x run_mulval.sh
   ```
 
 ## Usage
 
-You can generate attack graphs for different scenarios using the provided `Makefile`.
+You can generate attack graphs by running the `run_mulval.sh` script with the architecture, rules, and output directory as arguments.
 
-### Run Scenario 1
-To generate the attack graph for Scenario 1 (`scenario1.pl`):
+### Scenario 1: Page Donation
+To generate the attack graph for Scenario 1:
 ```bash
-make scenario1
+./run_mulval.sh -a scenario1_arch.pl -r scenario1_rules.P -o scenario1
 ```
-The output will be generated in the `ex1/` directory.
+The output will be generated in the `scenario1/` directory.
 
-### Run Scenario 2
-To generate the attack graph for Scenario 2 (`scenario2.pl`):
+### Scenario 2: Memory Reclaim (CWE-459)
+To generate the attack graph for Scenario 2:
 ```bash
-make scenario2
+./run_mulval.sh -a scenario2_arch.pl -r scenario2_rules.P -o scenario2
 ```
-The output will be generated in the `ex2/` directory.
-
-### Run All Scenarios
-To generate graphs for all defined scenarios:
-```bash
-make all
-```
+The output will be generated in the `scenario2/` directory.
 
 ### Clean Up
 To remove the generated output directories:
 ```bash
-make clean
+rm -rf scenario1 scenario2
 ```
 
-## How it works
+## Known Issues & Parser Constraints
 
-1. The `Makefile` calls `genScript.sh` with the appropriate architecture and rules files.
-2. `genScript.sh` checks if the output directory exists and prompts for deletion.
-3. A Docker container (`wilbercui/mulval`) is started in the background.
-4. The necessary `.pl` and `.P` files are copied into the container.
-5. The `graph_gen.sh` command is executed inside the container to produce the attack graph.
-6. The container is stopped and removed automatically.
+### Rule Description Syntax
+MulVAL's underlying Prolog/Java trace parser is highly sensitive to the formatting of the `rule_desc` field in `interaction_rule` rules.
+- **Always use single quotes**: Use single quotes (e.g., `'my rule description'`). Double quotes (`"..."`) will cause the parser to treat the description as a list of ASCII codes, leading to runtime crashes.
+- **Use spaces for stability**: The parser often incorrectly strips quotes from single-word tokens (atoms) in the trace output, which then causes syntax errors in downstream tools. Always include at least one space in your rule description (e.g., `'my rule description'`) to force the parser to treat it as a quoted string literal.
+- **Avoid camelCase for labels**: Due to the same tokenization issue, avoid simple single-word camelCase labels as they are likely to be treated as unquoted Prolog atoms and stripped.
+
