@@ -8,6 +8,7 @@ The repository is structured as follows:
 
 - [stpa-sec-analysis](./stpa-sec-analysis/): contains the Capella project used to model the architecture and perform the analysis
 - [attack-graphs](./attack-graphs/): contains code to generate attack-graphs using Mulval
+- [shadowfax](./ahadoqfax): submodule reference to Shadowfax platform used for experiments
 
 The target implementation is [Shadowfax](https://github.com/HiSA-Team/shadowfax). The Shadowfax platform (submodule in this repository) includes a trusted firmware leveraging OpenSBI firmware and a trusted hypervisor that can spawn bare-metal workloads.
 
