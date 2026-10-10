@@ -10,7 +10,7 @@ The repository is structured as follows:
 - [attack-graphs](./attack-graphs/): contains code to generate attack-graphs using Mulval
 - [shadowfax](./ahadoqfax): submodule reference to Shadowfax platform used for experiments
 
-The target implementation is [Shadowfax](https://github.com/HiSA-Team/shadowfax). The Shadowfax platform (submodule in this repository) includes a trusted firmware leveraging OpenSBI firmware and a trusted hypervisor that can spawn bare-metal workloads.
+The target implementation is [Shadowfax](https://github.com/HiSA-Team/shadowfax). The Shadowfax platform (submodule in this repository) includes a trusted firmware leveraging OpenSBI firmware and a trusted hypervisor.
 
 ## Reproducing vulnerabilities
 
@@ -18,11 +18,4 @@ Clone this repository with:
 
 ```sh
 git clone --recursive https://github.com/NS-unina/threat-model-riscv-cove
-```
-
-**NOTE**: make sure to checkout the unpatched version otherwise the vulnerabilities will not appear:
-
-```sh
-cd shadowfax
-git checkout d6b29ab35bb55d19316028863492016d539d446a
 ```
