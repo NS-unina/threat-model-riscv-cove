@@ -1,0 +1,37 @@
+diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
+index 562a831..56c7cf8 100644
+--- a/shadowfax/src/cove.rs
++++ b/shadowfax/src/cove.rs
+@@ -430,14 +430,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                                     permissions: 0x3f,
+                                 })
+                                 .unwrap();
+-                            /* Zero out the memory block */
+-                            let vec = unsafe {
+-                                core::slice::from_raw_parts_mut(
+-                                    base_address as *mut u8,
+-                                    num_pages * PAGE_SIZE,
+-                                )
+-                            };
+-                            vec.zeroize();
+                         }
+                         Err(_) => unsafe {
+                             let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
+diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
+index 86ff79a..8cb11e7 100644
+--- a/tsm/src/hyper.rs
++++ b/tsm/src/hyper.rs
+@@ -256,13 +256,6 @@ impl HypervisorState {
+                     for region in self.confidential_memory.iter_mut() {
+                         if let Some(guest) = region.guest_id {
+                             if guest == tvmid {
+-                                unsafe {
+-                                    core::ptr::write_bytes(
+-                                        region.base_address as *mut u8,
+-                                        0,
+-                                        region.size,
+-                                    );
+-                                }
+                                 region.guest_id = None;
+                             }
+                         }

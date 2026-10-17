@@ -1,0 +1,215 @@
+diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
+index 4fa32e6..0feebd5 100644
+--- a/shadowfax/src/cove.rs
++++ b/shadowfax/src/cove.rs
+@@ -258,55 +258,34 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+             SBI_COVH_CONVERT_PAGES => {
+                 let base_address = unsafe { (*domain_ctx).regs[10] };
+                 let num_pages = unsafe { (*domain_ctx).regs[11] };
++                let size = num_pages * PAGE_SIZE;
+ 
+-                // Base address must be page aligned, we cannot exceed number of available pmp
+-                // registers
+-                if state
+-                    .validate_convert_range(src_id, base_address, num_pages)
+-                    .is_err()
+-                {
++                /* Baseline without fixes: check the range shape only, then lend it to the TSM. */
++                if size == 0 || !size.is_power_of_two() || base_address % size != 0 {
+                     return unsafe { return_error(base_ctx, -1) };
+                 }
+-
+-                let ticket = state
+-                    .request_borrow(BorrowKind::new_alloc(
+-                        src_id,
+-                        dst_id,
++                state.domains[dst_id]
++                    .memory_regions
++                    .push(MemoryRegion {
+                         base_address,
+-                        num_pages,
+-                    ))
++                        order: size.trailing_zeros(),
++                        mmio: false,
++                        permissions: 0x3f,
++                    })
+                     .unwrap();
+-
+-                /* Store the ticket in a6 register */
+-                unsafe {
+-                    (*domain_ctx).regs[16] |= (ticket & 0x3FF) << 16;
+-                }
+             }
+-
+             SBI_COVH_RECLAIM_PAGES => {
+                 let base_address = unsafe { (*domain_ctx).regs[10] };
+                 let num_pages = unsafe { (*domain_ctx).regs[11] };
+ 
+-                if state
+-                    .validate_reclaim_range(src_id, dst_id, base_address, num_pages)
+-                    .is_err()
+-                {
+-                    return unsafe { return_error(base_ctx, -1) };
+-                }
+-
+-                let ticket = state
+-                    .request_borrow(BorrowKind::new_reclaim(
+-                        src_id,
+-                        dst_id,
+-                        base_address,
+-                        num_pages,
+-                    ))
+-                    .unwrap();
+-
+-                /* Store the ticket in a6 register */
+-                unsafe {
+-                    (*domain_ctx).regs[16] |= (ticket & 0x3FF) << 16;
+-                }
++                /* Baseline without fixes: no ownership validation; drop the range from the TSM. */
++                let tsm = &mut state.domains[dst_id];
++                tsm.memory_regions = compute_new_regions(
++                    &tsm.memory_regions,
++                    base_address,
++                    base_address + num_pages * PAGE_SIZE,
++                )
++                .unwrap();
+             }
+             _ => {}
+         }
+@@ -346,110 +325,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                     let _ = state.finish_bootstrap(dst_id, src_id);
+                 }
+             }
+-            SBI_COVH_CONVERT_PAGES => {
+-                /* Confirm the borrow */
+-                let a6 = unsafe { (*scratch_ctx).regs[16] };
+-                let ticket = (a6 & (0x3FF << 16)) >> 16;
+-                if success {
+-                    match state.take_borrow(ticket, dst_id, src_id) {
+-                        Ok(Allocation {
+-                            base_address,
+-                            num_pages,
+-                            owner_id: _,
+-                            tsm_id: _,
+-                        }) => {
+-                            let order = (num_pages * COVH_DEFAULT_PAGE_SIZE).trailing_zeros();
+-                            /* Remove the region from the dst domain (aka the untrusted) */
+-                            let domain = &mut state.domains[dst_id];
+-
+-                            domain.memory_regions = compute_new_regions(
+-                                &domain.memory_regions,
+-                                base_address,
+-                                base_address + num_pages * PAGE_SIZE,
+-                            )
+-                            .unwrap();
+-
+-                            /* Add the region to the src domain (aka the tsm)*/
+-                            let tsm = &mut state.domains[src_id];
+-                            tsm.memory_regions
+-                                .push(MemoryRegion {
+-                                    base_address,
+-                                    order,
+-                                    mmio: false,
+-                                    permissions: 0x3f,
+-                                })
+-                                .unwrap();
+-                            /* Zero out the memory region */
+-                            let vec = unsafe {
+-                                core::slice::from_raw_parts_mut(
+-                                    base_address as *mut u8,
+-                                    num_pages * PAGE_SIZE,
+-                                )
+-                            };
+-                            vec.zeroize();
+-                        }
+-                        Err(_) => unsafe {
+-                            let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
+-                            (*domain_ctx).regs[10] = -1isize as usize;
+-                            (*domain_ctx).regs[11] = 0;
+-                        },
+-                    }
+-                } else {
+-                    let _ = state.cancel_borrow(ticket, dst_id, src_id);
+-                }
+-            }
+-            SBI_COVH_RECLAIM_PAGES => {
+-                /* Confirm the borrow */
+-                let a6 = unsafe { (*scratch_ctx).regs[16] };
+-                let ticket = (a6 & (0x3FF << 16)) >> 16;
+-                if success {
+-                    match state.take_borrow(ticket, dst_id, src_id) {
+-                        Ok(Allocation {
+-                            base_address,
+-                            num_pages,
+-                            owner_id: _,
+-                            tsm_id: _,
+-                        }) => {
+-                            let order = (num_pages * COVH_DEFAULT_PAGE_SIZE).trailing_zeros();
+-                            /* Remove the region from the src domain (aka the tsm ) */
+-                            let tsm = &mut state.domains[src_id];
+-
+-                            tsm.memory_regions = compute_new_regions(
+-                                &tsm.memory_regions,
+-                                base_address,
+-                                base_address + num_pages * PAGE_SIZE,
+-                            )
+-                            .unwrap();
+-
+-                            /* Add the region to the dst (aka the untrusted domain)*/
+-                            let tsm = &mut state.domains[dst_id];
+-                            tsm.memory_regions
+-                                .push(MemoryRegion {
+-                                    base_address,
+-                                    order,
+-                                    mmio: false,
+-                                    permissions: 0x3f,
+-                                })
+-                                .unwrap();
+-                            /* Zero out the memory block */
+-                            let vec = unsafe {
+-                                core::slice::from_raw_parts_mut(
+-                                    base_address as *mut u8,
+-                                    num_pages * PAGE_SIZE,
+-                                )
+-                            };
+-                            vec.zeroize();
+-                        }
+-                        Err(_) => unsafe {
+-                            let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
+-                            (*domain_ctx).regs[10] = -1isize as usize;
+-                            (*domain_ctx).regs[11] = 0;
+-                        },
+-                    }
+-                } else {
+-                    let _ = state.cancel_borrow(ticket, dst_id, src_id);
+-                }
+-            }
+             SBI_COVH_FINALIZE_TVM => {
+                 let _ = state.finish_bootstrap(dst_id, src_id);
+             }
+diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
+index 86ff79a..3a9a243 100644
+--- a/tsm/src/hyper.rs
++++ b/tsm/src/hyper.rs
+@@ -256,13 +256,6 @@ impl HypervisorState {
+                     for region in self.confidential_memory.iter_mut() {
+                         if let Some(guest) = region.guest_id {
+                             if guest == tvmid {
+-                                unsafe {
+-                                    core::ptr::write_bytes(
+-                                        region.base_address as *mut u8,
+-                                        0,
+-                                        region.size,
+-                                    );
+-                                }
+                                 region.guest_id = None;
+                             }
+                         }
+@@ -738,7 +731,6 @@ impl HypervisorState {
+             .position(|pm| {
+                 pm.base_address == base_page_address
+                     && (pm.size / PAGE_SIZE) == num_pages
+-                    && pm.owner_id == owner
+                     && pm.guest_id.is_none()
+             })
+             .ok_or_else(|| anyhow::anyhow!("No matching memory block"))?;

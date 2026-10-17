@@ -1,0 +1,20 @@
+/dts-v1/;
+
+/include/ "platform/generic/base.dtsi"
+/include/ "platform/generic/default-domains.dtsi"
+
+/*
+ * The lifecycle measurement needs a confidential region larger than the
+ * generic platform's, so it carries its own memory map rather than patching
+ * the staged blob after the fact.
+ *
+ * A 32 MiB guest region lets GUEST_RAM_SIZE range from 2 to 32 MiB.
+ */
+&{/memory@80000000} {
+	reg = <0x00 0x80000000 0x00 0x06000000>;
+};
+
+&umem_high {
+	base = <0x0 0x82000000>;
+	order = <25>;
+};

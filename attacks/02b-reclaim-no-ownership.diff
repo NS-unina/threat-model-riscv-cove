@@ -1,0 +1,32 @@
+diff --git a/shadowfax/src/state.rs b/shadowfax/src/state.rs
+index 401fdf6..be02321 100644
+--- a/shadowfax/src/state.rs
++++ b/shadowfax/src/state.rs
+@@ -304,7 +304,6 @@ impl State {
+             .any(|allocation| {
+                 allocation.base_address == base_address
+                     && allocation.num_pages == num_pages
+-                    && allocation.owner_id == owner_id
+                     && allocation.tsm_id == tsm_id
+             })
+             .then_some(())
+@@ -393,7 +392,6 @@ impl State {
+                     .position(|(_, allocation)| {
+                         allocation.base_address == base_address
+                             && allocation.num_pages == num_pages
+-                            && allocation.owner_id == owner_id
+                             && allocation.tsm_id == tsm_id
+                     })
+                     .ok_or_else(|| anyhow::anyhow!("No matching memory block"))?;
+diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
+index 86ff79a..2738412 100644
+--- a/tsm/src/hyper.rs
++++ b/tsm/src/hyper.rs
+@@ -738,7 +738,6 @@ impl HypervisorState {
+             .position(|pm| {
+                 pm.base_address == base_page_address
+                     && (pm.size / PAGE_SIZE) == num_pages
+-                    && pm.owner_id == owner
+                     && pm.guest_id.is_none()
+             })
+             .ok_or_else(|| anyhow::anyhow!("No matching memory block"))?;

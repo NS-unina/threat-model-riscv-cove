@@ -1,0 +1,45 @@
+diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
+index 562a831..2c1db42 100644
+--- a/shadowfax/src/cove.rs
++++ b/shadowfax/src/cove.rs
+@@ -358,15 +358,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                             tsm_id: _,
+                         }) => {
+                             let order = (num_pages * COVH_DEFAULT_PAGE_SIZE).trailing_zeros();
+-                            /* Remove the region from the dst domain (aka the untrusted) */
+-                            let domain = &mut state.domains[dst_id];
+-
+-                            domain.memory_regions = compute_new_regions(
+-                                &domain.memory_regions,
+-                                base_address,
+-                                base_address + num_pages * PAGE_SIZE,
+-                            )
+-                            .unwrap();
+ 
+                             /* Add the region to the src domain (aka the tsm)*/
+                             let tsm = &mut state.domains[src_id];
+@@ -409,7 +400,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                             owner_id: _,
+                             tsm_id: _,
+                         }) => {
+-                            let order = (num_pages * COVH_DEFAULT_PAGE_SIZE).trailing_zeros();
+                             /* Remove the region from the src domain (aka the tsm ) */
+                             let tsm = &mut state.domains[src_id];
+ 
+@@ -420,16 +410,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                             )
+                             .unwrap();
+ 
+-                            /* Add the region to the dst (aka the untrusted domain)*/
+-                            let tsm = &mut state.domains[dst_id];
+-                            tsm.memory_regions
+-                                .push(MemoryRegion {
+-                                    base_address,
+-                                    order,
+-                                    mmio: false,
+-                                    permissions: 0x3f,
+-                                })
+-                                .unwrap();
+                             /* Zero out the memory block */
+                             let vec = unsafe {
+                                 core::slice::from_raw_parts_mut(
