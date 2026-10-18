@@ -22,8 +22,8 @@ Flaws:
        patch: 01-convert-no-revoke.diff      test: converted-memory-isolation
   02a  Confidentiality leakage after TVM disposal
        patch: 02a-reclaim-no-sanitize.diff   test: reclaimed-memory-zero
-  02b  Memory stealing
-       patch: 02b-reclaim-no-ownership.diff  test: cross-domain-reclaim
+  02b  Cross-domain interference (TVM tampering, destruction, memory stealing)
+       patch: 02b-no-ownership.diff         test: cross-domain-reclaim
 
 Options:
   --vulnerable  apply the patch that reintroduces the vulnerability
@@ -47,7 +47,7 @@ case "${1:-}" in
     -h|--help) usage; exit 0 ;;
     01)  patch=01-convert-no-revoke.diff;     test=converted-memory-isolation ;;
     02a) patch=02a-reclaim-no-sanitize.diff;  test=reclaimed-memory-zero ;;
-    02b) patch=02b-reclaim-no-ownership.diff; test=cross-domain-reclaim ;;
+    02b) patch=02b-no-ownership.diff;         test=cross-domain-reclaim ;;
     *)   usage >&2; exit 2 ;;
 esac
 

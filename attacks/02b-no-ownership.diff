@@ -1,8 +1,8 @@
 diff --git a/shadowfax/src/state.rs b/shadowfax/src/state.rs
-index 401fdf6..be02321 100644
+index 2fb5b47..6a6cbd4 100644
 --- a/shadowfax/src/state.rs
 +++ b/shadowfax/src/state.rs
-@@ -304,7 +304,6 @@ impl State {
+@@ -315,7 +315,6 @@ impl State {
              .any(|allocation| {
                  allocation.base_address == base_address
                      && allocation.num_pages == num_pages
@@ -10,7 +10,7 @@ index 401fdf6..be02321 100644
                      && allocation.tsm_id == tsm_id
              })
              .then_some(())
-@@ -393,7 +392,6 @@ impl State {
+@@ -404,7 +403,6 @@ impl State {
                      .position(|(_, allocation)| {
                          allocation.base_address == base_address
                              && allocation.num_pages == num_pages
@@ -19,10 +19,97 @@ index 401fdf6..be02321 100644
                      })
                      .ok_or_else(|| anyhow::anyhow!("No matching memory block"))?;
 diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
-index 86ff79a..2738412 100644
+index 86ff79a..445a2ff 100644
 --- a/tsm/src/hyper.rs
 +++ b/tsm/src/hyper.rs
-@@ -738,7 +738,6 @@ impl HypervisorState {
+@@ -235,9 +235,6 @@ impl HypervisorState {
+     ) -> anyhow::Result<()> {
+         match self.tvms.get_mut(tvmid).and_then(|tvm| tvm.as_mut()) {
+             Some(tvm) => {
+-                if tvm.owner != owner {
+-                    return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-                }
+                 if !matches!(tvm.state_enum, TvmState::TvmInitializing) {
+                     return Err(anyhow::anyhow!("TVM is already finalized"));
+                 }
+@@ -251,7 +248,7 @@ impl HypervisorState {
+     pub fn destroy_tvm(&mut self, owner: usize, tvmid: usize) -> anyhow::Result<()> {
+         match self.tvms.get(tvmid).and_then(|tvm| tvm.as_ref()) {
+             Some(tvm) => match tvm.state_enum {
+-                TvmState::TvmStopped if tvm.owner == owner => {
++                TvmState::TvmStopped => {
+                     self.tvms[tvmid] = None;
+                     for region in self.confidential_memory.iter_mut() {
+                         if let Some(guest) = region.guest_id {
+@@ -270,7 +267,6 @@ impl HypervisorState {
+                     self.coalesce_confidential_blocks();
+                     Ok(())
+                 }
+-                _ if tvm.owner != owner => Err(anyhow::anyhow!("TVM is owned by another domain")),
+                 _ => Err(anyhow::anyhow!("tvm is not stopped")),
+             },
+             None => Err(anyhow::anyhow!("no tvm available")),
+@@ -286,9 +282,6 @@ impl HypervisorState {
+     ) -> anyhow::Result<()> {
+         match self.tvms.get_mut(tvmid).and_then(|tvm| tvm.as_mut()) {
+             Some(tvm) => {
+-                if tvm.owner != owner {
+-                    return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-                }
+                 match tvm.state_enum {
+                     TvmState::TvmInitializing => {}
+                     _ => {
+@@ -356,9 +349,6 @@ impl HypervisorState {
+ 
+         match self.tvms.get_mut(tvmid).and_then(|tvm| tvm.as_mut()) {
+             Some(tvm) => {
+-                if tvm.owner != owner {
+-                    return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-                }
+                 match tvm.state_enum {
+                     TvmState::TvmInitializing => {}
+                     _ => return Err(anyhow::anyhow!("cannot add MMIO after finalization")),
+@@ -430,9 +420,6 @@ impl HypervisorState {
+                 .and_then(|tvm| tvm.as_ref())
+                 .ok_or_else(|| anyhow::anyhow!("invalid TVMID"))?;
+ 
+-            if tvm.owner != owner {
+-                return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-            }
+ 
+             if !matches!(tvm.state_enum, TvmState::TvmInitializing) {
+                 return Err(anyhow::anyhow!(
+@@ -523,9 +510,6 @@ impl HypervisorState {
+             .ok_or_else(|| anyhow::anyhow!("page range overflow"))?;
+         match self.tvms.get_mut(tvmid).and_then(|tvm| tvm.as_mut()) {
+             Some(tvm) => {
+-                if tvm.owner != owner {
+-                    return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-                }
+                 if !matches!(tvm.state_enum, TvmState::TvmInitializing) {
+                     return Err(anyhow::anyhow!("cannot add zero pages after finalization"));
+                 }
+@@ -599,9 +583,6 @@ impl HypervisorState {
+     ) -> anyhow::Result<()> {
+         match self.tvms.get_mut(tvmid).and_then(|tvm| tvm.as_mut()) {
+             Some(tvm) => {
+-                if tvm.owner != owner {
+-                    return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-                }
+                 if !matches!(tvm.state_enum, TvmState::TvmInitializing) {
+                     return Err(anyhow::anyhow!("cannot create a vCPU after finalization"));
+                 }
+@@ -638,9 +619,6 @@ impl HypervisorState {
+             .and_then(|tvm| tvm.as_ref())
+             .ok_or_else(|| anyhow::anyhow!("invalid TVMID"))?;
+ 
+-        if tvm.owner != owner {
+-            return Err(anyhow::anyhow!("TVM is owned by another domain"));
+-        }
+ 
+         if !matches!(
+             tvm.state_enum,
+@@ -738,7 +716,6 @@ impl HypervisorState {
              .position(|pm| {
                  pm.base_address == base_page_address
                      && (pm.size / PAGE_SIZE) == num_pages

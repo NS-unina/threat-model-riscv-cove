@@ -9,7 +9,7 @@ the current Shadowfax.
 |------|-------|------|--------------|----------------------|
 | 01: Trusted memory accessible from the untrusted domain | `01-convert-no-revoke.diff` | `converted-memory-isolation` | `[HOST] PASS: converted memory is not accessible` | `[ATTACK] FAIL: read TVM secret at 0x...` |
 | 02a: Confidentiality leakage after TVM disposal | `02a-reclaim-no-sanitize.diff` | `reclaimed-memory-zero` | `[ATTACK] PASS: no reclaimed TVM data is visible` | `[ATTACK] leaked byte in ...` |
-| 02b: Memory stealing | `02b-reclaim-no-ownership.diff` | `cross-domain-reclaim` | `[HOST] PASS: only the owner could reclaim its confidential pages` | `[ATTACKER] FAIL: stole host pages at 0x...` |
+| 02b: Cross-domain interference | `02b-no-ownership.diff` | `cross-domain-reclaim` | `[HOST] PASS: another domain could not touch the host TVM or its pages` | `[ATTACKER] FAIL: ... succeeded` for each of the three attacks |
 
 What each patch removes:
 
@@ -18,8 +18,10 @@ What each patch removes:
   therefore still covers the TVM memory.
 - **02a** removes both clears of reclaimed memory: Shadowfax's `zeroize` on
   reclaim TEERET and the TSM's clear in `destroy_tvm`.
-- **02b** removes the owner check on reclaim, both in Shadowfax (validation and
-  ticket commit) and in the TSM.
+- **02b** removes ownership tracking: the per-page owner check on reclaim in
+  Shadowfax (validation and ticket commit) and in the TSM, and the TSM's
+  per-TVM owner checks. Another trusted domain can then add memory regions to
+  the host's TVM, destroy it, and reclaim the host's pages.
 
 ## Running
 
