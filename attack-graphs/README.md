@@ -27,9 +27,11 @@ Each scenario's output, including `AttackGraph.pdf`, is written to its own `scen
 `make scenario2`
 
 ### Scenario 3: Memory Stealing (CWE-862)
-A second untrusted supervisor domain, present in the TSM trust map, reclaims
-confidential memory converted by another domain. The Domain Manager does not
-check ownership, so the reclaimed pages are mapped into the attacker's PMP.
+A second untrusted supervisor domain targets the TSM domain through the CoVE-H
+interface and reclaims confidential memory converted by another domain. The
+Domain Manager does not check ownership, so the reclaimed pages are mapped into
+the attacker's PMP. The scenario does not assume Shadowfax's trust map: a domain
+that is legitimately trusted can still be compromised later.
 
 `make scenario3`
 
