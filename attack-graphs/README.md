@@ -1,38 +1,40 @@
 # Attack Graphs Generation
 
-This directory contains the necessary files to generate attack graphs using [MulVAL](https://github.com/risksense/mulval). The generation process is automated via a script utilizing a Docker container to avoid local installation of MulVAL.
+This directory contains the necessary files to generate attack graphs using [MulVAL](https://github.com/risksense/mulval). Generation runs in a Docker container (`wilbercui/mulval`), so MulVAL does not need to be installed locally.
 
 ## Prerequisites
 
 - **Docker**: Ensure Docker is installed and the daemon is running.
-- **Execute Permissions**: The `run_mulval.sh` must be executable. If not, run:
-  ```bash
-  chmod +x run_mulval.sh
-  ```
+- **Make**
 
 ## Usage
 
-You can generate attack graphs by running the `run_mulval.sh` script with the architecture, rules, and output directory as arguments.
+Each scenario is a pair of files, `scenario<N>_arch.pl` (architecture) and `scenario<N>_rules.P` (rules). The Makefile finds every pair automatically:
+
+```bash
+make              # generate every scenario
+make scenario3    # generate one scenario
+make help         # list the scenarios found
+make clean        # remove all generated output directories
+```
+
+Each scenario's output, including `AttackGraph.pdf`, is written to its own `scenario<N>/` directory. A scenario is regenerated only when its architecture or rules file changes. If MulVAL finds no attack path to the goal, the target fails with a message saying so.
 
 ### Scenario 1: Page Donation
-To generate the attack graph for Scenario 1:
-```bash
-./run_mulval.sh -a scenario1_arch.pl -r scenario1_rules.P -o scenario1
-```
-The output will be generated in the `scenario1/` directory.
+`make scenario1`
 
 ### Scenario 2: Memory Reclaim (CWE-459)
-To generate the attack graph for Scenario 2:
-```bash
-./run_mulval.sh -a scenario2_arch.pl -r scenario2_rules.P -o scenario2
-```
-The output will be generated in the `scenario2/` directory.
+`make scenario2`
 
-### Clean Up
-To remove the generated output directories:
-```bash
-rm -rf scenario1 scenario2
-```
+### Scenario 3: Memory Stealing (CWE-862)
+A second untrusted supervisor domain, present in the TSM trust map, reclaims
+confidential memory converted by another domain. The Domain Manager does not
+check ownership, so the reclaimed pages are mapped into the attacker's PMP.
+
+`make scenario3`
+
+Removing `weaknessExist(domainManager, cwe862)` from `scenario3_arch.pl`, which
+models the ownership check, leaves MulVAL with no attack path to the goal.
 
 ## Known Issues & Parser Constraints
 

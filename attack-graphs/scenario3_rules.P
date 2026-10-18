@@ -1,0 +1,37 @@
+primitive(attackerLocated(_h)).
+primitive(attackerPrivilege(_p)).
+primitive(controlFlow(_s, _d, _a)).
+primitive(weaknessExist(_c, _w)).
+primitive(attackType(_t)).
+primitive(trustMapEntry(_d, _t)).
+primitive(ownsConfidentialMemory(_d)).
+
+derived(maliciousInputForwarded(_c)).
+derived(ownershipBypass(_c)).
+derived(memoryStealing(_c)).
+
+meta(attackGoal(_)).
+
+interaction_rule(
+  (maliciousInputForwarded(IM) :-
+    attackerLocated(UD),
+    attackerPrivilege(LP),
+    attackType(DA),
+    trustMapEntry(UD, _T),
+    controlFlow(UD, IM, _A1),
+    weaknessExist(IM, cwe20)),
+  rule_desc('exploit input validation', 1.0)).
+
+interaction_rule(
+  (ownershipBypass(DM) :-
+    maliciousInputForwarded(IM),
+    ownsConfidentialMemory(_V),
+    weaknessExist(DM, cwe862),
+    controlFlow(IM, DM, _A2)),
+  rule_desc('reclaim without ownership check', 1.0)).
+
+interaction_rule(
+  (memoryStealing(PMP) :-
+    ownershipBypass(DM),
+    controlFlow(DM, PMP, applyDomainMetadata)),
+  rule_desc('victim pages mapped to attacker', 1.0)).
