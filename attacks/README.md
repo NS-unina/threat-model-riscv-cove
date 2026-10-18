@@ -18,10 +18,12 @@ What each patch removes:
   therefore still covers the TVM memory.
 - **02a** removes both clears of reclaimed memory: Shadowfax's `zeroize` on
   reclaim TEERET and the TSM's clear in `destroy_tvm`.
-- **02b** removes ownership tracking: the per-page owner check on reclaim in
-  Shadowfax (validation and ticket commit) and in the TSM, and the TSM's
-  per-TVM owner checks. Another trusted domain can then add memory regions to
-  the host's TVM, destroy it, and reclaim the host's pages.
+- **02b** removes the ownership checks, which Shadowfax (the TSM driver)
+  enforces before entering the TSM: the per-page owner check on reclaim
+  (validation and ticket commit) and on the pages a TVM maps, and the per-TVM
+  owner check on every operation that names a TVM. Another trusted domain can
+  then add memory regions to the host's TVM, destroy it, and reclaim the host's
+  pages.
 
 ## Running
 

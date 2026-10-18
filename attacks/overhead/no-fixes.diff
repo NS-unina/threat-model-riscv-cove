@@ -1,8 +1,8 @@
 diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
-index 4fa32e6..0feebd5 100644
+index e3dd58b..6dd81d6 100644
 --- a/shadowfax/src/cove.rs
 +++ b/shadowfax/src/cove.rs
-@@ -258,55 +258,34 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -249,61 +249,34 @@ extern "C" fn covh_handler(fid: usize) -> usize {
              SBI_COVH_CONVERT_PAGES => {
                  let base_address = unsafe { (*domain_ctx).regs[10] };
                  let num_pages = unsafe { (*domain_ctx).regs[11] };
@@ -20,19 +20,22 @@ index 4fa32e6..0feebd5 100644
                  }
 -
 -                let ticket = state
--                    .request_borrow(BorrowKind::new_alloc(
--                        src_id,
--                        dst_id,
+-                    .request_borrow(Borrow {
+-                        kind: BorrowKind::Convert,
+-                        block: PhysicalMemoryBlock {
+-                            base_address,
+-                            num_pages,
+-                            owner_id: src_id,
+-                            tsm_id: dst_id,
+-                        },
 +                state.domains[dst_id]
 +                    .memory_regions
 +                    .push(MemoryRegion {
-                         base_address,
--                        num_pages,
--                    ))
++                        base_address,
 +                        order: size.trailing_zeros(),
 +                        mmio: false,
 +                        permissions: 0x3f,
-+                    })
+                     })
                      .unwrap();
 -
 -                /* Store the ticket in a6 register */
@@ -53,12 +56,15 @@ index 4fa32e6..0feebd5 100644
 -                }
 -
 -                let ticket = state
--                    .request_borrow(BorrowKind::new_reclaim(
--                        src_id,
--                        dst_id,
--                        base_address,
--                        num_pages,
--                    ))
+-                    .request_borrow(Borrow {
+-                        kind: BorrowKind::Reclaim,
+-                        block: PhysicalMemoryBlock {
+-                            base_address,
+-                            num_pages,
+-                            owner_id: src_id,
+-                            tsm_id: dst_id,
+-                        },
+-                    })
 -                    .unwrap();
 -
 -                /* Store the ticket in a6 register */
@@ -74,19 +80,95 @@ index 4fa32e6..0feebd5 100644
 +                )
 +                .unwrap();
              }
+             SBI_COVH_CREATE_TVM => {
+                 let params_addr = unsafe { (*domain_ctx).regs[10] };
+@@ -315,57 +288,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                 {
+                     return unsafe { return_error(base_ctx, -1) };
+                 }
+-                let (page_table, state_page) = unsafe {
+-                    (
+-                        core::ptr::read(params_addr as *const usize),
+-                        core::ptr::read((params_addr + 8) as *const usize),
+-                    )
+-                };
+-                let pages = state_page
+-                    .checked_sub(page_table)
+-                    .map(|t| t / PAGE_SIZE + 1);
+-                if !pages
+-                    .is_some_and(|n| state.owns_confidential_range(src_id, dst_id, page_table, n))
+-                {
+-                    return unsafe { return_error(base_ctx, -1) };
+-                }
+             }
+ 
+-            SBI_COVH_ADD_TVM_MEASURED_PAGES => {
+-                let tvm_id = unsafe { (*domain_ctx).regs[10] };
+-                let src_base_address = unsafe { (*domain_ctx).regs[11] };
+-                let dst_base_address = unsafe { (*domain_ctx).regs[12] };
+-                let num_pages = unsafe { (*domain_ctx).regs[14] };
+-                let src_ok = num_pages.checked_mul(PAGE_SIZE).is_some_and(|size| {
+-                    state.domain_owns_ram_range(src_id, src_base_address, size)
+-                });
+-                if !state.is_tvm_owned_by(dst_id, tvm_id, src_id)
+-                    || !src_ok
+-                    || !state.owns_confidential_range(src_id, dst_id, dst_base_address, num_pages)
+-                {
+-                    return unsafe { return_error(base_ctx, -1) };
+-                }
+-            }
+-            SBI_COVH_ADD_ZERO_PAGES => {
+-                let tvm_id = unsafe { (*domain_ctx).regs[10] };
+-                let base_address = unsafe { (*domain_ctx).regs[11] };
+-                let num_pages = unsafe { (*domain_ctx).regs[13] };
+-                if !state.is_tvm_owned_by(dst_id, tvm_id, src_id)
+-                    || !state.owns_confidential_range(src_id, dst_id, base_address, num_pages)
+-                {
+-                    return unsafe { return_error(base_ctx, -1) };
+-                }
+-            }
+-            SBI_COVH_ADD_TVM_MEMORY_REGION
+-            | SBI_COVH_FINALIZE_TVM
+-            | SBI_COVH_RUN_TVM_VCPU
+-            | SBI_COVH_CREATE_TVM_VCPU
+-            | SBI_COVH_DESTROY_TVM => {
+-                let tvm_id = unsafe { (*domain_ctx).regs[10] };
+-                if !state.is_tvm_owned_by(dst_id, tvm_id, src_id) {
+-                    return unsafe { return_error(base_ctx, -1) };
+-                }
+-            }
              _ => {}
          }
-@@ -346,110 +325,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
-                     let _ = state.finish_bootstrap(dst_id, src_id);
-                 }
+         unsafe {
+@@ -409,125 +333,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+                 let _ = state.domains[src_id].memory_regions.pop();
              }
+             SBI_COVH_CREATE_TVM => {
+-                /* src_id is the TSM, dst_id the creator, val the TVM id chosen by the TSM. */
+-                if !success || state.assign_tvm(src_id, val, dst_id).is_err() {
++                if !success {
+                     let _ = state.finish_bootstrap(dst_id, src_id);
+-                    /* The caller must not believe it holds a TVM it cannot use. */
+-                    unsafe {
+-                        let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
+-                        (*domain_ctx).regs[10] = -1isize as usize;
+-                        (*domain_ctx).regs[11] = 0;
+-                    }
+-                }
+-            }
+-            SBI_COVH_DESTROY_TVM => {
+-                /* The TVM id is the caller's a0; forget it only once the TSM destroyed it. */
+-                if success {
+-                    let _ = state.remove_tvm(src_id, call_a0, dst_id);
+-                }
+-            }
 -            SBI_COVH_CONVERT_PAGES => {
 -                /* Confirm the borrow */
 -                let a6 = unsafe { (*scratch_ctx).regs[16] };
 -                let ticket = (a6 & (0x3FF << 16)) >> 16;
 -                if success {
--                    match state.take_borrow(ticket, dst_id, src_id) {
--                        Ok(Allocation {
+-                    match state.take_borrow(ticket, dst_id, src_id, BorrowKind::Convert) {
+-                        Ok(PhysicalMemoryBlock {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: _,
@@ -137,8 +219,8 @@ index 4fa32e6..0feebd5 100644
 -                let a6 = unsafe { (*scratch_ctx).regs[16] };
 -                let ticket = (a6 & (0x3FF << 16)) >> 16;
 -                if success {
--                    match state.take_borrow(ticket, dst_id, src_id) {
--                        Ok(Allocation {
+-                    match state.take_borrow(ticket, dst_id, src_id, BorrowKind::Reclaim) {
+-                        Ok(PhysicalMemoryBlock {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: _,
@@ -182,16 +264,14 @@ index 4fa32e6..0feebd5 100644
 -                    }
 -                } else {
 -                    let _ = state.cancel_borrow(ticket, dst_id, src_id);
--                }
--            }
-             SBI_COVH_FINALIZE_TVM => {
-                 let _ = state.finish_bootstrap(dst_id, src_id);
+                 }
              }
+             SBI_COVH_FINALIZE_TVM => {
 diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
-index 86ff79a..3a9a243 100644
+index e247f95..29625c3 100644
 --- a/tsm/src/hyper.rs
 +++ b/tsm/src/hyper.rs
-@@ -256,13 +256,6 @@ impl HypervisorState {
+@@ -246,13 +246,6 @@ impl HypervisorState {
                      for region in self.confidential_memory.iter_mut() {
                          if let Some(guest) = region.guest_id {
                              if guest == tvmid {
@@ -205,11 +285,3 @@ index 86ff79a..3a9a243 100644
                                  region.guest_id = None;
                              }
                          }
-@@ -738,7 +731,6 @@ impl HypervisorState {
-             .position(|pm| {
-                 pm.base_address == base_page_address
-                     && (pm.size / PAGE_SIZE) == num_pages
--                    && pm.owner_id == owner
-                     && pm.guest_id.is_none()
-             })
-             .ok_or_else(|| anyhow::anyhow!("No matching memory block"))?;
