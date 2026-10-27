@@ -39,8 +39,8 @@ make -C shadowfax generate-keys
 Then run each test against the fixed and the vulnerable firmware:
 
 ```sh
-attacks/run.sh 01                 # fixed: attack blocked
-attacks/run.sh 01 --vulnerable    # patch applied: attack succeeds
+evaluation/run.sh 01                 # fixed: attack blocked
+evaluation/run.sh 01 --vulnerable    # patch applied: attack succeeds
 ```
 
 `run.sh` applies the patch to the submodule, rebuilds the firmware, runs the
