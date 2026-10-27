@@ -7,6 +7,7 @@ This repository contains the threat model for RISC-V CoVE using STPA-SEC and DAR
 The repository is structured as follows:
 
 - [stpa-sec-analysis](./stpa-sec-analysis/): contains the Capella project used to model the architecture and perform the analysis
+- [evaluation](./evaluation/): contains scripts to run attack scenarios with and without security patches on Shadowfax
 - [attack-graphs](./attack-graphs/): contains code to generate attack-graphs using Mulval
 - [shadowfax](./ahadoqfax): submodule reference to Shadowfax platform used for experiments
 
