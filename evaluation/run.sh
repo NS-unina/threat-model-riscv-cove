@@ -20,9 +20,9 @@ and the patch is reverted when the script exits.
 Flaws:
   01   Trusted memory accessible from the untrusted domain
        patch: 01-convert-no-revoke.diff      test: converted-memory-isolation
-  02a  Confidentiality leakage after TVM disposal
+  02  Confidentiality leakage after TVM disposal
        patch: 02a-reclaim-no-sanitize.diff   test: reclaimed-memory-zero
-  02b  Cross-domain interference (TVM tampering, destruction, memory stealing)
+  02  Cross-domain interference (TVM tampering, destruction, memory stealing)
        patch: 02b-no-ownership.diff         test: cross-domain-reclaim
 
 Options:
@@ -45,10 +45,10 @@ EOF
 
 case "${1:-}" in
     -h|--help) usage; exit 0 ;;
-    01)  patch=01-convert-no-revoke.diff;     test=converted-memory-isolation ;;
-    02a) patch=02a-reclaim-no-sanitize.diff;  test=reclaimed-memory-zero ;;
-    02b) patch=02b-no-ownership.diff;         test=cross-domain-reclaim ;;
-    *)   usage >&2; exit 2 ;;
+    01) patch=01-convert-no-revoke.diff;    test=converted-memory-isolation ;;
+    02) patch=02-reclaim-no-sanitize.diff;  test=reclaimed-memory-zero ;;
+    03) patch=03-no-ownership.diff;         test=cross-domain-reclaim ;;
+    *)  usage >&2; exit 2 ;;
 esac
 
 case "${2:-}" in
