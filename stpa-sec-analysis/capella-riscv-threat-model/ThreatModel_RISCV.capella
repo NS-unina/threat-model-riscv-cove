@@ -153,12 +153,12 @@
             name="Confidential Data are revealed to unauthorized actors" userID="H-01"
             losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102">
           <subHazards xsi:type="stpa:Hazard" id="27ab6f9a-a943-4986-80e9-232a3e33690e"
               name="Confidential Workload is leaked to unauthorized actors" userID="H-02"
               losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d"
               unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
           <subHazards xsi:type="stpa:Hazard" id="697c43c0-a969-4b13-86dc-cf4ef58a5322"
               name="TSM Confidential Data are accessed by unauthorized actors" userID="H-03"
               losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4" systemConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #3b08208a-e347-48aa-a304-b04877d8e09a"
@@ -172,12 +172,12 @@
             name="Confidential Data are modified by unauthorized actors" userID="H-05"
             losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#6abae367-f4e9-46ca-9613-efb65dadf740"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
-            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557">
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102">
           <subHazards xsi:type="stpa:Hazard" id="373491ed-b9bb-4db4-9188-1262c23e3109"
               name="Unauthorized modification of the Confidential Workload" userID="H-06"
               losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d"
               unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
-              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
           <subHazards xsi:type="stpa:Hazard" id="27b22db6-d572-4f73-99d3-7d49986c8bdc"
               name="Unauthorized modification inside the TSM and its data" userID="H-07"
               losses="#2aeebaba-15a5-428f-80fe-c7d34441d309" systemConstraints="#088e55b8-c450-4839-8765-db8f308eec34"
@@ -194,7 +194,7 @@
             userID="H-09" losses="#01898c6b-dd74-4637-a7fa-3264b40a8bb4 #2aeebaba-15a5-428f-80fe-c7d34441d309"
             systemConstraints="#cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-            lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+            lossScenarios="#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
         <rootHazards xsi:type="stpa:Hazard" id="d9048faa-02bc-4a37-9d9f-f7d00f687bf2"
             name="A malicious actor causes a Denial of Service to the system" userID="H-10"
             losses="#f96a8826-131c-4b8b-8299-f3975dda8adf" systemConstraints="#49386ed4-3e37-4b57-be1b-91849262da74"
@@ -217,12 +217,12 @@
             userID="SC-01" hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322"
             responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102">
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="fbbe1358-cd41-41b9-95e0-1bebb158b84d"
               name="Confidential Workload must not be leaked to unauthorized actors"
               userID="SC-02" hazards="#27ab6f9a-a943-4986-80e9-232a3e33690e" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
               unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="3b08208a-e347-48aa-a304-b04877d8e09a"
               name="TSM Confidential Data must not be accessible to unauthorized actors"
               userID="SC-03" hazards="#697c43c0-a969-4b13-86dc-cf4ef58a5322" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
@@ -237,12 +237,12 @@
             userID="SC-05" hazards="#78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109"
             responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
-            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557">
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102">
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="a0884088-0235-4e18-a012-f68cc762306d"
               name="It must not be possible for unauthorized actors to modify Confidential Workload "
               userID="SC-06" hazards="#373491ed-b9bb-4db4-9188-1262c23e3109" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
               unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #340d377c-6d73-4ec6-85d7-3e2afc2995d5 #d2c3c757-efd2-4e79-a881-47e254008d52 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #49e95a2c-362c-46e7-b7d2-064c99893741 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc"
-              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="088e55b8-c450-4839-8765-db8f308eec34"
               name="It must not be possible for unauthorized actors to modify the TSM and its data"
               userID="SC-07" hazards="#27b22db6-d572-4f73-99d3-7d49986c8bdc" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590 #c402b161-7a24-4458-9870-f9f0f7c0cdd1"
@@ -253,12 +253,12 @@
             hazards="#99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"
             responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
             unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72">
+            lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102">
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="bae4d924-ff07-47f3-85e4-b0e2a62871d7"
               name="The system must guarantee memory level isolation between different Supervisor Domains"
               userID="SC-09" hazards="#2a160f6e-8408-469f-8336-c4e25f24bc3f" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #3ce88aee-75cb-4daf-a061-0dc75f7e21b1 #6959218f-de11-4797-a753-ffe401cb8590"
               unsafeControlActions="#fdd06fe0-ea3d-44ae-bc88-fc60ba591c81 #34f6d8ea-873d-4d12-a829-79a7c63a68c7 #42e2f8eb-d8de-424b-b700-35dbba17b8e5 #09998f14-08a0-4911-a3e3-00d6b33d2b6f #84662b72-3b88-4c59-9aff-0c81f1b1d29d #1035b5e9-2a35-41f4-b2cc-95ae9d7532dc #1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb"
-              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
+              lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
           <subSystemConstraints xsi:type="stpa:SystemConstraint" id="84a57b16-6dda-4cf6-b964-cbdc4b4f3775"
               name="The system must guarantee memory level isolation between TVMs within the same Supervisor Domains"
               userID="SC-10" hazards="#99cf129c-7bc9-4c64-86fa-1edead1279bb" responsibilities="#899b2f75-75e8-466b-9e7e-c1a73bc65ac6 #4cdad1e2-31da-4743-9980-46dd1eba2fb9 #bd113a0d-0d5f-431e-a913-12c516db21dd #3377b52b-1a31-4cf8-a3da-85a40de72058"
@@ -605,24 +605,24 @@
                 target="#b8576c69-c740-48e2-8515-9da7f1e7a178">
               <controlActions xsi:type="stpa:ControlAction" id="010d2bb6-1fe8-4f42-938a-619a1704d4d9"
                   name="Apply Domain Metadata" userID="CA-13" exercisedResponsibilities="#6959218f-de11-4797-a753-ffe401cb8590"
-                  lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"
+                  lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #62c5eddb-1ea0-4e35-8dd2-3bccc9117d72 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"
                   supportingProcessModel="#a3aa4a7c-b6d9-4a40-9538-d592583fd9e5">
                 <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="fdd06fe0-ea3d-44ae-bc88-fc60ba591c81"
                     name="Missing PMP Configuration" userID="UCA-30" violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7 #84a57b16-6dda-4cf6-b964-cbdc4b4f3775"
                     hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
                 <unsafeControlActions xsi:type="stpa:UnsafeControlAction" id="09998f14-08a0-4911-a3e3-00d6b33d2b6f"
-                    name="Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]"
-                    userID="UCA-31" kind="PROVIDING" lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"
+                    name="Untrusted domain provides a memory address not owned by him  [coveh00, coveh01, coveh02, coveh05, coveh11, coveh12, coveh13, coveh14]"
+                    userID="UCA-31" kind="PROVIDING" lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"
                     violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #088e55b8-c450-4839-8765-db8f308eec34 #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
                     hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #27b22db6-d572-4f73-99d3-7d49986c8bdc #2a160f6e-8408-469f-8336-c4e25f24bc3f">
                   <controlFlawSet xsi:type="stpa:ControlFlawSet" id="9819112e-8447-4a59-96b0-409802333247">
                     <controlFlaws xsi:type="stpa:ControlFlaw" id="68ee7a6a-173c-4c64-82ab-c2cf32c7082e"
                         name="Input from the Untrusted Domain" countermeasures="#b9f76694-475e-4b90-86f9-c76f12c02e4e"
                         verdict="KO" justification="A malicious memory address can be provided by an Untrusted Domain"
-                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
                     <controlFlaws xsi:type="stpa:ControlFlaw" id="5a55eede-d21d-4ea9-9bfb-62d5553a112d"
                         kind="CONTROL_ALGORITHM" verdict="KO" justification="The Domain Manager is responsible for properly controlling the PMP"
-                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557"/>
+                        lossScenarios="#1cc0c0b9-fa1e-48bc-bdd0-388b2c375557 #d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
                     <controlFlaws xsi:type="stpa:ControlFlaw" id="5388c6e5-b55b-44db-b384-dfb57543f4ac"
                         kind="PROCESS_MODEL"/>
                     <controlFlaws xsi:type="stpa:ControlFlaw" id="9aba538b-e6e4-413e-a5d4-141c706dcff1"
@@ -928,6 +928,12 @@
             unsafeControlAction="#1b2eb8fc-ee52-4171-aa2e-57b7701e5cdb" causalFactors="#1604f5eb-cb80-4721-a26e-df7052e8b948"
             violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #3b08208a-e347-48aa-a304-b04877d8e09a #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
             hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #697c43c0-a969-4b13-86dc-cf4ef58a5322 #99cf129c-7bc9-4c64-86fa-1edead1279bb #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
+        <lossScenarios xsi:type="stpa:LossScenario" id="d0c5fbea-59d3-4efb-99e2-561eacfb3102"
+            name="Unauthorized Cross-Domain Operations on TVM Memory" userID="LS-03"
+            countermeasures="#b9f76694-475e-4b90-86f9-c76f12c02e4e" controlAction="#010d2bb6-1fe8-4f42-938a-619a1704d4d9"
+            unsafeControlAction="#09998f14-08a0-4911-a3e3-00d6b33d2b6f" causalFactors="#68ee7a6a-173c-4c64-82ab-c2cf32c7082e #5a55eede-d21d-4ea9-9bfb-62d5553a112d"
+            violatedConstraints="#2e42cd37-f96d-4c2d-88f7-0cda2665e98d #fbbe1358-cd41-41b9-95e0-1bebb158b84d #6abae367-f4e9-46ca-9613-efb65dadf740 #a0884088-0235-4e18-a012-f68cc762306d #cda902c3-04ef-4dbe-bb0d-e30971cb32b2 #bae4d924-ff07-47f3-85e4-b0e2a62871d7"
+            hazards="#f333368a-63a9-467e-b640-0c01b2cd48f9 #27ab6f9a-a943-4986-80e9-232a3e33690e #78a50e78-0d4e-40b8-b05a-a35f99ed8163 #373491ed-b9bb-4db4-9188-1262c23e3109 #2a160f6e-8408-469f-8336-c4e25f24bc3f"/>
       </lossScenarioPackage>
     </ownedExtensions>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"

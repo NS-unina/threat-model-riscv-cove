@@ -117,7 +117,7 @@
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Responsibility%20Table']"/>
         <target xmi:type="stpa:ControlEntity" href="ThreatModel_RISCV.capella#890a7120-1081-4268-8075-6201de2d763f"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_aOsdVxfjEfG0tt4COtklBw" name="[EXT] Exchange Table of Domain Manager->PMP" repPath="#_aOsdUBfjEfG0tt4COtklBw" changeId="1772702785899">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_aOsdVxfjEfG0tt4COtklBw" name="[EXT] Exchange Table of Domain Manager->PMP" repPath="#_aOsdUBfjEfG0tt4COtklBw" changeId="1793640704434">
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Exchange%20Table']"/>
         <target xmi:type="stpa:ControlRelation" href="ThreatModel_RISCV.capella#9fbd89d4-b9cb-4034-8cb1-516536872e66"/>
       </ownedRepresentationDescriptors>
@@ -225,7 +225,7 @@
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#e74b9dd0-f4a1-49ff-b7df-2d2b72778992"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4AYPERiAEfGonZ3KeUxxGA" name="[UAT] UCA Table for Apply Domain Metadata" repPath="#_4AXoABiAEfGonZ3KeUxxGA" changeId="1773399196016">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4AYPERiAEfGonZ3KeUxxGA" name="[UAT] UCA Table for Apply Domain Metadata" repPath="#_4AXoABiAEfGonZ3KeUxxGA" changeId="1793640815088">
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
       </ownedRepresentationDescriptors>
@@ -285,7 +285,7 @@
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#607e4a97-fd49-4ce8-a123-013737775bf3"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_W6m4MByKEfGgUeJQlcxm2g" name="[LST] Loss Scenario Table" repPath="#_W6imwByKEfGgUeJQlcxm2g" changeId="1773400861397">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_W6m4MByKEfGgUeJQlcxm2g" name="[LST] Loss Scenario Table" repPath="#_W6imwByKEfGgUeJQlcxm2g" changeId="1793641369391">
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']"/>
         <target xmi:type="stpa:LossScenarioPackage" href="ThreatModel_RISCV.capella#edb0289f-dacc-4abc-8399-6d6b14730c06"/>
       </ownedRepresentationDescriptors>
@@ -297,7 +297,7 @@
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']"/>
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#1a7cc781-5eb1-4c3a-86ba-d40972fae787"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_BFj4UB7LEfG0ovdNsAENCQ" name="[CFD] Causal Factor Diagram of Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]" repPath="#_BFiqMB7LEfG0ovdNsAENCQ" changeId="1773400841682">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_BFj4UB7LEfG0ovdNsAENCQ" name="[CFD] Causal Factor Diagram of Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]" repPath="#_BFiqMB7LEfG0ovdNsAENCQ" changeId="1793640832428">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Control%20Flaw%20Diagram']"/>
         <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
       </ownedRepresentationDescriptors>
@@ -12669,7 +12669,7 @@
   </table:DTable>
   <table:DTable uid="_aOsdUBfjEfG0tt4COtklBw" headerColumnWidth="120">
     <target xmi:type="stpa:ControlRelation" href="ThreatModel_RISCV.capella#9fbd89d4-b9cb-4034-8cb1-516536872e66"/>
-    <lines xmi:type="table:DLine" uid="_bGCVNxfjEfG0tt4COtklBw" label="(CA-11)">
+    <lines xmi:type="table:DLine" uid="_bGCVNxfjEfG0tt4COtklBw" label="(CA-13)">
       <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
       <semanticElements xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Exchange%20Table']/@ownedLineMappings[name='CAControlActionLine']"/>
@@ -12677,7 +12677,7 @@
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
         <semanticElements xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_bGC8FhfjEfG0tt4COtklBw" label="[R-14]" column="_aOsdUxfjEfG0tt4COtklBw">
+      <cells xmi:type="table:DCell" uid="_bGC8FhfjEfG0tt4COtklBw" label="[R-15]" column="_aOsdUxfjEfG0tt4COtklBw">
         <target xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
         <semanticElements xmi:type="stpa:ControlAction" href="ThreatModel_RISCV.capella#010d2bb6-1fe8-4f42-938a-619a1704d4d9"/>
       </cells>
@@ -13712,7 +13712,7 @@
           <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
           <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
           <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Unsafe%20Control%20Action%20Table']/@ownedLineMappings[name='UCACALine']/@ownedSubLines[name='UCACategoryLine']/@ownedSubLines[name='UCALine']"/>
-          <cells xmi:type="table:DCell" uid="_53W-1xiAEfGonZ3KeUxxGA" label="Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]" column="_4AXoCxiAEfGonZ3KeUxxGA">
+          <cells xmi:type="table:DCell" uid="_53W-1xiAEfGonZ3KeUxxGA" label="Untrusted domain provides a memory address not owned by him  [coveh00, coveh01, coveh02, coveh05, coveh11, coveh12, coveh13, coveh14]" column="_4AXoCxiAEfGonZ3KeUxxGA">
             <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
             <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
           </cells>
@@ -15558,25 +15558,58 @@
         <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#62c5eddb-1ea0-4e35-8dd2-3bccc9117d72"/>
       </cells>
     </lines>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j04ByKEfGgUeJQlcxm2g" label="Name" cells="_aPKZMByKEfGgUeJQlcxm2g _CDKbAR7JEfG0ovdNsAENCQ" width="250" featureName="name">
+    <lines xmi:type="table:DLine" uid="_SVKLctbkEfGVismqLvM_Jg" label="(LS-03)">
+      <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedLineMappings[name='LScenarioLine']"/>
+      <cells xmi:type="table:DCell" uid="_SVOc49bkEfGVismqLvM_Jg" label="Unauthorized Cross-Domain Operations on TVM Memory" column="_W6j04ByKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVPD8dbkEfGVismqLvM_Jg" label="CA-13  (Domain Manager)" column="_W6j04hyKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVY08dbkEfGVismqLvM_Jg" label="UCA-31" column="_W6j05ByKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVZcAdbkEfGVismqLvM_Jg" label="[SC-01, SC-02, SC-05, SC-06, SC-08, SC-09]" column="_W6j05hyKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVaDENbkEfGVismqLvM_Jg" label="[H-01, H-02, H-05, H-06, H-09]" column="_W6j06ByKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVaDEtbkEfGVismqLvM_Jg" label="[Input from the Untrusted Domain, [UCA-31] Control Algorithm: Inadequate]" column="_W6j06hyKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_SVaDFNbkEfGVismqLvM_Jg" label="[Validate Address Domain Owner]" column="_W6kb8ByKEfGgUeJQlcxm2g">
+        <target xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+        <semanticElements xmi:type="stpa:LossScenario" href="ThreatModel_RISCV.capella#d0c5fbea-59d3-4efb-99e2-561eacfb3102"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j04ByKEfGgUeJQlcxm2g" label="Name" cells="_aPKZMByKEfGgUeJQlcxm2g _CDKbAR7JEfG0ovdNsAENCQ _SVOc49bkEfGVismqLvM_Jg" width="415" featureName="name">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSNameColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j04hyKEfGgUeJQlcxm2g" label="Control Action" cells="_aPLAQByKEfGgUeJQlcxm2g _CDKbAx7JEfG0ovdNsAENCQ" width="175" featureName="controlAction">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j04hyKEfGgUeJQlcxm2g" label="Control Action" cells="_aPLAQByKEfGgUeJQlcxm2g _CDKbAx7JEfG0ovdNsAENCQ _SVPD8dbkEfGVismqLvM_Jg" width="175" featureName="controlAction">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSControlActionColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j05ByKEfGgUeJQlcxm2g" label="Unsafe Control Action" cells="_aShPMRyKEfGgUeJQlcxm2g _CF_sgR7JEfG0ovdNsAENCQ" width="175" featureName="unsafeControlAction">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j05ByKEfGgUeJQlcxm2g" label="Unsafe Control Action" cells="_aShPMRyKEfGgUeJQlcxm2g _CF_sgR7JEfG0ovdNsAENCQ _SVY08dbkEfGVismqLvM_Jg" width="175" featureName="unsafeControlAction">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSUCAColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j05hyKEfGgUeJQlcxm2g" label="Violated Constraints" cells="_aSidURyKEfGgUeJQlcxm2g _CF_sgx7JEfG0ovdNsAENCQ" width="175" featureName="violatedConstraints">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j05hyKEfGgUeJQlcxm2g" label="Violated Constraints" cells="_aSidURyKEfGgUeJQlcxm2g _CF_sgx7JEfG0ovdNsAENCQ _SVZcAdbkEfGVismqLvM_Jg" width="175" featureName="violatedConstraints">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSSCColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j06ByKEfGgUeJQlcxm2g" label="Hazards" cells="_aSidUxyKEfGgUeJQlcxm2g _CF_shR7JEfG0ovdNsAENCQ" width="175" featureName="hazards">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j06ByKEfGgUeJQlcxm2g" label="Hazards" cells="_aSidUxyKEfGgUeJQlcxm2g _CF_shR7JEfG0ovdNsAENCQ _SVaDENbkEfGVismqLvM_Jg" width="98" featureName="hazards">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSHazardColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6j06hyKEfGgUeJQlcxm2g" label="Causal Factors" cells="_aSidVRyKEfGgUeJQlcxm2g _CF_shx7JEfG0ovdNsAENCQ" width="175" featureName="causalFactors">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6j06hyKEfGgUeJQlcxm2g" label="Causal Factors" cells="_aSidVRyKEfGgUeJQlcxm2g _CF_shx7JEfG0ovdNsAENCQ _SVaDEtbkEfGVismqLvM_Jg" width="175" featureName="causalFactors">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSControlFlawsColumn']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_W6kb8ByKEfGgUeJQlcxm2g" label="Countermeasures" cells="_aSjrcByKEfGgUeJQlcxm2g _CF_siR7JEfG0ovdNsAENCQ" width="175" featureName="countermeasures">
+    <columns xmi:type="table:DFeatureColumn" uid="_W6kb8ByKEfGgUeJQlcxm2g" label="Countermeasures" cells="_aSjrcByKEfGgUeJQlcxm2g _CF_siR7JEfG0ovdNsAENCQ _SVaDFNbkEfGVismqLvM_Jg" width="175" featureName="countermeasures">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']/@ownedColumnMappings[name='LSConstraintsColumn']"/>
     </columns>
     <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Loss%20Scenario%20Table']"/>
@@ -16813,7 +16846,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/com.thalesgroup.mde.capella.stpa.design/description/STPA.odesign#//@ownedViewpoints[name='stpa']/@ownedRepresentations[name='Control%20Flaw%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']/@subNodeMappings[name='SensorFlawNode']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_BF4odR7LEfG0ovdNsAENCQ" name="(UCA-31) Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14]" height="3">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_BF4odR7LEfG0ovdNsAENCQ" name="(UCA-31) Untrusted domain provides a memory address not owned by him  [coveh00, coveh01, coveh02, coveh05, coveh11, coveh12, coveh13, coveh14]" height="3">
       <target xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
       <semanticElements xmi:type="stpa:UnsafeControlAction" href="ThreatModel_RISCV.capella#09998f14-08a0-4911-a3e3-00d6b33d2b6f"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_BF5PgB7LEfG0ovdNsAENCQ" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dot" backgroundColor="253,206,137" foregroundColor="255,255,255">
