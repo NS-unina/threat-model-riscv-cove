@@ -1,8 +1,8 @@
 diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
-index e3dd58b..990f5ee 100644
+index 2739c6b..fad4967 100644
 --- a/shadowfax/src/cove.rs
 +++ b/shadowfax/src/cove.rs
-@@ -339,8 +339,7 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -338,8 +338,7 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                  let src_ok = num_pages.checked_mul(PAGE_SIZE).is_some_and(|size| {
                      state.domain_owns_ram_range(src_id, src_base_address, size)
                  });
@@ -12,7 +12,7 @@ index e3dd58b..990f5ee 100644
                      || !state.owns_confidential_range(src_id, dst_id, dst_base_address, num_pages)
                  {
                      return unsafe { return_error(base_ctx, -1) };
-@@ -350,8 +349,7 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -349,8 +348,7 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                  let tvm_id = unsafe { (*domain_ctx).regs[10] };
                  let base_address = unsafe { (*domain_ctx).regs[11] };
                  let num_pages = unsafe { (*domain_ctx).regs[13] };
@@ -22,7 +22,7 @@ index e3dd58b..990f5ee 100644
                  {
                      return unsafe { return_error(base_ctx, -1) };
                  }
-@@ -361,10 +359,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -360,10 +358,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
              | SBI_COVH_RUN_TVM_VCPU
              | SBI_COVH_CREATE_TVM_VCPU
              | SBI_COVH_DESTROY_TVM => {
@@ -34,7 +34,7 @@ index e3dd58b..990f5ee 100644
              _ => {}
          }
 diff --git a/shadowfax/src/state.rs b/shadowfax/src/state.rs
-index 304cc47..e9eeb98 100644
+index 8ec8ed2..b1ede5a 100644
 --- a/shadowfax/src/state.rs
 +++ b/shadowfax/src/state.rs
 @@ -301,7 +301,6 @@ impl State {

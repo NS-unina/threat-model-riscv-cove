@@ -1,8 +1,8 @@
 diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
-index 562a831..2c1db42 100644
+index 2739c6b..0dde2f9 100644
 --- a/shadowfax/src/cove.rs
 +++ b/shadowfax/src/cove.rs
-@@ -358,15 +358,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -438,15 +438,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                              tsm_id: _,
                          }) => {
                              let order = (num_pages * COVH_DEFAULT_PAGE_SIZE).trailing_zeros();
@@ -18,7 +18,7 @@ index 562a831..2c1db42 100644
  
                              /* Add the region to the src domain (aka the tsm)*/
                              let tsm = &mut state.domains[src_id];
-@@ -409,7 +400,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -484,7 +475,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                              owner_id: _,
                              tsm_id: _,
                          }) => {
@@ -26,7 +26,7 @@ index 562a831..2c1db42 100644
                              /* Remove the region from the src domain (aka the tsm ) */
                              let tsm = &mut state.domains[src_id];
  
-@@ -420,16 +410,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -495,16 +485,6 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                              )
                              .unwrap();
  
@@ -41,5 +41,5 @@ index 562a831..2c1db42 100644
 -                                })
 -                                .unwrap();
                              /* Zero out the memory block */
-                             let vec = unsafe {
-                                 core::slice::from_raw_parts_mut(
+                             zeroize(base_address, num_pages);
+                         }

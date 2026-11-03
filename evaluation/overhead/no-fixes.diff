@@ -1,8 +1,8 @@
 diff --git a/shadowfax/src/cove.rs b/shadowfax/src/cove.rs
-index e3dd58b..6dd81d6 100644
+index 2739c6b..380b4e6 100644
 --- a/shadowfax/src/cove.rs
 +++ b/shadowfax/src/cove.rs
-@@ -249,61 +249,34 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -248,61 +248,34 @@ extern "C" fn covh_handler(fid: usize) -> usize {
              SBI_COVH_CONVERT_PAGES => {
                  let base_address = unsafe { (*domain_ctx).regs[10] };
                  let num_pages = unsafe { (*domain_ctx).regs[11] };
@@ -22,7 +22,7 @@ index e3dd58b..6dd81d6 100644
 -                let ticket = state
 -                    .request_borrow(Borrow {
 -                        kind: BorrowKind::Convert,
--                        block: PhysicalMemoryBlock {
+-                        block: PhysicalMemory {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: src_id,
@@ -58,7 +58,7 @@ index e3dd58b..6dd81d6 100644
 -                let ticket = state
 -                    .request_borrow(Borrow {
 -                        kind: BorrowKind::Reclaim,
--                        block: PhysicalMemoryBlock {
+-                        block: PhysicalMemory {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: src_id,
@@ -82,7 +82,7 @@ index e3dd58b..6dd81d6 100644
              }
              SBI_COVH_CREATE_TVM => {
                  let params_addr = unsafe { (*domain_ctx).regs[10] };
-@@ -315,57 +288,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -314,57 +287,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                  {
                      return unsafe { return_error(base_ctx, -1) };
                  }
@@ -140,7 +140,7 @@ index e3dd58b..6dd81d6 100644
              _ => {}
          }
          unsafe {
-@@ -409,125 +333,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
+@@ -408,114 +332,8 @@ extern "C" fn covh_handler(fid: usize) -> usize {
                  let _ = state.domains[src_id].memory_regions.pop();
              }
              SBI_COVH_CREATE_TVM => {
@@ -168,7 +168,7 @@ index e3dd58b..6dd81d6 100644
 -                let ticket = (a6 & (0x3FF << 16)) >> 16;
 -                if success {
 -                    match state.take_borrow(ticket, dst_id, src_id, BorrowKind::Convert) {
--                        Ok(PhysicalMemoryBlock {
+-                        Ok(PhysicalMemory {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: _,
@@ -196,13 +196,7 @@ index e3dd58b..6dd81d6 100644
 -                                })
 -                                .unwrap();
 -                            /* Zero out the memory region */
--                            let vec = unsafe {
--                                core::slice::from_raw_parts_mut(
--                                    base_address as *mut u8,
--                                    num_pages * PAGE_SIZE,
--                                )
--                            };
--                            vec.zeroize();
+-                            zeroize(base_address, num_pages);
 -                        }
 -                        Err(_) => unsafe {
 -                            let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
@@ -214,13 +208,14 @@ index e3dd58b..6dd81d6 100644
 -                    let _ = state.cancel_borrow(ticket, dst_id, src_id);
 -                }
 -            }
+-
 -            SBI_COVH_RECLAIM_PAGES => {
 -                /* Confirm the borrow */
 -                let a6 = unsafe { (*scratch_ctx).regs[16] };
 -                let ticket = (a6 & (0x3FF << 16)) >> 16;
 -                if success {
 -                    match state.take_borrow(ticket, dst_id, src_id, BorrowKind::Reclaim) {
--                        Ok(PhysicalMemoryBlock {
+-                        Ok(PhysicalMemory {
 -                            base_address,
 -                            num_pages,
 -                            owner_id: _,
@@ -248,13 +243,7 @@ index e3dd58b..6dd81d6 100644
 -                                })
 -                                .unwrap();
 -                            /* Zero out the memory block */
--                            let vec = unsafe {
--                                core::slice::from_raw_parts_mut(
--                                    base_address as *mut u8,
--                                    num_pages * PAGE_SIZE,
--                                )
--                            };
--                            vec.zeroize();
+-                            zeroize(base_address, num_pages);
 -                        }
 -                        Err(_) => unsafe {
 -                            let domain_ctx = state.domains[dst_id].context_addr as *mut Context;
@@ -267,21 +256,54 @@ index e3dd58b..6dd81d6 100644
                  }
              }
              SBI_COVH_FINALIZE_TVM => {
-diff --git a/tsm/src/hyper.rs b/tsm/src/hyper.rs
-index e247f95..29625c3 100644
---- a/tsm/src/hyper.rs
-+++ b/tsm/src/hyper.rs
-@@ -246,13 +246,6 @@ impl HypervisorState {
-                     for region in self.confidential_memory.iter_mut() {
-                         if let Some(guest) = region.guest_id {
-                             if guest == tvmid {
--                                unsafe {
--                                    core::ptr::write_bytes(
--                                        region.base_address as *mut u8,
--                                        0,
--                                        region.size,
--                                    );
--                                }
-                                 region.guest_id = None;
-                             }
-                         }
+@@ -910,50 +728,3 @@ fn add_region_range(
+ 
+     Ok(())
+ }
+-
+-/// Zero `num_pages` pages starting at `base_address`.
+-///
+-/// With Zicboz, clear one cache block per `cbo.zero`. No CSR reports the block
+-/// size, so the first call measures it on the (page-aligned) target: fill its
+-/// first page, zero one block and count the cleared bytes. Without Zicboz,
+-/// fall back to `zeroize`.
+-fn zeroize(base_address: usize, num_pages: usize) {
+-    use core::sync::atomic::{AtomicUsize, Ordering};
+-    static CBO_BLOCK: AtomicUsize = AtomicUsize::new(0);
+-
+-    let bytes = num_pages * PAGE_SIZE;
+-    if bytes == 0 {
+-        return;
+-    }
+-
+-    if cfg!(target_feature = "zicboz") {
+-        let cbo_zero = |address: usize| unsafe {
+-            core::arch::asm!(
+-                ".option push",
+-                ".option arch, +zicboz",
+-                "cbo.zero ({0})",
+-                ".option pop",
+-                in(reg) address,
+-                options(nostack, preserves_flags),
+-            );
+-        };
+-
+-        let mut block = CBO_BLOCK.load(Ordering::Relaxed);
+-        if block == 0 {
+-            let page = base_address as *mut u8;
+-            unsafe { core::ptr::write_bytes(page, 0xff, PAGE_SIZE) };
+-            cbo_zero(base_address);
+-            block = (0..PAGE_SIZE)
+-                .take_while(|&i| unsafe { page.add(i).read_volatile() } == 0)
+-                .count();
+-            CBO_BLOCK.store(block, Ordering::Relaxed);
+-        }
+-
+-        for offset in (0..bytes).step_by(block) {
+-            cbo_zero(base_address + offset);
+-        }
+-    } else {
+-        use zeroize::Zeroize;
+-        unsafe { core::slice::from_raw_parts_mut(base_address as *mut u8, bytes) }.zeroize();
+-    }
+-}

@@ -1,7 +1,7 @@
 /*
  * Full TVM lifecycle latency: every COVH call from the first convert to the
- * last reclaim, so each fix (revocation, zeroing on convert and reclaim, the
- * TSM clear on destroy, ownership checks) is on the measured path.
+ * last reclaim, so each fix (revocation, zeroing on convert and reclaim,
+ * ownership checks) is on the measured path.
  *
  * Output uses the tvm-launch-latency format:
  *   LATENCY,<kind>,<operation>,<cycles>,<instructions>,<time_ticks>
@@ -13,7 +13,15 @@
 #include "baremetal_elf.h"
 
 #define PAGE_SIZE               4096UL
-#define PAGE_DIRECTORY_SIZE     (64UL * PAGE_SIZE)
+/*
+ * Root, L1 and one L0 table per 2 MiB of guest RAM (the TSM maps 4 KiB
+ * leaves). Never below the 64 pages used for small guests, so their layout
+ * does not depend on GUEST_RAM_SIZE. The Makefile sizes the metadata region
+ * with the same formula.
+ */
+#define GUEST_L0_TABLES         (2UL + GUEST_RAM_SIZE / (2UL * 1024UL * 1024UL))
+#define PAGE_DIRECTORY_SIZE     \
+    ((GUEST_L0_TABLES > 64UL ? GUEST_L0_TABLES : 64UL) * PAGE_SIZE)
 #define SEGMENT_STAGING_SIZE    (64UL * 1024UL)
 #define MAX_OPERATIONS          16
 
@@ -111,6 +119,11 @@ int main(void)
     };
     struct counters before, after, total = {0};
     uintptr_t tvm_id, entry;
+
+    /* The TVM state page follows the page directory inside the metadata. */
+    if (metadata + PAGE_DIRECTORY_SIZE + PAGE_SIZE >
+        (uintptr_t)__confidential_metadata_end)
+        fail("METADATA_TOO_SMALL", -1);
 
     /* Same starting state for both builds; not measured. */
     clear_bytes(__confidential_metadata_start, metadata_pages * PAGE_SIZE);

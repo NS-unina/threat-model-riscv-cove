@@ -20,10 +20,10 @@ and the patch is reverted when the script exits.
 Flaws:
   01   Trusted memory accessible from the untrusted domain
        patch: 01-convert-no-revoke.diff      test: converted-memory-isolation
-  02  Confidentiality leakage after TVM disposal
-       patch: 02a-reclaim-no-sanitize.diff   test: reclaimed-memory-zero
-  02  Cross-domain interference (TVM tampering, destruction, memory stealing)
-       patch: 02b-no-ownership.diff         test: cross-domain-reclaim
+  02   Confidentiality leakage after TVM disposal
+       patch: 02-reclaim-no-sanitize.diff    test: reclaimed-memory-zero
+  03   Cross-domain interference (TVM tampering, destruction, memory stealing)
+       patch: 03-no-ownership.diff           test: cross-domain-reclaim
 
 Options:
   --vulnerable  apply the patch that reintroduces the vulnerability

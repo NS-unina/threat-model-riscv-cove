@@ -1,0 +1,39 @@
+/dts-v1/;
+
+/include/ "platform/generic/base.dtsi"
+/include/ "platform/generic/default-domains.dtsi"
+
+/*
+ * The lifecycle measurement needs a confidential region larger than the
+ * generic platform's, so it carries its own memory map rather than patching
+ * the staged blob after the fact.
+ *
+ * The Makefile fills in the guest region's order: the region is
+ * max(32 MiB, GUEST_RAM_SIZE), so GUEST_RAM_SIZE may range from 2 MiB to
+ * 1 GiB. A region much larger than the guest would leave the host so many
+ * NAPOT fragments after CONVERT that Shadowfax runs out of PMP entries.
+ * The base is aligned for every order up to 1 GiB, and the memory node ends
+ * past it with room to spare: QEMU sizes guest RAM (-m) from this node and
+ * places its DTB at the top of RAM.
+ */
+&{/memory@80000000} {
+	reg = <0x00 0x80000000 0x00 0x82000000>;
+};
+
+&umem_high {
+	base = <0x0 0xc0000000>;
+	order = <@GUEST_REGION_ORDER@>;
+};
+
+/*
+ * Room for the launcher's metadata (page directory and TVM state), which
+ * reaches 4 MiB for a 1 GiB guest; the host FDT moves to the top of the
+ * larger region.
+ */
+&umem {
+	order = <24>;
+};
+
+&{/chosen/shadowfax} {
+	host-fdt = <0x0 0x81ff0000>;
+};

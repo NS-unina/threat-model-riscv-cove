@@ -14,10 +14,15 @@ SHADOWFAX=$(cd "${SHADOWFAX:-$HERE/../../shadowfax}" && pwd)
 export PYTHON3="${PYTHON3:-uv run --with-requirements $SHADOWFAX/requirements.txt python3}"
 RUNS=${1:-5}
 [ $# -gt 0 ] && shift
-SIZES=${*:-2 8 32}
+SIZES=${*:-2 8 32 64 128 256 512 1024}
 OUT=${OUT:-$HERE/results.csv}
 
 echo 'variant,guest_mib,run,kind,operation,cycles,instructions,time_ticks' > "$OUT"
+
+# Build and boot the same profile: the launcher picks the firmware ELF by
+# PROFILE (default debug), so it must be passed to every make invocation.
+PROFILE=release
+export PROFILE
 
 measure() {
     variant=$1
@@ -30,6 +35,12 @@ measure() {
             taskset -c 0 timeout 900 make -s -C "$HERE" ROOT="$SHADOWFAX" \
                 GUEST_RAM_SIZE=$size run </dev/null 2>&1 | tr -d '\r' |
                 sed -n "s/^LATENCY,/$variant,$mib,$run,/p" >> "$OUT"
+            # A panic leaves QEMU running until the timeout and prints no
+            # lifecycle line; stop instead of recording a partial run.
+            grep -q "^$variant,$mib,$run,lifecycle," "$OUT" || {
+                echo "$variant ${mib} MiB run $run: no TVM_LIFECYCLE result" >&2
+                exit 1
+            }
         done
     done
 }
