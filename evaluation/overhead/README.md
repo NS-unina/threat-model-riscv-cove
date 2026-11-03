@@ -54,38 +54,49 @@ Makefile sizes, for each `GUEST_RAM_SIZE`:
 
 ## Results
 
-These are the release Shadowfax firmware with Zicboz (commit `4c3d8f4`) under
-QEMU (TCG), with each run pinned to one host CPU. Values are the mean of 5
-runs; the sample standard deviation of the lifecycle time is at most 3.2% of
-the mean (0.2 to 3.2%), so it is not reported per row. *Zeroing* is the time
-the fixes add to `CONVERT` and `RECLAIM` (guest and metadata pages), where
-Shadowfax clears the memory; *share* is its fraction of the added time.
+These are the release Shadowfax firmware with Zicboz and Zicbom (commit
+`40edcf9`) under QEMU (TCG), with each run pinned to one host CPU. Values are
+the mean of 5 runs; the sample standard deviation of the lifecycle time is at
+most 4.6% of the mean (0.3 to 4.6%), so it is not reported per row. *Zeroing*
+is the time the fixes add to `CONVERT` and `RECLAIM` (guest and metadata
+pages), where Shadowfax clears the memory; *share* is its fraction of the
+added time. `table.py` computes these figures and the LaTeX rows from
+`results.csv`.
 
 | Guest RAM | No fixes | Fixed   | Overhead | Zeroing | Share  |
 |-----------|----------|---------|----------|---------|--------|
-| 2 MiB     | 0.032 s  | 0.041 s | 1.27×    | 0.006 s | 69%    |
-| 8 MiB     | 0.037 s  | 0.054 s | 1.46×    | 0.015 s | 87%    |
-| 32 MiB    | 0.056 s  | 0.103 s | 1.84×    | 0.046 s | 97%    |
-| 64 MiB    | 0.082 s  | 0.171 s | 2.10×    | 0.089 s | 99.0%  |
-| 128 MiB   | 0.132 s  | 0.312 s | 2.36×    | 0.179 s | 99.3%  |
-| 256 MiB   | 0.235 s  | 0.581 s | 2.47×    | 0.346 s | 100%   |
-| 512 MiB   | 0.438 s  | 1.13 s  | 2.59×    | 0.693 s | 99.9%  |
-| 1 GiB     | 0.847 s  | 2.23 s  | 2.63×    | 1.38 s  | 99.8%  |
+| 2 MiB     | 0.032 s  | 0.043 s | 1.36×    | 0.009 s | 76%    |
+| 8 MiB     | 0.037 s  | 0.063 s | 1.72×    | 0.024 s | 92%    |
+| 32 MiB    | 0.056 s  | 0.144 s | 2.57×    | 0.086 s | 98%    |
+| 64 MiB    | 0.081 s  | 0.252 s | 3.09×    | 0.169 s | 99.1%  |
+| 128 MiB   | 0.133 s  | 0.468 s | 3.53×    | 0.334 s | 99.5%  |
+| 256 MiB   | 0.236 s  | 0.900 s | 3.82×    | 0.664 s | 100%   |
+| 512 MiB   | 0.441 s  | 1.80 s  | 4.09×    | 1.36 s  | 99.6%  |
+| 1 GiB     | 0.860 s  | 3.55 s  | 4.13×    | 2.71 s  | 100%   |
 
-Nearly all of the overhead is zeroing confidential memory on convert and on
-reclaim. It costs about 0.68 ms per MiB per pass, and each byte of TVM memory
-is cleared twice (on donation and on reclamation), so it grows linearly with
-TVM memory at about 1.35 ms per MiB. The other fixes (revocation, ticketing,
-ownership tracking and checks) add a constant 1 to 3 ms per lifecycle; this
-is why the zeroing share is lower for small guests.
+Nearly all of the overhead is clearing confidential memory on convert and on
+reclaim. Each pass zeroes the memory with `cbo.zero` and then writes it back
+with `cbo.clean`, so that agents that bypass the cache, such as non-coherent
+DMA devices, also observe zeros. A pass costs about 1.3 ms per MiB, and each
+byte of TVM memory is cleared twice (on donation and on reclamation), so the
+overhead grows linearly with TVM memory at about 2.6 ms per MiB. Zeroing
+accounts for more than 99% of the added latency for guests with 64 MiB of
+memory and upwards. The other fixes (revocation, ticketing, ownership tracking
+and checks) add a roughly constant few milliseconds per lifecycle (up to about
+5 ms; at 256 MiB and 1 GiB the difference is within run-to-run noise, which is
+also why the share rounds to 100% there). This is why the zeroing share is
+lower for small guests.
 
-The overhead ratio levels off at about 2.6× because the baseline grows
-linearly too: most of its lifecycle is `LOAD_GUEST` (0.82 s at 1 GiB), where
-the TSM clears the guest's zero pages while building the TVM. That clearing
-is part of TVM construction, not a security fix, so both builds pay it.
+The overhead ratio levels off at about 4× because the baseline grows linearly
+too: most of its lifecycle is `LOAD_GUEST` (0.83 s at 1 GiB), where the TSM
+clears the guest's zero pages while building the TVM. That clearing is part of
+TVM construction, not a security fix, so both builds pay it. Compared with
+Zicboz alone (commit `4c3d8f4`, 2.6× at 1 GiB), the `cbo.clean` pass roughly
+doubles the cost of each clearing pass.
 
-Under QEMU (TCG) every `cbo.zero` is an emulated helper call, so the absolute
-zeroing times are an upper bound for real hardware.
+QEMU (TCG) does not model caches: every `cbo.zero` and `cbo.clean` is an
+emulated helper call with no real write-back traffic, so these times reflect
+instruction overhead in emulation rather than memory traffic on hardware.
 
 The ticket, allocation and TVM-ownership tables add about 4.8 KiB of static
 firmware state: 64 ticket slots × 40 B, 64 allocations × 32 B, and a 64 × 2
