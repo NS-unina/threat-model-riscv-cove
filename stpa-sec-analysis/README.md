@@ -17,11 +17,11 @@ Results are saved as CSV files in the output directory.
 
 ## Methodology Overview
 
-The model was created within the Capella MBSE tool using the STPA and DARC Add-Ons, as detailed in our paper:
+The model was created within the Capella MBSE tool (version 7.0.0) using the STPA and DARC Add-Ons, as detailed in our paper:
 > **A Systematic Threat Modeling Methodology for Confidential Computing Architectures: a Case Study on RISC-V CoVE**
 
 Our approach follows a hybrid workflow that provides end-to-end traceability from high-level system hazards down to concrete attack paths:
-1.  **STPA Analysis:** Modeling components, control actions, and feedback loops to identify safety/security artifacts (losses, hazards, UCAs, scenarios).
+1.  **STPA Analysis:** Modeling components, control actions, and feedback loops to identify safety/security artifacts (losses, hazards, UCAs, loss scenarios).
 2.  **Security Analysis (DARC/STRIDE):** Mapping identified loss scenarios to the STRIDE taxonomy to clarify attacker objectives through DARC add-on.
 3.  **Attack Graph Generation (Mulval):** Refining the analysis from a practical attacker perspective to identify feasible exploit chains.
 4.  **Experimental Validation:** Verifying vulnerabilities on the **Shadowfax** TEE platform.
@@ -73,7 +73,7 @@ Analyze how each control actions can lead to hazards, a control action can be un
 As an example is reported the UCA table for the CA-13 "Apply Domain Metadata"
 
 *   **UCA Table Example (CA-13 Apply Domain Metadata):**
-    ![UCA Table - CA-13](./figures/ca-13-unsafe-control-action.png)
+    ![UCA Table - CA-13](./figures/UnsafeControlAction.png)
 
 ### 4. Identify Loss Scenarios
 Identify the causal factors (e.g., compromised inputs, logic errors) that lead to UCAs and system losses.
@@ -81,15 +81,15 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
 *   **Causal Factor Diagram (UCA-31):**
     Analyzes how an untrusted domain can provide memory addresses it doesn't own.
     In this analysis we consider as sources of loss the input from the Untrusted Supervisor Domain, since he can send forged CoVE-H SBI, and the inadeguacy of the controller algorithm, since the Domain Manager should properly catch and block the malicious input. 
-    ![Causal Factor Diagram - UCA-31](./figures/causal-factor-diagram-uca31.png)
+    ![Causal Factor Diagram - UCA-31](./figures/[CFD] Causal Factor Diagram of Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14].png)
 
 *   **Causal Factor Diagram (UCA-35):**
     Analyzes the not cleaning memory pages after the reclaim.
     In this analysis we consider as the main problem the incorrectness the process model. 
-    ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca35.png)
+    ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca31.png)
 
 *   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, violated system constraints and the previously identified causal factors with the related countermeasures. 
-    ![Loss Scenarios](./figures/loss-scanarios.png)
+    ![Loss Scenarios](./figures/LossScenarioTable.png)
 
 ## Security Analysis Phases
 The security analysis is the additional step that transforms STPA into STPA-Sec. This analysis is performed through DARC Capella add-on, that allows for analysing the system under a security perspective. It is possible to apply DARC analysis at different layers of the MBSE analysis, we focus on the logical one. Moreover, both loss scenarios can be modeled in the same way in the DARC analysis. We integrate the DARC analysis with STRIDE by uniforming the threat kind library with STRIDE category.
@@ -119,5 +119,19 @@ The security analysis is the additional step that transforms STPA into STPA-Sec.
          ![Logical Architecture (LAB) with Availability](./figures/[LAB]LogicalArchitectureAvailability.png)
     *   **System Trust Boundaries:** illustrates with are the system trust boundaries.
          ![Logical Architecture (LAB) with Trust Boundaries](./figures/[LAB]LogicalArchitectureTB.png)
-        
-   
+
+The aforementioned analysis is related to LS-01 and LS-02, as it focuses exclusively on Information Disclosure. LS-03, on the other hand, primarily targets Tampering, which may subsequently lead to Information Disclosure if confidential memory is exposed.
+
+As an example, we illustrate how the DARC analysis would change for LS-03. However, since the same architectural pattern recurs across the scenarios, these diagrams do not add significant value to the overall analysis.
+
+*   **Threats & Assets (TDB):**
+
+Threats & Assets mapping for LS-03, focusing on Tampering.
+
+![Threats & Assets (TDB)](./figures/[TDB]ThreatsAssetsTampering.png)
+
+*   **Logical Architecture (LAB):**
+
+Logical Architecture for LS-03, focusing on Tampering and its potential implications for Information Disclosure.
+
+![Logical Architecture (LAB) with assets](./figures/[LAB]LogicalArchitectureTampering.png)
