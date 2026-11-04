@@ -81,12 +81,12 @@ Identify the causal factors (e.g., compromised inputs, logic errors) that lead t
 *   **Causal Factor Diagram (UCA-31):**
     Analyzes how an untrusted domain can provide memory addresses it doesn't own.
     In this analysis we consider as sources of loss the input from the Untrusted Supervisor Domain, since he can send forged CoVE-H SBI, and the inadeguacy of the controller algorithm, since the Domain Manager should properly catch and block the malicious input. 
-    ![Causal Factor Diagram - UCA-31](./figures/[CFD] Causal Factor Diagram of Untrusted domain provides a memory address not owned by him  [covh00, covh01, coveh05, coveh11, coveh12, coveh13, coveh14].png)
+    ![Causal Factor Diagram - UCA-31](./figures/[CFD]CausalFactorDiagramofUntrustedUCA-31.png)
 
 *   **Causal Factor Diagram (UCA-35):**
     Analyzes the not cleaning memory pages after the reclaim.
     In this analysis we consider as the main problem the incorrectness the process model. 
-    ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca31.png)
+    ![Causal Factor Diagram - UCA-35](./figures/causal-factor-diagram-uca35.png)
 
 *   **Loss Scenario Table:** Illustrates loss scenarios, with related hazards, violated system constraints and the previously identified causal factors with the related countermeasures. 
     ![Loss Scenarios](./figures/LossScenarioTable.png)
